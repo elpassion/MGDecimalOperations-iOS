@@ -1,18 +1,12 @@
-//
-//  Created by Maciej Gomółka on 24.08.2016.
-//  Copyright © 2016 EL Passion. All rights reserved.
-//
+#import "SpecHelper.h"
 
-#import <XCTest/XCTest.h>
+SpecBegin(ExampleTest)
 
-@interface MGDecimalOperationsTests : XCTestCase
-@end
+describe(@"ExampleTest", ^{
+    it(@"should be true", ^{
+        NSInteger result = 1 + 1;
+        expect(result).to.equal(2);
+    });
+});
 
-@implementation MGDecimalOperationsTests
-
-- (void)testExample {
-    NSInteger result = 1 + 1;
-    XCTAssertTrue(result == 2);
-}
-
-@end
+SpecEnd

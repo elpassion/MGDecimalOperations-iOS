@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		71B6C0A1BF67FEFE8C1EA437 /* libPods-MGDecimalOperationsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE459114C0F3E0AB1A1F7145 /* libPods-MGDecimalOperationsTests.a */; };
+		9FBE6869A12D6404CDC9B9F4 /* libPods-MGDecimalOperations.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 920FF198002EF69D1C66A690 /* libPods-MGDecimalOperations.a */; };
 		AFFF3DEF1D6D947600CCA836 /* MGDecimalOperations.h in Headers */ = {isa = PBXBuildFile; fileRef = AFFF3DEE1D6D947600CCA836 /* MGDecimalOperations.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AFFF3DF61D6D947600CCA836 /* MGDecimalOperations.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFFF3DEB1D6D947600CCA836 /* MGDecimalOperations.framework */; };
 		AFFF3DFB1D6D947600CCA836 /* MGDecimalOperationsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AFFF3DFA1D6D947600CCA836 /* MGDecimalOperationsTests.m */; };
@@ -23,12 +25,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0379EEBDD80E1022B93C3C13 /* Pods-MGDecimalOperations.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MGDecimalOperations.release.xcconfig"; path = "Pods/Target Support Files/Pods-MGDecimalOperations/Pods-MGDecimalOperations.release.xcconfig"; sourceTree = "<group>"; };
+		723FCE0BB1F6620AC1748224 /* Pods-MGDecimalOperationsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MGDecimalOperationsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MGDecimalOperationsTests/Pods-MGDecimalOperationsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		920FF198002EF69D1C66A690 /* libPods-MGDecimalOperations.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MGDecimalOperations.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE459114C0F3E0AB1A1F7145 /* libPods-MGDecimalOperationsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MGDecimalOperationsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFFF3DEB1D6D947600CCA836 /* MGDecimalOperations.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MGDecimalOperations.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFFF3DEE1D6D947600CCA836 /* MGDecimalOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGDecimalOperations.h; sourceTree = "<group>"; };
 		AFFF3DF01D6D947600CCA836 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AFFF3DF51D6D947600CCA836 /* MGDecimalOperationsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MGDecimalOperationsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFFF3DFA1D6D947600CCA836 /* MGDecimalOperationsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGDecimalOperationsTests.m; sourceTree = "<group>"; };
 		AFFF3DFC1D6D947600CCA836 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AFFF3E051D6D9D6F00CCA836 /* SpecHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpecHelper.h; sourceTree = "<group>"; };
+		D933CEBA1B9886B56F23D287 /* Pods-MGDecimalOperations.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MGDecimalOperations.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MGDecimalOperations/Pods-MGDecimalOperations.debug.xcconfig"; sourceTree = "<group>"; };
+		F4757AA39F0E528D4E2428D4 /* Pods-MGDecimalOperationsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MGDecimalOperationsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MGDecimalOperationsTests/Pods-MGDecimalOperationsTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FBE6869A12D6404CDC9B9F4 /* libPods-MGDecimalOperations.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +54,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFFF3DF61D6D947600CCA836 /* MGDecimalOperations.framework in Frameworks */,
+				71B6C0A1BF67FEFE8C1EA437 /* libPods-MGDecimalOperationsTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +67,8 @@
 				AFFF3DED1D6D947600CCA836 /* MGDecimalOperations */,
 				AFFF3DF91D6D947600CCA836 /* MGDecimalOperationsTests */,
 				AFFF3DEC1D6D947600CCA836 /* Products */,
+				E8117577D6B3C8F63EDE2DA7 /* Pods */,
+				F2ACAFECBD9C4C407D1819DA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,9 +94,30 @@
 			isa = PBXGroup;
 			children = (
 				AFFF3DFA1D6D947600CCA836 /* MGDecimalOperationsTests.m */,
+				AFFF3E051D6D9D6F00CCA836 /* SpecHelper.h */,
 				AFFF3DFC1D6D947600CCA836 /* Info.plist */,
 			);
 			path = MGDecimalOperationsTests;
+			sourceTree = "<group>";
+		};
+		E8117577D6B3C8F63EDE2DA7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D933CEBA1B9886B56F23D287 /* Pods-MGDecimalOperations.debug.xcconfig */,
+				0379EEBDD80E1022B93C3C13 /* Pods-MGDecimalOperations.release.xcconfig */,
+				723FCE0BB1F6620AC1748224 /* Pods-MGDecimalOperationsTests.debug.xcconfig */,
+				F4757AA39F0E528D4E2428D4 /* Pods-MGDecimalOperationsTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F2ACAFECBD9C4C407D1819DA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				920FF198002EF69D1C66A690 /* libPods-MGDecimalOperations.a */,
+				AE459114C0F3E0AB1A1F7145 /* libPods-MGDecimalOperationsTests.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -104,10 +138,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AFFF3DFF1D6D947600CCA836 /* Build configuration list for PBXNativeTarget "MGDecimalOperations" */;
 			buildPhases = (
+				62F4B549FEF8FD3B14AF16DA /* [CP] Check Pods Manifest.lock */,
 				AFFF3DE61D6D947600CCA836 /* Sources */,
 				AFFF3DE71D6D947600CCA836 /* Frameworks */,
 				AFFF3DE81D6D947600CCA836 /* Headers */,
 				AFFF3DE91D6D947600CCA836 /* Resources */,
+				88E18C24895B314116E0A9B9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -122,9 +158,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AFFF3E021D6D947600CCA836 /* Build configuration list for PBXNativeTarget "MGDecimalOperationsTests" */;
 			buildPhases = (
+				9F3AD2903E75E0A5BAAD6587 /* [CP] Check Pods Manifest.lock */,
 				AFFF3DF11D6D947600CCA836 /* Sources */,
 				AFFF3DF21D6D947600CCA836 /* Frameworks */,
 				AFFF3DF31D6D947600CCA836 /* Resources */,
+				6B3EB5027973A784C49FD85F /* [CP] Embed Pods Frameworks */,
+				169122684D9C6686017B2223 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -188,6 +227,84 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		169122684D9C6686017B2223 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MGDecimalOperationsTests/Pods-MGDecimalOperationsTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		62F4B549FEF8FD3B14AF16DA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6B3EB5027973A784C49FD85F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MGDecimalOperationsTests/Pods-MGDecimalOperationsTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		88E18C24895B314116E0A9B9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MGDecimalOperations/Pods-MGDecimalOperations-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9F3AD2903E75E0A5BAAD6587 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AFFF3DE61D6D947600CCA836 /* Sources */ = {
@@ -308,6 +425,7 @@
 		};
 		AFFF3E001D6D947600CCA836 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D933CEBA1B9886B56F23D287 /* Pods-MGDecimalOperations.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
@@ -325,6 +443,7 @@
 		};
 		AFFF3E011D6D947600CCA836 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0379EEBDD80E1022B93C3C13 /* Pods-MGDecimalOperations.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
@@ -342,6 +461,7 @@
 		};
 		AFFF3E031D6D947600CCA836 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 723FCE0BB1F6620AC1748224 /* Pods-MGDecimalOperationsTests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = MGDecimalOperationsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -352,6 +472,7 @@
 		};
 		AFFF3E041D6D947600CCA836 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4757AA39F0E528D4E2428D4 /* Pods-MGDecimalOperationsTests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = MGDecimalOperationsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -379,6 +500,7 @@
 				AFFF3E011D6D947600CCA836 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AFFF3E021D6D947600CCA836 /* Build configuration list for PBXNativeTarget "MGDecimalOperationsTests" */ = {
 			isa = XCConfigurationList;
@@ -387,6 +509,7 @@
 				AFFF3E041D6D947600CCA836 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
