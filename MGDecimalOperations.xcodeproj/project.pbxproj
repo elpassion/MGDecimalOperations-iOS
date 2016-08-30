@@ -13,7 +13,9 @@
 		132903C7A33FDFE20A2EB396 /* DivideOperator.m in Sources */ = {isa = PBXBuildFile; fileRef = 13290F5EFE29032EDDC50EF4 /* DivideOperator.m */; };
 		132903CD494ABE4C20FFE2FD /* Variable.h in Headers */ = {isa = PBXBuildFile; fileRef = 132905F071F04F04D72E59B3 /* Variable.h */; };
 		132903D604E54E6D8FF4DB95 /* OperatorProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 13290AC490BF9CA19067CE1C /* OperatorProtocol.h */; };
+		132904B6B127C1938EA7E553 /* BracketOperator.m in Sources */ = {isa = PBXBuildFile; fileRef = 132904C281ADAC40BC7D7F69 /* BracketOperator.m */; };
 		13290728C272DB64FC10CFF5 /* OperationObjectProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 132909A0B99EA0F971853927 /* OperationObjectProtocol.h */; };
+		1329078FBDBA0D7632E22B30 /* BracketOperator.h in Headers */ = {isa = PBXBuildFile; fileRef = 1329079CAE7813E9E9F2A8A1 /* BracketOperator.h */; };
 		13290810C84A5D3DB2B8A058 /* SubtractOperator.h in Headers */ = {isa = PBXBuildFile; fileRef = 132901AF2D1AD34B4094AB03 /* SubtractOperator.h */; };
 		132909417D8955EFACAB4218 /* AddOperator.m in Sources */ = {isa = PBXBuildFile; fileRef = 13290446E9304FC5EC34105D /* AddOperator.m */; };
 		13290C16EC1C85AFC263961F /* MultiplyOperator.h in Headers */ = {isa = PBXBuildFile; fileRef = 13290F30D7C180C41E82CE91 /* MultiplyOperator.h */; };
@@ -41,7 +43,9 @@
 		1329018DE7CE2A623245787D /* Variable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Variable.m; sourceTree = "<group>"; };
 		132901AF2D1AD34B4094AB03 /* SubtractOperator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubtractOperator.h; sourceTree = "<group>"; };
 		13290446E9304FC5EC34105D /* AddOperator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddOperator.m; sourceTree = "<group>"; };
+		132904C281ADAC40BC7D7F69 /* BracketOperator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BracketOperator.m; sourceTree = "<group>"; };
 		132905F071F04F04D72E59B3 /* Variable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Variable.h; sourceTree = "<group>"; };
+		1329079CAE7813E9E9F2A8A1 /* BracketOperator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BracketOperator.h; sourceTree = "<group>"; };
 		1329098C7DC364F26E3F9C42 /* MultiplyOperator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiplyOperator.m; sourceTree = "<group>"; };
 		132909A0B99EA0F971853927 /* OperationObjectProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperationObjectProtocol.h; sourceTree = "<group>"; };
 		132909EE13C6DFBDDB692C5B /* DivideOperator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DivideOperator.h; sourceTree = "<group>"; };
@@ -105,6 +109,8 @@
 				132909EE13C6DFBDDB692C5B /* DivideOperator.h */,
 				132900FE5B95F69AFF414C48 /* SubtractOperator.m */,
 				132901AF2D1AD34B4094AB03 /* SubtractOperator.h */,
+				1329079CAE7813E9E9F2A8A1 /* BracketOperator.h */,
+				132904C281ADAC40BC7D7F69 /* BracketOperator.m */,
 			);
 			path = Operators;
 			sourceTree = "<group>";
@@ -190,6 +196,7 @@
 				13290C16EC1C85AFC263961F /* MultiplyOperator.h in Headers */,
 				13290398E7C26D1909C279C1 /* DivideOperator.h in Headers */,
 				13290810C84A5D3DB2B8A058 /* SubtractOperator.h in Headers */,
+				1329078FBDBA0D7632E22B30 /* BracketOperator.h in Headers */,
 				132903D604E54E6D8FF4DB95 /* OperatorProtocol.h in Headers */,
 				13290728C272DB64FC10CFF5 /* OperationObjectProtocol.h in Headers */,
 			);
@@ -380,6 +387,7 @@
 				13290DF2C9790EC482CBBAE3 /* MultiplyOperator.m in Sources */,
 				132903C7A33FDFE20A2EB396 /* DivideOperator.m in Sources */,
 				13290F0432C303DA8A944A7C /* SubtractOperator.m in Sources */,
+				132904B6B127C1938EA7E553 /* BracketOperator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
