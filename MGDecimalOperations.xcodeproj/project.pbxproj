@@ -12,7 +12,9 @@
 		132903CD494ABE4C20FFE2FD /* Variable.h in Headers */ = {isa = PBXBuildFile; fileRef = 132905F071F04F04D72E59B3 /* Variable.h */; };
 		132903D604E54E6D8FF4DB95 /* OperatorProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 13290AC490BF9CA19067CE1C /* OperatorProtocol.h */; };
 		13290728C272DB64FC10CFF5 /* OperationObjectProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 132909A0B99EA0F971853927 /* OperationObjectProtocol.h */; };
+		13290810C84A5D3DB2B8A058 /* SubtractOperator.h in Headers */ = {isa = PBXBuildFile; fileRef = 132901AF2D1AD34B4094AB03 /* SubtractOperator.h */; };
 		132909417D8955EFACAB4218 /* AddOperator.m in Sources */ = {isa = PBXBuildFile; fileRef = 13290446E9304FC5EC34105D /* AddOperator.m */; };
+		13290F0432C303DA8A944A7C /* SubtractOperator.m in Sources */ = {isa = PBXBuildFile; fileRef = 132900FE5B95F69AFF414C48 /* SubtractOperator.m */; };
 		71B6C0A1BF67FEFE8C1EA437 /* libPods-MGDecimalOperationsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE459114C0F3E0AB1A1F7145 /* libPods-MGDecimalOperationsTests.a */; };
 		9FBE6869A12D6404CDC9B9F4 /* libPods-MGDecimalOperations.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 920FF198002EF69D1C66A690 /* libPods-MGDecimalOperations.a */; };
 		AFFF3DEF1D6D947600CCA836 /* MGDecimalOperations.h in Headers */ = {isa = PBXBuildFile; fileRef = AFFF3DEE1D6D947600CCA836 /* MGDecimalOperations.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -31,7 +33,9 @@
 
 /* Begin PBXFileReference section */
 		0379EEBDD80E1022B93C3C13 /* Pods-MGDecimalOperations.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MGDecimalOperations.release.xcconfig"; path = "Pods/Target Support Files/Pods-MGDecimalOperations/Pods-MGDecimalOperations.release.xcconfig"; sourceTree = "<group>"; };
+		132900FE5B95F69AFF414C48 /* SubtractOperator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubtractOperator.m; sourceTree = "<group>"; };
 		1329018DE7CE2A623245787D /* Variable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Variable.m; sourceTree = "<group>"; };
+		132901AF2D1AD34B4094AB03 /* SubtractOperator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubtractOperator.h; sourceTree = "<group>"; };
 		13290446E9304FC5EC34105D /* AddOperator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddOperator.m; sourceTree = "<group>"; };
 		132905F071F04F04D72E59B3 /* Variable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Variable.h; sourceTree = "<group>"; };
 		132909A0B99EA0F971853927 /* OperationObjectProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperationObjectProtocol.h; sourceTree = "<group>"; };
@@ -87,6 +91,8 @@
 			children = (
 				13290446E9304FC5EC34105D /* AddOperator.m */,
 				13290FA580B93A699503B488 /* AddOperator.h */,
+				132900FE5B95F69AFF414C48 /* SubtractOperator.m */,
+				132901AF2D1AD34B4094AB03 /* SubtractOperator.h */,
 			);
 			path = Operators;
 			sourceTree = "<group>";
@@ -169,6 +175,7 @@
 				AFFF3DEF1D6D947600CCA836 /* MGDecimalOperations.h in Headers */,
 				132903CD494ABE4C20FFE2FD /* Variable.h in Headers */,
 				13290146457D875E29EA8B42 /* AddOperator.h in Headers */,
+				13290810C84A5D3DB2B8A058 /* SubtractOperator.h in Headers */,
 				132903D604E54E6D8FF4DB95 /* OperatorProtocol.h in Headers */,
 				13290728C272DB64FC10CFF5 /* OperationObjectProtocol.h in Headers */,
 			);
@@ -356,6 +363,7 @@
 			files = (
 				132901EA839830954E783200 /* Variable.m in Sources */,
 				132909417D8955EFACAB4218 /* AddOperator.m in Sources */,
+				13290F0432C303DA8A944A7C /* SubtractOperator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
