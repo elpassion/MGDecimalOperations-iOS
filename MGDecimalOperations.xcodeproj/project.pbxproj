@@ -11,7 +11,6 @@
 		9FBE6869A12D6404CDC9B9F4 /* libPods-MGDecimalOperations.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 920FF198002EF69D1C66A690 /* libPods-MGDecimalOperations.a */; };
 		AFFF3DEF1D6D947600CCA836 /* MGDecimalOperations.h in Headers */ = {isa = PBXBuildFile; fileRef = AFFF3DEE1D6D947600CCA836 /* MGDecimalOperations.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AFFF3DF61D6D947600CCA836 /* MGDecimalOperations.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFFF3DEB1D6D947600CCA836 /* MGDecimalOperations.framework */; };
-		AFFF3DFB1D6D947600CCA836 /* MGDecimalOperationsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AFFF3DFA1D6D947600CCA836 /* MGDecimalOperationsTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,7 +32,6 @@
 		AFFF3DEE1D6D947600CCA836 /* MGDecimalOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGDecimalOperations.h; sourceTree = "<group>"; };
 		AFFF3DF01D6D947600CCA836 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AFFF3DF51D6D947600CCA836 /* MGDecimalOperationsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MGDecimalOperationsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AFFF3DFA1D6D947600CCA836 /* MGDecimalOperationsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGDecimalOperationsTests.m; sourceTree = "<group>"; };
 		AFFF3DFC1D6D947600CCA836 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AFFF3E051D6D9D6F00CCA836 /* SpecHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpecHelper.h; sourceTree = "<group>"; };
 		D933CEBA1B9886B56F23D287 /* Pods-MGDecimalOperations.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MGDecimalOperations.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MGDecimalOperations/Pods-MGDecimalOperations.debug.xcconfig"; sourceTree = "<group>"; };
@@ -93,7 +91,6 @@
 		AFFF3DF91D6D947600CCA836 /* MGDecimalOperationsTests */ = {
 			isa = PBXGroup;
 			children = (
-				AFFF3DFA1D6D947600CCA836 /* MGDecimalOperationsTests.m */,
 				AFFF3E051D6D9D6F00CCA836 /* SpecHelper.h */,
 				AFFF3DFC1D6D947600CCA836 /* Info.plist */,
 			);
@@ -318,7 +315,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AFFF3DFB1D6D947600CCA836 /* MGDecimalOperationsTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
