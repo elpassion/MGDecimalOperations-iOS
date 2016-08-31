@@ -11,7 +11,7 @@
 {
     NSMutableDictionary *details = [NSMutableDictionary new];
     details[NSLocalizedDescriptionKey] = errorMessage;
-    return [NSError errorWithDomain:@"MGDecimalOperations" code:1 userInfo:nil];
+    return [NSError errorWithDomain:@"MGDecimalOperations" code:1 userInfo:details];
 }
 
 @end
