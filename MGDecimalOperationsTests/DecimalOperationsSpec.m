@@ -177,6 +177,93 @@ SpecBegin(DecimalOperations)
                     expect(result).to.equal(5);
                 });
             });
+
+            context(@"when perform with '1+((2/3)*4-(5+6)*7)'", ^{
+
+                beforeEach(^{
+                    variables = @{
+                            @"a": [NSDecimalNumber decimalNumberWithString:@"1"],
+                            @"bb": [NSDecimalNumber decimalNumberWithString:@"9"],
+                            @"c": [NSDecimalNumber decimalNumberWithString:@"3"],
+                            @"d": [NSDecimalNumber decimalNumberWithString:@"4"],
+                            @"e": [NSDecimalNumber decimalNumberWithString:@"5"],
+                            @"f": [NSDecimalNumber decimalNumberWithString:@"6"],
+                            @"go": [NSDecimalNumber decimalNumberWithString:@"7"],
+                    };
+
+                    result = [sut mathWithOperation:@"a+((bb/c )*d-( e +f)*go )" variablesDecimal:variables error:&error];
+                });
+
+                it(@"should return '-73,3332'", ^{
+                    expect(result).to.equal(-64);
+                });
+            });
+
+            context(@"when perform with '1++2'", ^{
+
+                __block NSError *error;
+
+                beforeEach(^{
+                    variables = @{
+                            @"a": [NSDecimalNumber decimalNumberWithString:@"1"],
+                            @"b": [NSDecimalNumber decimalNumberWithString:@"2"]
+                    };
+
+                    result = [sut mathWithOperation:@"a++b" variablesDecimal:variables error:&error];
+                });
+
+                it(@"should error be not nil", ^{
+                    expect(error).notTo.beNil();
+                });
+
+                it(@"should return nil", ^{
+                    expect(result).to.beNil();
+                });
+            });
+
+            context(@"when perform with '2-+8'", ^{
+
+                __block NSError *error;
+
+                beforeEach(^{
+                    variables = @{
+                            @"a": [NSDecimalNumber decimalNumberWithString:@"2"],
+                            @"b": [NSDecimalNumber decimalNumberWithString:@"8"]
+                    };
+
+                    result = [sut mathWithOperation:@"a-+b" variablesDecimal:variables error:&error];
+                });
+
+                it(@"should error not to be nil", ^{
+                    expect(error).notTo.beNil();
+                });
+
+                it(@"should return nil", ^{
+                    expect(result).to.beNil();
+                });
+            });
+
+            context(@"when perform with '111  222'", ^{
+
+                __block NSError *error;
+
+                beforeEach(^{
+                    variables = @{
+                            @"a": [NSDecimalNumber decimalNumberWithString:@"111"],
+                            @"b": [NSDecimalNumber decimalNumberWithString:@"222"]
+                    };
+
+                    result = [sut mathWithOperation:@"a  b" variablesDecimal:variables error:&error];
+                });
+
+                it(@"should error not to be nil", ^{
+                    expect(error).notTo.beNil();
+                });
+
+                it(@"should return nil", ^{
+                    expect(result).to.beNil();
+                });
+            });
         });
 
         describe(@"mathWithOperation variablesString", ^{
