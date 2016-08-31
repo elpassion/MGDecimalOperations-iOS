@@ -4,7 +4,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "OperationObjectProtocol.h"
 
 @class Variable;
 
@@ -12,8 +11,5 @@
 
 - (NSDecimalNumber *)mathWithOperation:(NSString *)operation variablesString:(NSDictionary *)variables error:(NSError **)error;
 - (NSDecimalNumber *)mathWithOperation:(NSString *)operation variablesDecimal:(NSDictionary *)variables error:(NSError **)error;
-- (NSArray *)getPostfixExpressionWithSeparatedObjects:(NSArray *)separatedObjects;
-- (NSArray *)getSeparatedObjectsWithString:(NSString *)operation;
-- (id <OperationObjectProtocol>)getOperationObjectWithString:(NSString *)operation currentPositionInString:(NSUInteger)currentPosition;
 
 @end
