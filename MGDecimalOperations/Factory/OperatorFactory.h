@@ -9,6 +9,6 @@
 
 @interface OperatorFactory : NSObject
 
-- (id <OperationObjectProtocol>)getOperatorWithCharacter:(UniChar)operatorSymbol;
+- (id <OperationObjectProtocol>)operatorWithCharacter:(UniChar)operatorSymbol;
 
 @end

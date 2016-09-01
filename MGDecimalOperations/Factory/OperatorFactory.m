@@ -12,7 +12,7 @@
 
 @implementation OperatorFactory
 
-- (id <OperationObjectProtocol>)getOperatorWithCharacter:(UniChar)operatorSymbol
+- (id <OperationObjectProtocol>)operatorWithCharacter:(UniChar)operatorSymbol
 {
     switch (operatorSymbol) {
         case '+':
