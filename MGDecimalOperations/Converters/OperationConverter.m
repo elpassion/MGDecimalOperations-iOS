@@ -47,14 +47,14 @@
 
     while (currentPosition < operation.length) {
         UniChar character = [operation characterAtIndex:currentPosition];
-        if ((character >= 40 && character <= 43) || character == 47 || character == 45) {
+        if ([self isCharacterOperator:character]) {
             if (!isNumberInObject) {
-                return [self.operatorFactory getOperatorWithCharacter:character];
+                return [self.operatorFactory operatorWithCharacter:character];
             } else {
                 return [[Variable alloc] initWithSymbol:object];
             }
         };
-        if ((character >= 65 && character <= 90) || (character >= 97 && character <= 122)) {
+        if ([self isCharacterVariable:character]) {
             isNumberInObject = YES;
             object = [object stringByAppendingFormat:@"%c", character];
             currentPosition++;
@@ -63,6 +63,20 @@
         return [[FailedObject alloc] init];
     }
     return [[Variable alloc] initWithSymbol:object];
+}
+
+- (BOOL)isCharacterOperator:(UniChar)character
+{
+    if((character >= 40 && character <= 43) || character == 47 || character == 45)
+        return true;
+    return false;
+}
+
+- (BOOL)isCharacterVariable:(UniChar)character
+{
+    if((character >= 65 && character <= 90) || (character >= 97 && character <= 122))
+        return true;
+    return false;
 }
 
 @end
