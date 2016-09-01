@@ -201,8 +201,6 @@ SpecBegin(DecimalOperations)
 
             context(@"when perform with '1++2'", ^{
 
-                __block NSError *error;
-
                 beforeEach(^{
                     variables = @{
                             @"a": [NSDecimalNumber decimalNumberWithString:@"1"],
@@ -223,8 +221,6 @@ SpecBegin(DecimalOperations)
 
             context(@"when perform with '2-+8'", ^{
 
-                __block NSError *error;
-
                 beforeEach(^{
                     variables = @{
                             @"a": [NSDecimalNumber decimalNumberWithString:@"2"],
@@ -244,8 +240,6 @@ SpecBegin(DecimalOperations)
             });
 
             context(@"when perform with '111  222'", ^{
-
-                __block NSError *error;
 
                 beforeEach(^{
                     variables = @{
