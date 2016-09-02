@@ -423,6 +423,71 @@ SpecBegin(DecimalOperations)
                 });
             });
 
+            context(@"when perform 'a + b * (c /d - (e+f * g)) + h *(i + (j/ k))'", ^{
+
+                beforeEach(^{
+                    variables = @{
+                            @"a": @"1",
+                            @"b": @"2",
+                            @"c": @"8",
+                            @"d": @"4",
+                            @"e": @"5",
+                            @"f": @"6",
+                            @"g": @"7",
+                            @"h": @"8",
+                            @"i": @"9",
+                            @"j": @"11",
+                            @"k": @"11"
+                    };
+
+                    result = [sut mathWithOperation:@"a + b * (c /d - (e+f * g)) + h *(i + (j/ k))" variablesString:variables error:&error];
+                });
+
+                it(@"should return -9", ^{
+                    expect(result).to.equal(-9);
+                });
+
+                it(@"should return be nil", ^{
+                    expect(error).to.beNil();
+                });
+            });
+
+            context(@"when perform with 'a + b*c dd'", ^{
+
+                beforeEach(^{
+                    variables = @{
+                            @"a": @"1",
+                            @"b": @"2",
+                            @"c": @"3",
+                            @"dd": @"4"
+                    };
+
+                    result = [sut mathWithOperation:@"a + b*c dd" variablesString:variables error:&error];
+                });
+
+                it(@"should error not to be nil", ^{
+                    expect(error).notTo.beNil();
+                });
+            });
+
+            context(@"when perform with 'aa * abc/ccc+ fff'", ^{
+
+                beforeEach(^{
+                    variables = @{
+                            @"aa": @"2",
+                            @"abc": @"9",
+                            @"ccc": @"3",
+                            @"fff": @"1"
+                    };
+
+                    result = [sut mathWithOperation:@"aa * abc/ccc+ fff" variablesString:variables error:&error];
+                });
+
+                it(@"should return 7", ^{
+                    expect(result).to.equal(7);
+                });
+            });
+
             context(@"when perform with 'a + b - c * d'", ^{
 
                 beforeEach(^{
