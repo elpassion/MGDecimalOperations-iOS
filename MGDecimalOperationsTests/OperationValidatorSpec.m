@@ -45,14 +45,14 @@ SpecBegin(OperationValidator)
             });
         });
 
-        describe(@"isVariableNeighbourForVariable", ^{
+        describe(@"isRightNumberOfOperatorsAndVariables", ^{
 
             __block BOOL result;
 
             context(@"when perform with 'a b'", ^{
 
                 beforeEach(^{
-                    result = [sut isVariableNeighbourForVariable:@"a b"];
+                    result = [sut isRightNumberOfOperatorsAndVariables:@"a b"];
                 });
 
                 it(@"should return true", ^{
@@ -63,7 +63,7 @@ SpecBegin(OperationValidator)
             context(@"when perform with 'a+b'", ^{
 
                 beforeEach(^{
-                    result = [sut isVariableNeighbourForVariable:@"a+b"];
+                    result = [sut isRightNumberOfOperatorsAndVariables:@"a+b"];
                 });
 
                 it(@"should return false", ^{
@@ -74,7 +74,7 @@ SpecBegin(OperationValidator)
             context(@"when perform with 'a + b'", ^{
 
                 beforeEach(^{
-                    result = [sut isVariableNeighbourForVariable:@"a + b"];
+                    result = [sut isRightNumberOfOperatorsAndVariables:@"a + b"];
                 });
 
                 it(@"should return false", ^{
@@ -85,7 +85,7 @@ SpecBegin(OperationValidator)
             context(@"when perform with 'a  b'", ^{
 
                 beforeEach(^{
-                    result = [sut isVariableNeighbourForVariable:@"a  b"];
+                    result = [sut isRightNumberOfOperatorsAndVariables:@"a  b"];
                 });
 
                 it(@"should return true", ^{
@@ -96,7 +96,7 @@ SpecBegin(OperationValidator)
             context(@"when perform with 'a +  b'", ^{
 
                 beforeEach(^{
-                    result = [sut isVariableNeighbourForVariable:@"a + b"];
+                    result = [sut isRightNumberOfOperatorsAndVariables:@"a + b"];
                 });
 
                 it(@"should return false", ^{

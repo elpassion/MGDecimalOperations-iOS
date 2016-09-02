@@ -29,7 +29,7 @@
 {
     if (![self isNumberOfCloseAndOpenBracketThisSame:operation]) {
         *error = [self.errorFactory errorWithMessage:@"Wrong operation. Different number of open and close brackets"];
-    } else if ([self isVariableNeighbourForVariable:operation]) {
+    } else if ([self isRightNumberOfOperatorsAndVariables:operation]) {
         *error = [self.errorFactory errorWithMessage:@"Wrong operation. Numbers not separated by operator"];
     }
 }
@@ -56,25 +56,30 @@
     return (open == close);
 }
 
-- (BOOL)isVariableNeighbourForVariable:(NSString *)operation
+- (BOOL)isRightNumberOfOperatorsAndVariables:(NSString *)operation
 {
     NSString *operationWithoutBrackets = [[operation stringByReplacingOccurrencesOfString:@"(" withString:@""] stringByReplacingOccurrencesOfString:@")" withString:@""];
     NSPredicate *noEmptyString = [NSPredicate predicateWithFormat:@"SELF != ''"];
-    NSArray *operationInParts = [operationWithoutBrackets componentsSeparatedByString:@" "];
+    NSCharacterSet *characterSet = [NSCharacterSet characterSetWithCharactersInString:@" -+*/"];
+    NSArray *operationInParts = [operationWithoutBrackets componentsSeparatedByCharactersInSet:characterSet];
     NSArray *filteredArray = [operationInParts filteredArrayUsingPredicate:noEmptyString];
 
-    BOOL isVariable = NO;
+    NSUInteger numberOfVariables = filteredArray.count;
+    NSUInteger numberOfOperators = [self numberOfOperatorsWithOperation:operation];
 
-    for (NSUInteger i = 0; i < filteredArray.count; i++) {
-        UniChar character = [filteredArray[i] characterAtIndex:0];
-        if (!(character >= 42 && character <= 47 && character != 44)) {
-            if (isVariable) return YES;
-            isVariable = YES;
-        } else {
-            isVariable = NO;
+    return numberOfOperators != numberOfVariables-1;
+}
+
+-(NSUInteger)numberOfOperatorsWithOperation:(NSString *)operation
+{
+    NSUInteger numberOfOperators = 0;
+    for (NSUInteger i = 0; i < operation.length; i++){
+        UniChar character = [operation characterAtIndex:i];
+        if(character == '+' || character == '-' || character == '*' || character == '/'){
+            numberOfOperators++;
         }
     }
-    return NO;
+    return numberOfOperators;
 }
 
 - (BOOL)isSeparatedObjectArrayContainFailedObject:(NSArray *)separatedObjects
