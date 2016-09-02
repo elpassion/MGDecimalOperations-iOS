@@ -272,7 +272,7 @@ SpecBegin(DecimalOperations)
                 error = nil;
             });
 
-            context(@"when perform '2.321378923 + 3.210932892'", ^{
+            context(@"when perform with '2.321378923 + 3.210932892'", ^{
 
                 beforeEach(^{
                     variables = @{
@@ -287,7 +287,7 @@ SpecBegin(DecimalOperations)
                 });
             });
 
-            context(@"when perform '50 - 70'", ^{
+            context(@"when perform with '50 - 70'", ^{
 
                 beforeEach(^{
                     variables = @{
@@ -302,7 +302,7 @@ SpecBegin(DecimalOperations)
                 });
             });
 
-            context(@"when perform '3 * 5'", ^{
+            context(@"when perform with '3 * 5'", ^{
 
                 beforeEach(^{
                     variables = @{
@@ -317,7 +317,7 @@ SpecBegin(DecimalOperations)
                 });
             });
 
-            context(@"when perform '70 / 7'", ^{
+            context(@"when perform with '70 / 7'", ^{
 
                 beforeEach(^{
                     variables = @{
@@ -332,7 +332,7 @@ SpecBegin(DecimalOperations)
                 });
             });
 
-            context(@"when perform '5 + 5 + 5 - 5'", ^{
+            context(@"when perform with '5 + 5 + 5 - 5'", ^{
 
                 beforeEach(^{
                     variables = @{
@@ -350,7 +350,7 @@ SpecBegin(DecimalOperations)
                 });
             });
 
-            context(@"when perform '4 * 5 / 2'", ^{
+            context(@"when perform with '4 * 5 / 2'", ^{
 
                 beforeEach(^{
                     variables = @{
@@ -367,7 +367,7 @@ SpecBegin(DecimalOperations)
                 });
             });
 
-            context(@"when perform '2 + (2 * 2)'", ^{
+            context(@"when perform with '2 + (2 * 2)'", ^{
 
                 beforeEach(^{
                     variables = @{
@@ -384,7 +384,7 @@ SpecBegin(DecimalOperations)
                 });
             });
 
-            context(@"when perform '(14 / 7 * (3 + (3 * 5)))'", ^{
+            context(@"when perform with '(14 / 7 * (3 + (3 * 5)))'", ^{
 
                 beforeEach(^{
                     variables = @{
@@ -403,7 +403,7 @@ SpecBegin(DecimalOperations)
                 });
             });
 
-            context(@"when perform '((((3 * 5 * 2) + 5) - 10) / 5)'", ^{
+            context(@"when perform with '((((3 * 5 * 2) + 5) - 10) / 5)'", ^{
 
                 beforeEach(^{
                     variables = @{
@@ -420,6 +420,31 @@ SpecBegin(DecimalOperations)
 
                 it(@"should return 5", ^{
                     expect(result).to.equal(5);
+                });
+            });
+
+            context(@"when perform with 'a + b - c * d'", ^{
+
+                beforeEach(^{
+                    variables = @{
+                            @"a": @"1",
+                            @"b": @"3",
+                            @"c": @"4"
+                    };
+                    
+                    result = [sut mathWithOperation:@"a + b - c * d" variablesString:variables error:&error];
+                });
+
+                it(@"should return nil", ^{
+                    expect(result).to.beNil();
+                });
+
+                it(@"should ", ^{
+                    expect(error).notTo.beNil();
+                });
+
+                it(@"should return error with message 'Dictionary doesn't contain all variables'", ^{
+                    expect(error.userInfo[NSLocalizedDescriptionKey]).to.equal(@"Dictionary doesn't contain all variables");
                 });
             });
         });

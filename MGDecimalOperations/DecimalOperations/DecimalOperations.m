@@ -43,7 +43,7 @@
     [self.operationValidator validateOperationWithString:operation error:error];
     if (*error != nil) return nil;
     NSArray *separatedObjects = [self.operationConverter separatedObjectsWithString:operation];
-    [self.operationValidator validateOperationWithSeparatedObjects:separatedObjects error:error];
+    [self.operationValidator validateOperationWithSeparatedObjects:separatedObjects variables:variables error:error];
     if (*error != nil) return nil;
     NSArray *postfix = [[self operationCalculator] postfixExpressionWithSeparatedObjects:separatedObjects];
     Variable *resultVariable = [[self operationCalculator] evaluatedResultWithPostfixArray:postfix variablesDictionary:variables];

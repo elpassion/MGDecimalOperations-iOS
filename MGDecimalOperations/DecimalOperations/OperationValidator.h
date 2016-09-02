@@ -8,7 +8,7 @@
 @interface OperationValidator : NSObject
 
 - (void)validateOperationWithString:(NSString *)operation error:(NSError **)error;
-- (void)validateOperationWithSeparatedObjects:(NSArray *)separatedObjects error:(NSError **)error;
+- (void)validateOperationWithSeparatedObjects:(NSArray *)separatedObjects variables:(NSDictionary *)variables error:(NSError **)error;
 
 - (BOOL)isNumberOfCloseAndOpenBracketThisSame:(NSString *)operation;
 - (BOOL)isRightNumberOfOperatorsAndVariables:(NSString *)operation;
