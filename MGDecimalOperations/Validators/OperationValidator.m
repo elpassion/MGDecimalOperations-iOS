@@ -5,7 +5,6 @@
 
 #import "OperationValidator.h"
 #import "ErrorFactory.h"
-#import "FailedObject.h"
 #import "OperatorProtocol.h"
 #import "BracketOperator.h"
 #import "Variable.h"
@@ -37,9 +36,7 @@
 
 - (void)validateOperationWithSeparatedObjects:(NSArray *)separatedObjects variables:(NSDictionary *)variables error:(NSError **)error
 {
-    if ([self isSeparatedObjectArrayContainFailedObject:separatedObjects]) {
-        *error = [self.errorFactory errorWithMessage:@"Wrong operation. Operation contain forbidden variables name or operations"];
-    } else if (![self isCurrentAndPreviousObjectsCanBeNeighbours:separatedObjects]) {
+    if (![self isCurrentAndPreviousObjectsCanBeNeighbours:separatedObjects]) {
         *error = [self.errorFactory errorWithMessage:@"Wrong operation. Operator next to operator"];
     }else if(![self isDictionaryContainSeparatedObjects:separatedObjects variables:variables]) {
         *error = [self.errorFactory errorWithMessage:@"Dictionary doesn't contain all variables"];
@@ -98,17 +95,6 @@
         }
     }
     return numberOfOperators;
-}
-
-- (BOOL)isSeparatedObjectArrayContainFailedObject:(NSArray *)separatedObjects
-{
-    for (NSUInteger i = 0; i < separatedObjects.count; i++) {
-        id <OperationObjectProtocol> object = separatedObjects[i];
-        if ([object isKindOfClass:[FailedObject class]]) {
-            return YES;
-        }
-    }
-    return NO;
 }
 
 - (BOOL)isCurrentAndPreviousObjectsCanBeNeighbours:(NSArray *)separatedObjects

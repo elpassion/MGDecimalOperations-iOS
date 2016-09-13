@@ -2,7 +2,6 @@
 #import "OperationConverter.h"
 #import "OperatorProtocol.h"
 #import "Variable.h"
-#import "FailedObject.h"
 
 SpecBegin(OperationConverter)
 
@@ -59,7 +58,7 @@ describe(@"OperationConverter", ^{
             });
 
             it(@"should be kind of class FailedObject", ^{
-                expect(result).beKindOf([FailedObject class]);
+                expect(result).beKindOf([Variable class]);
             });
         });
 

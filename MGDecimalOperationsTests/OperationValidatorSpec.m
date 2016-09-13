@@ -2,7 +2,6 @@
 #import "OperationValidator.h"
 #import "Variable.h"
 #import "AddOperator.h"
-#import "FailedObject.h"
 
 SpecBegin(OperationValidator)
 
@@ -97,46 +96,6 @@ SpecBegin(OperationValidator)
 
                 beforeEach(^{
                     result = [sut isRightNumberOfOperatorsAndVariables:@"a + b"];
-                });
-
-                it(@"should return false", ^{
-                    expect(result).to.beFalsy();
-                });
-            });
-        });
-
-        describe(@"isSeparatedObjectArrayContainFailedObject", ^{
-
-            __block NSArray *inputValues;
-            __block BOOL result;
-
-            context(@"when perform with 'failedObject'", ^{
-
-                beforeEach(^{
-                    inputValues = @[
-                            [[Variable alloc] initWithSymbol:@"a" value:@"1"],
-                            [AddOperator new],
-                            [FailedObject new]
-                    ];
-
-                    result = [sut isSeparatedObjectArrayContainFailedObject:inputValues];
-                });
-
-                it(@"should return true", ^{
-                    expect(result).to.beTruthy();
-                });
-            });
-
-            context(@"when perform without 'failedObject'", ^{
-
-                beforeEach(^{
-                    inputValues = @[
-                            [[Variable alloc] initWithSymbol:@"a" value:@"1"],
-                            [AddOperator new],
-                            [[Variable alloc] initWithSymbol:@"b" value:@"2"]
-                    ];
-
-                    result = [sut isSeparatedObjectArrayContainFailedObject:inputValues];
                 });
 
                 it(@"should return false", ^{

@@ -12,7 +12,6 @@
 
 - (BOOL)isNumberOfCloseAndOpenBracketThisSame:(NSString *)operation;
 - (BOOL)isRightNumberOfOperatorsAndVariables:(NSString *)operation;
-- (BOOL)isSeparatedObjectArrayContainFailedObject:(NSArray *)separatedObjects;
 - (BOOL)isCurrentAndPreviousObjectsCanBeNeighbours:(NSArray *)separatedObjects;
 
 @end

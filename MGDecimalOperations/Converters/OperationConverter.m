@@ -6,7 +6,6 @@
 #import "OperationConverter.h"
 #import "OperatorFactory.h"
 #import "Variable.h"
-#import "FailedObject.h"
 
 @interface OperationConverter ()
 
@@ -53,28 +52,19 @@
             } else {
                 return [[Variable alloc] initWithSymbol:object];
             }
-        };
-        if ([self isCharacterVariable:character]) {
+        } else {
             isNumberInObject = YES;
             object = [object stringByAppendingFormat:@"%c", character];
             currentPosition++;
             continue;
         }
-        return [[FailedObject alloc] init];
     }
     return [[Variable alloc] initWithSymbol:object];
 }
 
 - (BOOL)isCharacterOperator:(UniChar)character
 {
-    if((character >= 40 && character <= 43) || character == 47 || character == 45)
-        return true;
-    return false;
-}
-
-- (BOOL)isCharacterVariable:(UniChar)character
-{
-    if((character >= 65 && character <= 90) || (character >= 97 && character <= 122) || (character >= 48 && character <= 57))
+    if ((character >= 40 && character <= 43) || character == 47 || character == 45)
         return true;
     return false;
 }
