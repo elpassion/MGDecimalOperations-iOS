@@ -272,6 +272,24 @@ SpecBegin(DecimalOperations)
                 error = nil;
             });
 
+            context(@"when perform with '1 + 4 + 5 - 5'", ^{
+
+                beforeEach(^{
+                    variables= @{
+                            @"$%^": @"1",
+                            @"~AW": @"4",
+                            @"!@#": @"5",
+                            @"<7.,": @"5"
+                    };
+
+                    result = [sut mathWithOperation:@"$%^ + ~AW + !@# - <7.," variablesString:variables error:&error];
+                });
+
+                it(@"should return 5", ^{
+                    expect(result).to.equal(5);
+                });
+            });
+
             context(@"when perform with '2.321378923 + 3.210932892'", ^{
 
                 beforeEach(^{
@@ -464,7 +482,7 @@ SpecBegin(DecimalOperations)
                     expect(result).to.equal(-9);
                 });
 
-                it(@"should return be nil", ^{
+                it(@"should error be nil", ^{
                     expect(error).to.beNil();
                 });
             });
