@@ -74,7 +74,7 @@
 
 - (BOOL)isCharacterVariable:(UniChar)character
 {
-    if((character >= 65 && character <= 90) || (character >= 97 && character <= 122))
+    if((character >= 65 && character <= 90) || (character >= 97 && character <= 122) || (character >= 48 && character <= 57))
         return true;
     return false;
 }

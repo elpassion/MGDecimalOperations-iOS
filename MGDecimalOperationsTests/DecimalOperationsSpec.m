@@ -287,6 +287,23 @@ SpecBegin(DecimalOperations)
                 });
             });
 
+            context(@"when perform with '2 + 4*5'", ^{
+
+                beforeEach(^{
+                    variables = @{
+                            @"a4a": @"2",
+                            @"44g": @"4",
+                            @"g4g": @"5"
+                    };
+
+                    result = [sut mathWithOperation:@"a4a + 44g*g4g" variablesString:variables error:&error];
+                });
+
+                it(@"should return 22", ^{
+                    expect(result).to.equal(22);
+                });
+            });
+
             context(@"when perform with '50 - 70'", ^{
 
                 beforeEach(^{
