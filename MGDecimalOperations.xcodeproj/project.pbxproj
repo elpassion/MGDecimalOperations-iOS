@@ -59,6 +59,7 @@
 /* Begin PBXFileReference section */
 		0379EEBDD80E1022B93C3C13 /* Pods-MGDecimalOperations.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MGDecimalOperations.release.xcconfig"; path = "Pods/Target Support Files/Pods-MGDecimalOperations/Pods-MGDecimalOperations.release.xcconfig"; sourceTree = "<group>"; };
 		132900FE5B95F69AFF414C48 /* SubtractOperator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubtractOperator.m; sourceTree = "<group>"; };
+		1329010D9B24DD6762F01C7E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		1329018DE7CE2A623245787D /* Variable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Variable.m; sourceTree = "<group>"; };
 		132901AF2D1AD34B4094AB03 /* SubtractOperator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubtractOperator.h; sourceTree = "<group>"; };
 		132902089A57F9AB74084656 /* OperationValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OperationValidator.m; sourceTree = "<group>"; };
@@ -96,7 +97,6 @@
 		AE459114C0F3E0AB1A1F7145 /* libPods-MGDecimalOperationsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MGDecimalOperationsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFFF3DEB1D6D947600CCA836 /* MGDecimalOperations.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MGDecimalOperations.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFFF3DEE1D6D947600CCA836 /* MGDecimalOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGDecimalOperations.h; sourceTree = "<group>"; };
-		AFFF3DF01D6D947600CCA836 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AFFF3DF51D6D947600CCA836 /* MGDecimalOperationsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MGDecimalOperationsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFFF3DFC1D6D947600CCA836 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AFFF3E051D6D9D6F00CCA836 /* SpecHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpecHelper.h; sourceTree = "<group>"; };
@@ -156,6 +156,14 @@
 				132902FC893A282AD3BE8572 /* OperationCalculator.h */,
 			);
 			path = DecimalOperations;
+			sourceTree = "<group>";
+		};
+		13290A45C00BE578A217F0E4 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				1329010D9B24DD6762F01C7E /* Info.plist */,
+			);
+			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
 		13290CC6B12F82F455F5E69C /* Factory */ = {
@@ -228,12 +236,12 @@
 			isa = PBXGroup;
 			children = (
 				AFFF3DEE1D6D947600CCA836 /* MGDecimalOperations.h */,
-				AFFF3DF01D6D947600CCA836 /* Info.plist */,
 				132902176FD5ED5B3AA8B5A9 /* OperationObjects */,
 				13290CC6B12F82F455F5E69C /* Factory */,
 				132906FE1AE9B667BEFA812C /* DecimalOperations */,
 				132905C29904993700AD0991 /* Converters */,
 				13290F534612549C887935D3 /* Validators */,
+				13290A45C00BE578A217F0E4 /* SupportingFiles */,
 			);
 			path = MGDecimalOperations;
 			sourceTree = "<group>";
@@ -616,7 +624,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = MGDecimalOperations/Info.plist;
+				INFOPLIST_FILE = MGDecimalOperations/SupportingFiles/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.elpassion.MGDecimalOperations;
@@ -634,7 +642,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = MGDecimalOperations/Info.plist;
+				INFOPLIST_FILE = MGDecimalOperations/SupportingFiles/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.elpassion.MGDecimalOperations;
