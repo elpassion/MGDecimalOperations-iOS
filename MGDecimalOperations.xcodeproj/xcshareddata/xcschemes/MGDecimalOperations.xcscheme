@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "AFFF3DEA1D6D947600CCA836"
-               BuildableName = "MGDecimalOperations"
+               BuildableName = "MGDecimalOperations.framework"
                BlueprintName = "MGDecimalOperations"
                ReferencedContainer = "container:MGDecimalOperations.xcodeproj">
             </BuildableReference>

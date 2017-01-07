@@ -12,7 +12,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "AFFF3DF41D6D947600CCA836"
-               BuildableName = "MGDecimalOperationsTests"
+               BuildableName = "MGDecimalOperationsTests.xctest"
                BlueprintName = "MGDecimalOperationsTests"
                ReferencedContainer = "container:MGDecimalOperations.xcodeproj">
             </BuildableReference>
@@ -30,7 +30,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "AFFF3DF41D6D947600CCA836"
-               BuildableName = "MGDecimalOperationsTests"
+               BuildableName = "MGDecimalOperationsTests.xctest"
                BlueprintName = "MGDecimalOperationsTests"
                ReferencedContainer = "container:MGDecimalOperations.xcodeproj">
             </BuildableReference>
