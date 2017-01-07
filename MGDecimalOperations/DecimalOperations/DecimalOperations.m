@@ -34,7 +34,7 @@
 
 - (NSDecimalNumber *)mathWithOperation:(NSString *)operation variablesString:(NSDictionary *)variables error:(NSError **)error
 {
-    NSDictionary *convertedVariables = [[self decimalsConverter] decimalVariablesFromStringVariables:variables error:error];
+    NSDictionary *convertedVariables = [self.decimalsConverter decimalVariablesFromStringVariables:variables error:error];
     return [self mathWithOperation:operation variablesDecimal:convertedVariables error:error];
 }
 
