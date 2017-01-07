@@ -33,7 +33,7 @@
 
 /**
  *  This is method for calculation operations wrote in String.
- *  In this method you provide to the variables parametr NSDictionary
+ *  In this method you provide to the variables parameter NSDictionary
  *  contains keys with name of variables and NSDecimalNumbers
  *
  *  @param operation is operation wrote in String
@@ -42,7 +42,7 @@
  *  @param error     is NSError. Before you call this method you need to create NSError
  *                   pointer that you pass. When error occurs this variable will describe problem.
  *
- *  @return NSDeciamlNumber that is result of operation wrote in @parm operation
+ *  @return NSDecimalNumber that is result of operation wrote in @parm operation
  */
 
 - (NSDecimalNumber *)mathWithOperation:(NSString *)operation variablesDecimal:(NSDictionary *)variables error:(NSError **)error;
