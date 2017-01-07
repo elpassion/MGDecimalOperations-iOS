@@ -10,7 +10,7 @@
 - (void)validateOperationWithString:(NSString *)operation error:(NSError **)error;
 - (void)validateOperationWithSeparatedObjects:(NSArray *)separatedObjects variables:(NSDictionary *)variables error:(NSError **)error;
 
-- (BOOL)isNumberOfCloseAndOpenBracketThisSame:(NSString *)operation;
+- (BOOL)isNumberOfCloseAndOpenBracketsEqual:(NSString *)operation;
 - (BOOL)isRightNumberOfOperatorsAndVariables:(NSString *)operation;
 - (BOOL)isCurrentAndPreviousObjectsCanBeNeighbours:(NSArray *)separatedObjects;
 

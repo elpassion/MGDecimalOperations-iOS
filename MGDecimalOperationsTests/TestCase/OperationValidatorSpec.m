@@ -24,7 +24,7 @@ SpecBegin(OperationValidator)
             context(@"when perform with '(a + (b * (c / d)))'", ^{
 
                 beforeEach(^{
-                    result = [sut isNumberOfCloseAndOpenBracketThisSame:@"(a + (b * (c / d)))"];
+                    result = [sut isNumberOfCloseAndOpenBracketsEqual:@"(a + (b * (c / d)))"];
                 });
 
                 it(@"should return true", ^{
@@ -35,7 +35,7 @@ SpecBegin(OperationValidator)
             context(@"when perform with '(a + b - (c * d) - (f * g)))'", ^{
 
                 beforeEach(^{
-                    result = [sut isNumberOfCloseAndOpenBracketThisSame:@"(a + b - (c * d) - (f * g)))"];
+                    result = [sut isNumberOfCloseAndOpenBracketsEqual:@"(a + b - (c * d) - (f * g)))"];
                 });
 
                 it(@"should return false", ^{

@@ -27,7 +27,7 @@
 
 - (void)validateOperationWithString:(NSString *)operation error:(NSError **)error
 {
-    if (![self isNumberOfCloseAndOpenBracketThisSame:operation]) {
+    if ([self isNumberOfCloseAndOpenBracketsEqual:operation] == false) {
         *error = [self.errorFactory errorWithMessage:@"Wrong operation. Different number of open and close brackets"];
     } else if ([self isRightNumberOfOperatorsAndVariables:operation]) {
         *error = [self.errorFactory errorWithMessage:@"Wrong operation. Numbers not separated by operator"];
@@ -58,7 +58,7 @@
     return true;
 }
 
-- (BOOL)isNumberOfCloseAndOpenBracketThisSame:(NSString *)operation
+- (BOOL)isNumberOfCloseAndOpenBracketsEqual:(NSString *)operation
 {
     NSUInteger open = 0;
     NSUInteger close = 0;
