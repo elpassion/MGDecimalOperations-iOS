@@ -4,17 +4,14 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "OperatorProtocol.h"
+#import "BracketProtocol.h"
 
 @class Variable;
 
-@interface BracketOperator : NSObject <OperatorProtocol>
+@interface BracketOperator : NSObject <BracketProtocol>
 
 @property (nonatomic, strong) NSString *symbol;
-@property (nonatomic) NSInteger priority;
 
 - (instancetype)initWithSymbol:(NSString *)symbol;
-
-- (Variable *)makeOperationWithFirstArgument:(Variable *)firstArgument SecondArgument:(Variable *)secondArgument;
 
 @end

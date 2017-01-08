@@ -4,7 +4,6 @@
 //
 
 #import "BracketOperator.h"
-#import "Variable.h"
 
 @implementation BracketOperator
 
@@ -14,11 +13,6 @@
         _symbol = symbol;
     }
     return self;
-}
-
-- (Variable *)makeOperationWithFirstArgument:(Variable *)firstArgument SecondArgument:(Variable *)secondArgument
-{
-    return nil;
 }
 
 @end
