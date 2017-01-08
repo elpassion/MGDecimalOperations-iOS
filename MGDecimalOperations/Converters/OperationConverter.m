@@ -29,14 +29,14 @@
     NSUInteger currentPositionInString = 0;
     NSUInteger operationLength = operationWithoutSpaces.length;
     id <OperationObjectProtocol> currentObject;
-    NSArray *resultArr = [NSArray new];
+    NSArray *separatedObjects = [NSArray new];
 
     while (currentPositionInString < operationLength) {
         currentObject = [self operationObjectWithString:operationWithoutSpaces currentPositionInString:currentPositionInString];
-        resultArr = [resultArr arrayByAddingObject:currentObject];
+        separatedObjects = [separatedObjects arrayByAddingObject:currentObject];
         currentPositionInString += currentObject.symbol.length;
     }
-    return resultArr;
+    return separatedObjects;
 }
 
 - (id <OperationObjectProtocol>)operationObjectWithString:(NSString *)operation currentPositionInString:(NSUInteger)currentPosition
