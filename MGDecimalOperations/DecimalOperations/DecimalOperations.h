@@ -26,7 +26,7 @@
  *  @param error     is NSError. Before you call this method you need to create NSError pointer that you pass.
  *                   When error occurs this variable will describe problem.
  *
- *  @return NSDeciamlNumber that is result of operation wrote in @parm operation
+ *  @return NSDecimalNumber that is result of operation wrote in operation parameter
  */
 
 - (NSDecimalNumber *)mathWithOperation:(NSString *)operation variablesString:(NSDictionary *)variables error:(NSError **)error;
@@ -42,7 +42,7 @@
  *  @param error     is NSError. Before you call this method you need to create NSError
  *                   pointer that you pass. When error occurs this variable will describe problem.
  *
- *  @return NSDecimalNumber that is result of operation wrote in @parm operation
+ *  @return NSDecimalNumber that is result of operation wrote in operation parameter
  */
 
 - (NSDecimalNumber *)mathWithOperation:(NSString *)operation variablesDecimal:(NSDictionary *)variables error:(NSError **)error;
