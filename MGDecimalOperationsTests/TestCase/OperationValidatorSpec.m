@@ -125,6 +125,22 @@ SpecBegin(OperationValidator)
                     expect(result).to.beTruthy();
                 });
             });
+
+            context(@"when perform with '56 ++ 4'", ^{
+                beforeEach(^{
+                    inputValues = @[
+                            [[Variable alloc] initWithSymbol:@"a" value:@"56"],
+                            [AddOperator new],
+                            [AddOperator new],
+                            [[Variable alloc] initWithSymbol:@"b" value:@"4"]
+                    ];
+                    result = [sut areCurrentAndPreviousObjectsCanBeNeighbours:inputValues];
+                });
+
+                it(@"should return false", ^{
+                    expect(result).to.beFalsy();
+                });
+            });
         });
 
         describe(@"validateOperationWithString", ^{
