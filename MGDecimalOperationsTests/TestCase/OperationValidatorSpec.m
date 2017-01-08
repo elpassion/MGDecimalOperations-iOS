@@ -51,7 +51,7 @@ SpecBegin(OperationValidator)
             context(@"when perform with 'a b'", ^{
 
                 beforeEach(^{
-                    result = [sut isRightNumberOfOperatorsAndVariables:@"a b"];
+                    result = [sut isCorrectNumberOfOperatorsAndVariables:@"a b"];
                 });
 
                 it(@"should return true", ^{
@@ -62,7 +62,7 @@ SpecBegin(OperationValidator)
             context(@"when perform with 'a+b'", ^{
 
                 beforeEach(^{
-                    result = [sut isRightNumberOfOperatorsAndVariables:@"a+b"];
+                    result = [sut isCorrectNumberOfOperatorsAndVariables:@"a+b"];
                 });
 
                 it(@"should return false", ^{
@@ -73,7 +73,7 @@ SpecBegin(OperationValidator)
             context(@"when perform with 'a + b'", ^{
 
                 beforeEach(^{
-                    result = [sut isRightNumberOfOperatorsAndVariables:@"a + b"];
+                    result = [sut isCorrectNumberOfOperatorsAndVariables:@"a + b"];
                 });
 
                 it(@"should return false", ^{
@@ -84,7 +84,7 @@ SpecBegin(OperationValidator)
             context(@"when perform with 'a  b'", ^{
 
                 beforeEach(^{
-                    result = [sut isRightNumberOfOperatorsAndVariables:@"a  b"];
+                    result = [sut isCorrectNumberOfOperatorsAndVariables:@"a  b"];
                 });
 
                 it(@"should return true", ^{
@@ -95,7 +95,7 @@ SpecBegin(OperationValidator)
             context(@"when perform with 'a +  b'", ^{
 
                 beforeEach(^{
-                    result = [sut isRightNumberOfOperatorsAndVariables:@"a + b"];
+                    result = [sut isCorrectNumberOfOperatorsAndVariables:@"a + b"];
                 });
 
                 it(@"should return false", ^{
@@ -118,7 +118,7 @@ SpecBegin(OperationValidator)
                             [[Variable alloc] initWithSymbol:@"b" value:@"1"]
                     ];
 
-                    result = [sut isCurrentAndPreviousObjectsCanBeNeighbours:inputValues];
+                    result = [sut areCurrentAndPreviousObjectsCanBeNeighbours:inputValues];
                 });
 
                 it(@"should return true", ^{

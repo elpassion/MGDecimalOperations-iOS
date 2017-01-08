@@ -29,14 +29,14 @@
 {
     if ([self isNumberOfCloseAndOpenBracketsEqual:operation] == false) {
         *error = [self.errorFactory errorWithMessage:@"Wrong operation. Different number of open and close brackets"];
-    } else if ([self isRightNumberOfOperatorsAndVariables:operation]) {
+    } else if ([self isCorrectNumberOfOperatorsAndVariables:operation]) {
         *error = [self.errorFactory errorWithMessage:@"Wrong operation. Numbers not separated by operator"];
     }
 }
 
 - (void)validateOperationWithSeparatedObjects:(NSArray *)separatedObjects variables:(NSDictionary *)variables error:(NSError **)error
 {
-    if (![self isCurrentAndPreviousObjectsCanBeNeighbours:separatedObjects]) {
+    if (![self areCurrentAndPreviousObjectsCanBeNeighbours:separatedObjects]) {
         *error = [self.errorFactory errorWithMessage:@"Wrong operation. Operator next to operator"];
     }else if(![self isDictionaryContainSeparatedObjects:separatedObjects variables:variables]) {
         *error = [self.errorFactory errorWithMessage:@"Dictionary doesn't contain all variables"];
@@ -71,17 +71,16 @@
     return (open == close);
 }
 
-- (BOOL)isRightNumberOfOperatorsAndVariables:(NSString *)operation
+- (BOOL)isCorrectNumberOfOperatorsAndVariables:(NSString *)operation
 {
     NSString *operationWithoutBrackets = [[operation stringByReplacingOccurrencesOfString:@"(" withString:@""] stringByReplacingOccurrencesOfString:@")" withString:@""];
-    NSPredicate *noEmptyString = [NSPredicate predicateWithFormat:@"SELF != ''"];
     NSCharacterSet *characterSet = [NSCharacterSet characterSetWithCharactersInString:@" -+*/"];
     NSArray *operationInParts = [operationWithoutBrackets componentsSeparatedByCharactersInSet:characterSet];
+    NSPredicate *noEmptyString = [NSPredicate predicateWithFormat:@"SELF != ''"];
     NSArray *filteredArray = [operationInParts filteredArrayUsingPredicate:noEmptyString];
 
     NSUInteger numberOfVariables = filteredArray.count;
     NSUInteger numberOfOperators = [self numberOfOperatorsWithOperation:operation];
-
     return numberOfOperators != numberOfVariables-1;
 }
 
@@ -97,7 +96,7 @@
     return numberOfOperators;
 }
 
-- (BOOL)isCurrentAndPreviousObjectsCanBeNeighbours:(NSArray *)separatedObjects
+- (BOOL)areCurrentAndPreviousObjectsCanBeNeighbours:(NSArray *)separatedObjects
 {
     for (NSUInteger i = 1; i < separatedObjects.count; i++) {
         id <OperationObjectProtocol> current = separatedObjects[i];

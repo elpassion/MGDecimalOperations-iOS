@@ -11,7 +11,7 @@
 - (void)validateOperationWithSeparatedObjects:(NSArray *)separatedObjects variables:(NSDictionary *)variables error:(NSError **)error;
 
 - (BOOL)isNumberOfCloseAndOpenBracketsEqual:(NSString *)operation;
-- (BOOL)isRightNumberOfOperatorsAndVariables:(NSString *)operation;
-- (BOOL)isCurrentAndPreviousObjectsCanBeNeighbours:(NSArray *)separatedObjects;
+- (BOOL)isCorrectNumberOfOperatorsAndVariables:(NSString *)operation;
+- (BOOL)areCurrentAndPreviousObjectsCanBeNeighbours:(NSArray *)separatedObjects;
 
 @end
