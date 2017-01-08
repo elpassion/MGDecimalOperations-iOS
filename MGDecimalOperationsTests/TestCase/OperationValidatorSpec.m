@@ -6,7 +6,6 @@
 SpecBegin(OperationValidator)
 
     describe(@"OperationValidator", ^{
-
         __block OperationValidator *sut;
 
         beforeEach(^{
@@ -18,11 +17,9 @@ SpecBegin(OperationValidator)
         });
 
         describe(@"isNumberOfCloseAndOpenBracketThisSame", ^{
-
             __block BOOL result;
 
             context(@"when perform with '(a + (b * (c / d)))'", ^{
-
                 beforeEach(^{
                     result = [sut isNumberOfCloseAndOpenBracketsEqual:@"(a + (b * (c / d)))"];
                 });
@@ -33,7 +30,6 @@ SpecBegin(OperationValidator)
             });
 
             context(@"when perform with '(a + b - (c * d) - (f * g)))'", ^{
-
                 beforeEach(^{
                     result = [sut isNumberOfCloseAndOpenBracketsEqual:@"(a + b - (c * d) - (f * g)))"];
                 });
@@ -45,11 +41,9 @@ SpecBegin(OperationValidator)
         });
 
         describe(@"isCorrectNumberOfOperatorsAndVariables", ^{
-
             __block BOOL result;
 
             context(@"when perform with 'a b'", ^{
-
                 beforeEach(^{
                     result = [sut isCorrectNumberOfOperatorsAndVariables:@"a b"];
                 });
@@ -60,7 +54,6 @@ SpecBegin(OperationValidator)
             });
 
             context(@"when perform with 'a+b'", ^{
-
                 beforeEach(^{
                     result = [sut isCorrectNumberOfOperatorsAndVariables:@"a+b"];
                 });
@@ -71,7 +64,6 @@ SpecBegin(OperationValidator)
             });
 
             context(@"when perform with 'a + b'", ^{
-
                 beforeEach(^{
                     result = [sut isCorrectNumberOfOperatorsAndVariables:@"a + b"];
                 });
@@ -82,7 +74,6 @@ SpecBegin(OperationValidator)
             });
 
             context(@"when perform with 'a  b'", ^{
-
                 beforeEach(^{
                     result = [sut isCorrectNumberOfOperatorsAndVariables:@"a  b"];
                 });
@@ -93,7 +84,6 @@ SpecBegin(OperationValidator)
             });
 
             context(@"when perform with 'a +  b'", ^{
-
                 beforeEach(^{
                     result = [sut isCorrectNumberOfOperatorsAndVariables:@"a + b"];
                 });
@@ -105,19 +95,16 @@ SpecBegin(OperationValidator)
         });
 
         describe(@"areCurrentAndPreviousObjectsCanBeNeighbours", ^{
-
             __block NSArray *inputValues;
             __block BOOL result;
 
             context(@"when perform with '1 + 1'", ^{
-
                 beforeEach(^{
                     inputValues = @[
                             [[Variable alloc] initWithSymbol:@"a" value:@"1"],
                             [AddOperator new],
                             [[Variable alloc] initWithSymbol:@"b" value:@"1"]
                     ];
-
                     result = [sut areCurrentAndPreviousObjectsCanBeNeighbours:inputValues];
                 });
 
@@ -144,15 +131,9 @@ SpecBegin(OperationValidator)
         });
 
         describe(@"validateOperationWithString", ^{
-
             __block NSError *error;
 
-            afterEach(^{
-                error = nil;
-            });
-
             context(@"when perform with 'a + b -c'", ^{
-
                 beforeEach(^{
                     [sut validateOperationWithString:@"a + b -c" error:&error];
                 });
@@ -163,7 +144,6 @@ SpecBegin(OperationValidator)
             });
 
             context(@"when perform with 'a + b (c)'", ^{
-
                 beforeEach(^{
                     [sut validateOperationWithString:@"a + b (c)" error:&error];
                 });
@@ -178,7 +158,6 @@ SpecBegin(OperationValidator)
             });
 
             context(@"when perform with '(a + c * (g)))'", ^{
-
                 beforeEach(^{
                     [sut validateOperationWithString:@"(a + c * (g)))" error:&error];
                 });
