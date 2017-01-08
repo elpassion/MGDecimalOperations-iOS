@@ -29,16 +29,16 @@
 {
     if ([self isNumberOfCloseAndOpenBracketsEqual:operation] == false) {
         *error = [self.errorFactory errorWithMessage:@"Wrong operation. Different number of open and close brackets"];
-    } else if ([self isCorrectNumberOfOperatorsAndVariables:operation]) {
+    } else if ([self isCorrectNumberOfOperatorsAndVariables:operation] == false) {
         *error = [self.errorFactory errorWithMessage:@"Wrong operation. Numbers not separated by operator"];
     }
 }
 
 - (void)validateOperationWithSeparatedObjects:(NSArray *)separatedObjects variables:(NSDictionary *)variables error:(NSError **)error
 {
-    if (![self areCurrentAndPreviousObjectsCanBeNeighbours:separatedObjects]) {
+    if ([self areCurrentAndPreviousObjectsCanBeNeighbours:separatedObjects] == false) {
         *error = [self.errorFactory errorWithMessage:@"Wrong operation. Operator next to operator"];
-    }else if(![self isDictionaryContainSeparatedObjects:separatedObjects variables:variables]) {
+    }else if([self isDictionaryContainSeparatedObjects:separatedObjects variables:variables] == false) {
         *error = [self.errorFactory errorWithMessage:@"Dictionary doesn't contain all variables"];
     }
 }
@@ -81,7 +81,7 @@
 
     NSUInteger numberOfVariables = filteredArray.count;
     NSUInteger numberOfOperators = [self numberOfOperatorsWithOperation:operation];
-    return numberOfOperators != numberOfVariables-1;
+    return numberOfOperators == numberOfVariables-1;
 }
 
 -(NSUInteger)numberOfOperatorsWithOperation:(NSString *)operation

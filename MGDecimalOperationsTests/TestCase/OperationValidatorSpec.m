@@ -44,7 +44,7 @@ SpecBegin(OperationValidator)
             });
         });
 
-        describe(@"isRightNumberOfOperatorsAndVariables", ^{
+        describe(@"isCorrectNumberOfOperatorsAndVariables", ^{
 
             __block BOOL result;
 
@@ -54,8 +54,8 @@ SpecBegin(OperationValidator)
                     result = [sut isCorrectNumberOfOperatorsAndVariables:@"a b"];
                 });
 
-                it(@"should return true", ^{
-                    expect(result).to.beTruthy();
+                it(@"should return false", ^{
+                    expect(result).to.beFalsy();
                 });
             });
 
@@ -65,8 +65,8 @@ SpecBegin(OperationValidator)
                     result = [sut isCorrectNumberOfOperatorsAndVariables:@"a+b"];
                 });
 
-                it(@"should return false", ^{
-                    expect(result).to.beFalsy();
+                it(@"should return true", ^{
+                    expect(result).to.beTruthy();
                 });
             });
 
@@ -76,8 +76,8 @@ SpecBegin(OperationValidator)
                     result = [sut isCorrectNumberOfOperatorsAndVariables:@"a + b"];
                 });
 
-                it(@"should return false", ^{
-                    expect(result).to.beFalsy();
+                it(@"should return true", ^{
+                    expect(result).to.beTruthy();
                 });
             });
 
@@ -87,8 +87,8 @@ SpecBegin(OperationValidator)
                     result = [sut isCorrectNumberOfOperatorsAndVariables:@"a  b"];
                 });
 
-                it(@"should return true", ^{
-                    expect(result).to.beTruthy();
+                it(@"should return false", ^{
+                    expect(result).to.beFalsy();
                 });
             });
 
@@ -98,13 +98,13 @@ SpecBegin(OperationValidator)
                     result = [sut isCorrectNumberOfOperatorsAndVariables:@"a + b"];
                 });
 
-                it(@"should return false", ^{
-                    expect(result).to.beFalsy();
+                it(@"should return true", ^{
+                    expect(result).to.beTruthy();
                 });
             });
         });
 
-        describe(@"isCurrentAndPreviousObjectsCanBeNeighbours", ^{
+        describe(@"areCurrentAndPreviousObjectsCanBeNeighbours", ^{
 
             __block NSArray *inputValues;
             __block BOOL result;
