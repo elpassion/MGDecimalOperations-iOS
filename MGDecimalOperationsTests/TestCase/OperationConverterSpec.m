@@ -6,7 +6,6 @@
 SpecBegin(OperationConverter)
 
 describe(@"OperationConverter", ^{
-
     __block OperationConverter *sut;
 
     beforeEach(^{
@@ -18,15 +17,9 @@ describe(@"OperationConverter", ^{
     });
 
     describe(@"operationObjectWithString", ^{
-
         __block id <OperationObjectProtocol> result;
 
-        afterEach(^{
-            result = nil;
-        });
-
         context(@"when perform with ' aa+b' at index 0", ^{
-
             beforeEach(^{
                 result = [sut operationObjectWithString:@"aa+b" currentPositionInString:0];
             });
@@ -37,7 +30,6 @@ describe(@"OperationConverter", ^{
         });
 
         context(@"when perform with 'a+bb' at index 1", ^{
-
             beforeEach(^{
                 result = [sut operationObjectWithString:@"a+bb" currentPositionInString:1];
             });
@@ -48,7 +40,6 @@ describe(@"OperationConverter", ^{
         });
 
         context(@"when perform with '%%%' at index 0", ^{
-
             beforeEach(^{
                 result = [sut operationObjectWithString:@"%%%" currentPositionInString:0];
             });
@@ -63,7 +54,6 @@ describe(@"OperationConverter", ^{
         });
 
         context(@"when perform with 'a*c' at index 1", ^{
-
             beforeEach(^{
                 result = [sut operationObjectWithString:@"a*c" currentPositionInString:1];
             });
@@ -74,7 +64,6 @@ describe(@"OperationConverter", ^{
         });
 
         context(@"when perform with 'a-cc' at index 2", ^{
-
             beforeEach(^{
                 result = [sut operationObjectWithString:@"a-cc" currentPositionInString:2];
             });
@@ -86,15 +75,9 @@ describe(@"OperationConverter", ^{
     });
 
     describe(@"separatedObjectsWithString", ^{
-
         __block NSArray *result;
 
-        afterEach(^{
-            result = nil;
-        });
-
         context(@"when perform with 'a+b*c'", ^{
-
             beforeEach(^{
                 result = [sut separatedObjectsWithString:@"a + b * c"];
             });
@@ -103,28 +86,58 @@ describe(@"OperationConverter", ^{
                 expect(result).to.haveCount(5);
             });
 
-            it(@"should symbols 0,2,4 be kind of class Variable", ^{
-                expect(result[0]).beAKindOf([Variable class]);
-                expect(result[2]).beAKindOf([Variable class]);
-                expect(result[4]).beAKindOf([Variable class]);
+            describe(@"1st element", ^{
+                it(@"should be kind of class Variable", ^{
+                    expect(result[0]).beAKindOf([Variable class]);
+                });
+
+                it(@"should have correct value", ^{
+                    expect([result[0] symbol]).to.equal(@"a");
+                });
             });
 
-            it(@"should symbols 1,3 implements 'OperatorProtocol'", ^{
-                expect(result[1]).conformTo(@protocol(OperatorProtocol));
-                expect(result[3]).conformTo(@protocol(OperatorProtocol));
+            describe(@"2nd element", ^{
+                it(@"should implements 'OperatorProtocol'", ^{
+                    expect(result[1]).conformTo(@protocol(OperatorProtocol));
+                });
+
+                it(@"should have correct value", ^{
+                    expect([result[1] symbol]).to.equal(@"+");
+                });
             });
 
-            it(@"should return correct values", ^{
-                expect([result[0] symbol]).to.equal(@"a");
-                expect([result[1] symbol]).to.equal(@"+");
-                expect([result[2] symbol]).to.equal(@"b");
-                expect([result[3] symbol]).to.equal(@"*");
-                expect([result[4] symbol]).to.equal(@"c");
+            describe(@"3rd element", ^{
+                it(@"should be kind of class Variable", ^{
+                    expect(result[2]).beAKindOf([Variable class]);
+                });
+
+                it(@"should have correct value", ^{
+                    expect([result[2] symbol]).to.equal(@"b");
+                });
+            });
+
+            describe(@"4th element", ^{
+                it(@"should implements 'OperatorProtocol'", ^{
+                    expect(result[3]).conformTo(@protocol(OperatorProtocol));
+                });
+
+                it(@"should have correct value", ^{
+                    expect([result[3] symbol]).to.equal(@"*");
+                });
+            });
+
+            describe(@"5th element", ^{
+                it(@"should be kind of class Variable", ^{
+                    expect(result[4]).beAKindOf([Variable class]);
+                });
+
+                it(@"should have correct value", ^{
+                    expect([result[4] symbol]).to.equal(@"c");
+                });
             });
         });
 
         context(@"when perform with 'aa *(b + ccc)'", ^{
-
             beforeEach(^{
                 result = [sut separatedObjectsWithString:@"aa *(b + ccc)"];
             });
@@ -133,27 +146,74 @@ describe(@"OperationConverter", ^{
                 expect(result).to.haveCount(7);
             });
 
-            it(@"should symbols 0,3,5 be kind of class Variable", ^{
-                expect(result[0]).beAKindOf([Variable class]);
-                expect(result[3]).beAKindOf([Variable class]);
-                expect(result[5]).beAKindOf([Variable class]);
+            describe(@"1st element", ^{
+                it(@"should be kind of class Variable", ^{
+                    expect(result[0]).beAKindOf([Variable class]);
+                });
+
+                it(@"should have correct value", ^{
+                    expect([result[0] symbol]).to.equal(@"aa");
+                });
             });
 
-            it(@"should symbols 1,2,4,6 implements 'OperatorProtocol'", ^{
-                expect(result[1]).conformTo(@protocol(OperatorProtocol));
-                expect(result[2]).conformTo(@protocol(OperatorProtocol));
-                expect(result[4]).conformTo(@protocol(OperatorProtocol));
-                expect(result[6]).conformTo(@protocol(OperatorProtocol));
+            describe(@"2nd element", ^{
+                it(@"should implements 'OperatorProtocol'", ^{
+                    expect(result[1]).conformTo(@protocol(OperatorProtocol));
+                });
+
+                it(@"should have correct value", ^{
+                    expect([result[1] symbol]).to.equal(@"*");
+                });
             });
 
-            it(@"should return correct values", ^{
-                expect([result[0] symbol]).to.equal(@"aa");
-                expect([result[1] symbol]).to.equal(@"*");
-                expect([result[2] symbol]).to.equal(@"(");
-                expect([result[3] symbol]).to.equal(@"b");
-                expect([result[4] symbol]).to.equal(@"+");
-                expect([result[5] symbol]).to.equal(@"ccc");
-                expect([result[6] symbol]).to.equal(@")");
+            describe(@"3rd element", ^{
+                it(@"should implements 'OperatorProtocol'", ^{
+                    expect(result[2]).conformTo(@protocol(OperatorProtocol));
+                });
+
+                it(@"should have correct value", ^{
+                    expect([result[2] symbol]).to.equal(@"(");
+                });
+            });
+
+            describe(@"4th element", ^{
+                it(@"should be kind of class Variable", ^{
+                    expect(result[3]).beAKindOf([Variable class]);
+                });
+
+                it(@"should have correct value", ^{
+                    expect([result[3] symbol]).to.equal(@"b");
+                });
+            });
+
+            describe(@"5th element", ^{
+                it(@"should implements 'OperatorProtocol'", ^{
+                    expect(result[4]).conformTo(@protocol(OperatorProtocol));
+                });
+
+                it(@"should have correct value", ^{
+                    expect([result[4] symbol]).to.equal(@"+");
+                });
+            });
+
+            describe(@"6th element", ^{
+                it(@"should be kind of class Variable", ^{
+                    expect(result[5]).beAKindOf([Variable class]);
+                });
+
+                it(@"should have correct value", ^{
+                    expect([result[5] symbol]).to.equal(@"ccc");
+                });
+            });
+
+            describe(@"7th element", ^{
+                it(@"should implements 'OperatorProtocol'", ^{
+                    expect(result[6]).conformTo(@protocol(OperatorProtocol));
+                });
+
+                it(@"should have correct value", ^{
+                    expect([result[6] symbol]).to.equal(@")");
+                });
             });
         });
     });
