@@ -8,7 +8,7 @@
 
 @class Variable;
 
-@protocol OperatorProtocol <NSObject, OperationObjectProtocol>
+@protocol OperatorProtocol <NSObject, OperationObjectProtocol, NonValueObjectProtocol>
 
 @property (nonatomic) NSInteger priority;
 

@@ -5,7 +5,7 @@
 
 #import <Foundation/Foundation.h>
 #import "OperationObjectProtocol.h"
+#import "NonValueObjectProtocol.h"
 
-@protocol BracketProtocol <NSObject, OperationObjectProtocol>
-@end@protocol BracketProtocol <NSObject, OperationObjectProtocol, NonValueObjectProtocol>
+@protocol BracketProtocol <NSObject, OperationObjectProtocol, NonValueObjectProtocol>
 @end
