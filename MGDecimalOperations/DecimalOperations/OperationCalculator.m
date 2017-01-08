@@ -50,7 +50,7 @@
         [stack removeLastObject];
         [output addObject:operationObject];
     }
-    return output;
+    return output.copy;
 }
 
 - (Variable *)evaluatedResultWithPostfixArray:(NSArray *)postfixArray variablesDictionary:(NSDictionary *)variables
@@ -70,8 +70,8 @@
             [stack removeLastObject];
             Variable *firstVariable = [stack lastObject];
             [stack removeLastObject];
-            if (![firstVariable isValueSet]) [firstVariable setVariableValueWithVariables:variables];
-            if (![secondVariable isValueSet]) [secondVariable setVariableValueWithVariables:variables];
+            if ([firstVariable isValueSet] == false) [firstVariable setVariableValueWithVariables:variables];
+            if ([secondVariable isValueSet] == false) [secondVariable setVariableValueWithVariables:variables];
             Variable *result = [operator makeOperationWithFirstArgument:firstVariable SecondArgument:secondVariable];
             [stack addObject:result];
         }
