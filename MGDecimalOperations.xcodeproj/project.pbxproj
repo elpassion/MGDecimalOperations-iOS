@@ -35,6 +35,7 @@
 		132909417D8955EFACAB4218 /* AddOperator.m in Sources */ = {isa = PBXBuildFile; fileRef = 13290446E9304FC5EC34105D /* AddOperator.m */; };
 		13290994AC4A3F6F6FA8C5EB /* OperationCalculatorSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 132907B4885074F0C749A3C3 /* OperationCalculatorSpec.m */; };
 		13290AAE7FA71FB9AAABB5AB /* OperationValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 132902089A57F9AB74084656 /* OperationValidator.m */; };
+		13290AF228DAD17B36548412 /* NonValueObjectProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 13290F69BB455931580A5AD5 /* NonValueObjectProtocol.h */; };
 		13290BF9EAB6654C3623B5AB /* OperationConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = 13290760C389599B76D34A92 /* OperationConverter.h */; };
 		13290C16EC1C85AFC263961F /* MultiplyOperator.h in Headers */ = {isa = PBXBuildFile; fileRef = 13290F30D7C180C41E82CE91 /* MultiplyOperator.h */; };
 		13290C5130D43E6AA171A1CD /* OperationCalculator.h in Headers */ = {isa = PBXBuildFile; fileRef = 132902FC893A282AD3BE8572 /* OperationCalculator.h */; };
@@ -94,6 +95,7 @@
 		13290E833DDFDEB6FA7C14CE /* OperationConverterSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OperationConverterSpec.m; sourceTree = "<group>"; };
 		13290F30D7C180C41E82CE91 /* MultiplyOperator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiplyOperator.h; sourceTree = "<group>"; };
 		13290F5EFE29032EDDC50EF4 /* DivideOperator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DivideOperator.m; sourceTree = "<group>"; };
+		13290F69BB455931580A5AD5 /* NonValueObjectProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NonValueObjectProtocol.h; sourceTree = "<group>"; };
 		13290FA580B93A699503B488 /* AddOperator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddOperator.h; sourceTree = "<group>"; };
 		723FCE0BB1F6620AC1748224 /* Pods-MGDecimalOperationsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MGDecimalOperationsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MGDecimalOperationsTests/Pods-MGDecimalOperationsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		920FF198002EF69D1C66A690 /* libPods-MGDecimalOperations.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MGDecimalOperations.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -135,6 +137,7 @@
 				13290AC490BF9CA19067CE1C /* OperatorProtocol.h */,
 				132909A0B99EA0F971853927 /* OperationObjectProtocol.h */,
 				13290AF112F8BFA0BB3D0DE6 /* BracketProtocol.h */,
+				13290F69BB455931580A5AD5 /* NonValueObjectProtocol.h */,
 			);
 			path = OperationObjects;
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 				13290BF9EAB6654C3623B5AB /* OperationConverter.h in Headers */,
 				1329030ED26312F8A860C50D /* OperationValidator.h in Headers */,
 				132905F1D6473D3942B153BD /* BracketProtocol.h in Headers */,
+				13290AF228DAD17B36548412 /* NonValueObjectProtocol.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
