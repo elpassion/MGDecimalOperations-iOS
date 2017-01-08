@@ -19,12 +19,15 @@
 		132903CD494ABE4C20FFE2FD /* Variable.h in Headers */ = {isa = PBXBuildFile; fileRef = 132905F071F04F04D72E59B3 /* Variable.h */; };
 		132903D604E54E6D8FF4DB95 /* OperatorProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 13290AC490BF9CA19067CE1C /* OperatorProtocol.h */; };
 		132903D8D365F2085AF318EA /* DecimalOperations.m in Sources */ = {isa = PBXBuildFile; fileRef = 132903C40C708E69BFFA5E18 /* DecimalOperations.m */; };
+		132904058AE69AB76143BB3B /* CloseBracket.m in Sources */ = {isa = PBXBuildFile; fileRef = 13290393DA121BFC2A27D6FD /* CloseBracket.m */; };
+		132904B6B127C1938EA7E553 /* OpenBracket.m in Sources */ = {isa = PBXBuildFile; fileRef = 132904C281ADAC40BC7D7F69 /* OpenBracket.m */; };
 		132904F605743EC58CEC1838 /* OperationConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 13290DF481910291C035F747 /* OperationConverter.m */; };
 		132905F1D6473D3942B153BD /* BracketProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 13290AF112F8BFA0BB3D0DE6 /* BracketProtocol.h */; };
 		1329063B6F1D7B2DE033A8BA /* OperatorFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 13290C43AF09CEB35E22E75E /* OperatorFactory.m */; };
 		132906E292E41A345EF33636 /* OperatorFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 1329077D49844603CFC46D4F /* OperatorFactory.h */; };
 		13290728C272DB64FC10CFF5 /* OperationObjectProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 132909A0B99EA0F971853927 /* OperationObjectProtocol.h */; };
 		1329075D8EE689224E74064A /* DecimalConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = 1329075579D2B1F5F00D8B70 /* DecimalConverter.h */; };
+		1329078FBDBA0D7632E22B30 /* OpenBracket.h in Headers */ = {isa = PBXBuildFile; fileRef = 1329079CAE7813E9E9F2A8A1 /* OpenBracket.h */; };
 		132907A6885CD59B7F72B5FE /* ErrorFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 13290C62C2826BF4FEED2CA2 /* ErrorFactory.m */; };
 		13290810C84A5D3DB2B8A058 /* SubtractOperator.h in Headers */ = {isa = PBXBuildFile; fileRef = 132901AF2D1AD34B4094AB03 /* SubtractOperator.h */; };
 		1329089C1E7F41CF88E37E2C /* ErrorFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 13290DBE98BD099230EF1997 /* ErrorFactory.h */; };
@@ -37,6 +40,7 @@
 		13290BF9EAB6654C3623B5AB /* OperationConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = 13290760C389599B76D34A92 /* OperationConverter.h */; };
 		13290C16EC1C85AFC263961F /* MultiplyOperator.h in Headers */ = {isa = PBXBuildFile; fileRef = 13290F30D7C180C41E82CE91 /* MultiplyOperator.h */; };
 		13290C5130D43E6AA171A1CD /* OperationCalculator.h in Headers */ = {isa = PBXBuildFile; fileRef = 132902FC893A282AD3BE8572 /* OperationCalculator.h */; };
+		13290D47AB12F7CDD6FBDF84 /* CloseBracket.h in Headers */ = {isa = PBXBuildFile; fileRef = 132907D9457EE7038686E950 /* CloseBracket.h */; };
 		13290DF2C9790EC482CBBAE3 /* MultiplyOperator.m in Sources */ = {isa = PBXBuildFile; fileRef = 1329098C7DC364F26E3F9C42 /* MultiplyOperator.m */; };
 		13290E1D324784CB836D6078 /* DecimalConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 13290C051DD460F71EAB2A8D /* DecimalConverter.m */; };
 		13290F0432C303DA8A944A7C /* SubtractOperator.m in Sources */ = {isa = PBXBuildFile; fileRef = 132900FE5B95F69AFF414C48 /* SubtractOperator.m */; };
@@ -65,15 +69,19 @@
 		132902089A57F9AB74084656 /* OperationValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OperationValidator.m; sourceTree = "<group>"; };
 		1329024350ADA44111971C04 /* DecimalOperationsSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DecimalOperationsSpec.m; sourceTree = "<group>"; };
 		132902FC893A282AD3BE8572 /* OperationCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperationCalculator.h; sourceTree = "<group>"; };
+		13290393DA121BFC2A27D6FD /* CloseBracket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CloseBracket.m; sourceTree = "<group>"; };
 		132903C40C708E69BFFA5E18 /* DecimalOperations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DecimalOperations.m; sourceTree = "<group>"; };
 		1329042280F5581C262C9ED2 /* OperationValidatorSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OperationValidatorSpec.m; sourceTree = "<group>"; };
 		132904269B5B4DFAE192B827 /* DecimalOperations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DecimalOperations.h; sourceTree = "<group>"; };
 		13290446E9304FC5EC34105D /* AddOperator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddOperator.m; sourceTree = "<group>"; };
+		132904C281ADAC40BC7D7F69 /* OpenBracket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenBracket.m; sourceTree = "<group>"; };
 		132905F071F04F04D72E59B3 /* Variable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Variable.h; sourceTree = "<group>"; };
 		1329075579D2B1F5F00D8B70 /* DecimalConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DecimalConverter.h; sourceTree = "<group>"; };
 		13290760C389599B76D34A92 /* OperationConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperationConverter.h; sourceTree = "<group>"; };
 		1329077D49844603CFC46D4F /* OperatorFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperatorFactory.h; sourceTree = "<group>"; };
+		1329079CAE7813E9E9F2A8A1 /* OpenBracket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenBracket.h; sourceTree = "<group>"; };
 		132907B4885074F0C749A3C3 /* OperationCalculatorSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OperationCalculatorSpec.m; sourceTree = "<group>"; };
+		132907D9457EE7038686E950 /* CloseBracket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CloseBracket.h; sourceTree = "<group>"; };
 		1329098C7DC364F26E3F9C42 /* MultiplyOperator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiplyOperator.m; sourceTree = "<group>"; };
 		132909A0B99EA0F971853927 /* OperationObjectProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperationObjectProtocol.h; sourceTree = "<group>"; };
 		132909AB71B05A7B6E2F5D59 /* OperationValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperationValidator.h; sourceTree = "<group>"; };
@@ -210,6 +218,10 @@
 				132909EE13C6DFBDDB692C5B /* DivideOperator.h */,
 				132900FE5B95F69AFF414C48 /* SubtractOperator.m */,
 				132901AF2D1AD34B4094AB03 /* SubtractOperator.h */,
+				1329079CAE7813E9E9F2A8A1 /* OpenBracket.h */,
+				132904C281ADAC40BC7D7F69 /* OpenBracket.m */,
+				13290393DA121BFC2A27D6FD /* CloseBracket.m */,
+				132907D9457EE7038686E950 /* CloseBracket.h */,
 			);
 			path = Operators;
 			sourceTree = "<group>";
@@ -312,6 +324,7 @@
 				132906E292E41A345EF33636 /* OperatorFactory.h in Headers */,
 				1329089C1E7F41CF88E37E2C /* ErrorFactory.h in Headers */,
 				13290913BA6541FBFC9EC047 /* DecimalOperations.h in Headers */,
+				1329078FBDBA0D7632E22B30 /* OpenBracket.h in Headers */,
 				132903D604E54E6D8FF4DB95 /* OperatorProtocol.h in Headers */,
 				13290728C272DB64FC10CFF5 /* OperationObjectProtocol.h in Headers */,
 				13290C5130D43E6AA171A1CD /* OperationCalculator.h in Headers */,
@@ -320,6 +333,7 @@
 				1329030ED26312F8A860C50D /* OperationValidator.h in Headers */,
 				132905F1D6473D3942B153BD /* BracketProtocol.h in Headers */,
 				13290AF228DAD17B36548412 /* NonValueObjectProtocol.h in Headers */,
+				13290D47AB12F7CDD6FBDF84 /* CloseBracket.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -511,10 +525,12 @@
 				1329063B6F1D7B2DE033A8BA /* OperatorFactory.m in Sources */,
 				132907A6885CD59B7F72B5FE /* ErrorFactory.m in Sources */,
 				132903D8D365F2085AF318EA /* DecimalOperations.m in Sources */,
+				132904B6B127C1938EA7E553 /* OpenBracket.m in Sources */,
 				132908E5B48178BB768B27DF /* OperationCalculator.m in Sources */,
 				13290E1D324784CB836D6078 /* DecimalConverter.m in Sources */,
 				132904F605743EC58CEC1838 /* OperationConverter.m in Sources */,
 				13290AAE7FA71FB9AAABB5AB /* OperationValidator.m in Sources */,
+				132904058AE69AB76143BB3B /* CloseBracket.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
