@@ -11,7 +11,6 @@
 SpecBegin(OperationCalculator)
 
     describe(@"OperationCalculator", ^{
-
         __block OperationCalculator *sut;
 
         beforeEach(^{
@@ -23,12 +22,10 @@ SpecBegin(OperationCalculator)
         });
 
         describe(@"postfixExpressionWithSeparatedObjects", ^{
-
             __block NSArray *result;
             __block NSArray *inputObjects;
 
             context(@"when perform with '((3+5)*7)'", ^{
-
                 beforeEach(^{
                     inputObjects = @[
                             [OpenBracket new],
@@ -41,7 +38,6 @@ SpecBegin(OperationCalculator)
                             [[Variable alloc] initWithSymbol:@"7"],
                             [CloseBracket new]
                     ];
-
                     result = [sut postfixExpressionWithSeparatedObjects:inputObjects];
                 });
 
@@ -61,7 +57,6 @@ SpecBegin(OperationCalculator)
             });
 
             context(@"when perform with '2*2+2'", ^{
-
                 beforeEach(^{
                     inputObjects = @[
                             [[Variable alloc] initWithSymbol:@"2"],
@@ -70,7 +65,6 @@ SpecBegin(OperationCalculator)
                             [AddOperator new],
                             [[Variable alloc] initWithSymbol:@"2"]
                     ];
-
                     result = [sut postfixExpressionWithSeparatedObjects:inputObjects];
                 });
 
@@ -90,7 +84,6 @@ SpecBegin(OperationCalculator)
             });
 
             context(@"when perform with '((3/2*5)+6)'", ^{
-
                 beforeEach(^{
                     inputObjects = @[
                             [OpenBracket new],
@@ -105,7 +98,6 @@ SpecBegin(OperationCalculator)
                             [[Variable alloc] initWithSymbol:@"6"],
                             [CloseBracket new],
                     ];
-
                     result = [sut postfixExpressionWithSeparatedObjects:inputObjects];
                 });
 
@@ -127,7 +119,6 @@ SpecBegin(OperationCalculator)
             });
 
             context(@"when perform with '3+5*7/3/(3-5)'", ^{
-
                 beforeEach(^{
                     inputObjects = @[
                             [[Variable alloc] initWithSymbol:@"3"],
@@ -144,7 +135,6 @@ SpecBegin(OperationCalculator)
                             [[Variable alloc] initWithSymbol:@"5"],
                             [CloseBracket new]
                     ];
-
                     result = [sut postfixExpressionWithSeparatedObjects:inputObjects];
                 });
 
@@ -171,13 +161,11 @@ SpecBegin(OperationCalculator)
         });
 
         describe(@"evaluatedResultWithPostfixArray", ^{
-
             __block Variable *result;
             __block NSArray *postfixArray;
             __block NSDictionary *inputVariables;
 
             context(@"when perform with 'a b + c *'", ^{
-
                 beforeEach(^{
                     postfixArray = @[
                             [[Variable alloc] initWithSymbol:@"a"],
