@@ -5,6 +5,7 @@
 
 #import <Foundation/Foundation.h>
 #import "OperationObjectProtocol.h"
+#import "NonValueObjectProtocol.h"
 
 @class Variable;
 
