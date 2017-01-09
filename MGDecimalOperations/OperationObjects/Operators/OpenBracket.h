@@ -4,11 +4,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "BracketProtocol.h"
+#import "NonValueObjectProtocol.h"
 
 @class Variable;
 
-@interface OpenBracket : NSObject <BracketProtocol>
+@interface OpenBracket : NSObject <NonValueObjectProtocol>
 
 @property (nonatomic, strong) NSString *symbol;
 

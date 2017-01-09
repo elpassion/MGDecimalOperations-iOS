@@ -4,9 +4,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "BracketProtocol.h"
+#import "NonValueObjectProtocol.h"
 
-@interface CloseBracket : NSObject <BracketProtocol>
+@interface CloseBracket : NSObject <NonValueObjectProtocol>
 
 @property (nonatomic, strong) NSString *symbol;
 

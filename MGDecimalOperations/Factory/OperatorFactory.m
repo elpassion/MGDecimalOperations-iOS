@@ -7,8 +7,9 @@
 #import "SubtractOperator.h"
 #import "MultiplyOperator.h"
 #import "DivideOperator.h"
-#import "BracketOperator.h"
+#import "OpenBracket.h"
 #import "AddOperator.h"
+#import "CloseBracket.h"
 
 @implementation OperatorFactory
 
@@ -24,9 +25,9 @@
         case '/':
             return [[DivideOperator alloc] init];
         case '(':
-            return [[BracketOperator alloc] initWithSymbol:@"("];
+            return [OpenBracket new];
         case ')':
-            return [[BracketOperator alloc] initWithSymbol:@")"];
+            return [CloseBracket new];
         default:
             return nil;
     }
