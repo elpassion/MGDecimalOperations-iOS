@@ -6,7 +6,7 @@
 #import "OperationValidator.h"
 #import "ErrorFactory.h"
 #import "OperatorProtocol.h"
-#import "BracketOperator.h"
+#import "OpenBracket.h"
 #import "Variable.h"
 
 @interface OperationValidator ()
@@ -102,7 +102,7 @@
         id <OperationObjectProtocol> current = separatedObjects[i];
         id <OperationObjectProtocol> previous = separatedObjects[i - 1];
 
-        if ([current class] == [BracketOperator class] || [previous class] == [BracketOperator class]) return YES;
+        if ([current class] == [OpenBracket class] || [previous class] == [OpenBracket class]) return YES;
         if ([current conformsToProtocol:@protocol(OperatorProtocol)] && [previous conformsToProtocol:@protocol(OperatorProtocol)]) return NO;
     }
     return YES;
