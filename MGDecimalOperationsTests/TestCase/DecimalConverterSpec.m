@@ -5,7 +5,6 @@
 SpecBegin(DecimalsConverter)
 
     describe(@"DecimalConverter", ^{
-
         __block DecimalConverter *sut;
 
         beforeEach(^{
@@ -18,11 +17,9 @@ SpecBegin(DecimalsConverter)
         });
 
         describe(@"isCorrectNumber", ^{
-
             __block BOOL correctNumber;
 
-            context(@"when we check '22'", ^{
-
+            context(@"when check '22'", ^{
                 beforeEach(^{
                     correctNumber = [sut isCorrectNumber:@"22"];
                 });
@@ -32,8 +29,7 @@ SpecBegin(DecimalsConverter)
                 });
             });
 
-            context(@"when we check '2343453.44'", ^{
-
+            context(@"when check '2343453.44'", ^{
                 beforeEach(^{
                     correctNumber = [sut isCorrectNumber:@"2343453.44"];
                 });
@@ -43,8 +39,7 @@ SpecBegin(DecimalsConverter)
                 });
             });
 
-            context(@"when we check '223..234.3'", ^{
-
+            context(@"when check '223..234.3'", ^{
                 beforeEach(^{
                     correctNumber = [sut isCorrectNumber:@"223..234.3"];
                 });
@@ -54,8 +49,7 @@ SpecBegin(DecimalsConverter)
                 });
             });
 
-            context(@"when we check '0.345345'", ^{
-
+            context(@"when check '0.345345'", ^{
                 beforeEach(^{
                     correctNumber = [sut isCorrectNumber:@"0.345345"];
                 });
@@ -65,8 +59,7 @@ SpecBegin(DecimalsConverter)
                 });
             });
 
-            context(@"when we check '2333afg334'", ^{
-
+            context(@"when check '2333afg334'", ^{
                 beforeEach(^{
                     correctNumber = [sut isCorrectNumber:@"2333afg334"];
                 });
@@ -76,8 +69,7 @@ SpecBegin(DecimalsConverter)
                 });
             });
 
-            context(@"when we check '2344.a343'", ^{
-
+            context(@"when check '2344.a343'", ^{
                 beforeEach(^{
                     correctNumber = [sut isCorrectNumber:@"2344.a343"];
                 });
@@ -89,17 +81,15 @@ SpecBegin(DecimalsConverter)
         });
 
         describe(@"decimalNumberFromString", ^{
-
-            context(@"when we check '222'", ^{
-
+            context(@"when check '222'", ^{
                 __block id decimalNumber;
 
                 beforeEach(^{
                     decimalNumber = [sut decimalNumberFromString:@"222"];
                 });
 
-                it(@"should be kind of NSDecimalNumber class ", ^{
-                    expect(decimalNumber).beAKindOf([NSDecimalNumber class]);
+                it(@"should be instance of 'NSDecimalNumber'", ^{
+                    expect(decimalNumber).beInstanceOf([NSDecimalNumber class]);
                 });
 
                 it(@"should return 222", ^{
@@ -109,13 +99,11 @@ SpecBegin(DecimalsConverter)
         });
 
         describe(@"decimalVariablesFromStringVariables", ^{
-
             __block NSDictionary *stringVariables;
             __block NSDictionary *decimalVariables;
             __block NSDictionary *expectedResult;
 
-            context(@"when we check right variables", ^{
-
+            context(@"when check right variables", ^{
                 __block NSError *error;
 
                 beforeEach(^{
@@ -123,16 +111,14 @@ SpecBegin(DecimalsConverter)
                             @"a": @"2222",
                             @"b": @"345.65"
                     };
-
                     decimalVariables = [sut decimalVariablesFromStringVariables:stringVariables error:&error];
-
                     expectedResult = @{
                             @"a": [NSDecimalNumber decimalNumberWithString:@"2222"],
                             @"b": [NSDecimalNumber decimalNumberWithString:@"345.65"]
                     };
                 });
 
-                it(@"should return expected right values", ^{
+                it(@"should return right values", ^{
                     expect(decimalVariables).to.equal(expectedResult);
                 });
 
@@ -141,8 +127,7 @@ SpecBegin(DecimalsConverter)
                 });
             });
 
-            context(@"when we check wrong variables", ^{
-
+            context(@"when check wrong variables", ^{
                 __block NSError *error;
 
                 beforeEach(^{
@@ -150,16 +135,15 @@ SpecBegin(DecimalsConverter)
                             @"a": @"2a222",
                             @"b": @"345.65"
                     };
-
                     decimalVariables = [sut decimalVariablesFromStringVariables:stringVariables error:&error];
-                });
-
-                it(@"should error be nil", ^{
-                    expect(error).notTo.beNil();
                 });
 
                 it(@"should return nil", ^{
                     expect(decimalVariables);
+                });
+
+                it(@"should error be nil", ^{
+                    expect(error).notTo.beNil();
                 });
             });
         });
