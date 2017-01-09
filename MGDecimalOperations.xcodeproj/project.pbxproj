@@ -134,11 +134,11 @@
 		132902176FD5ED5B3AA8B5A9 /* OperationObjects */ = {
 			isa = PBXGroup;
 			children = (
-				13290FAD07B58579AE32B95B /* Variables */,
 				13290E5933734EC0C96DDFC6 /* Operators */,
-				13290AC490BF9CA19067CE1C /* OperatorProtocol.h */,
-				132909A0B99EA0F971853927 /* OperationObjectProtocol.h */,
+				13290FAD07B58579AE32B95B /* Variables */,
 				13290F69BB455931580A5AD5 /* NonValueObjectProtocol.h */,
+				132909A0B99EA0F971853927 /* OperationObjectProtocol.h */,
+				13290AC490BF9CA19067CE1C /* OperatorProtocol.h */,
 			);
 			path = OperationObjects;
 			sourceTree = "<group>";
@@ -165,10 +165,10 @@
 		132906FE1AE9B667BEFA812C /* DecimalOperations */ = {
 			isa = PBXGroup;
 			children = (
-				132903C40C708E69BFFA5E18 /* DecimalOperations.m */,
 				132904269B5B4DFAE192B827 /* DecimalOperations.h */,
-				13290AE1A740E76B2B723A22 /* OperationCalculator.m */,
+				132903C40C708E69BFFA5E18 /* DecimalOperations.m */,
 				132902FC893A282AD3BE8572 /* OperationCalculator.h */,
+				13290AE1A740E76B2B723A22 /* OperationCalculator.m */,
 			);
 			path = DecimalOperations;
 			sourceTree = "<group>";
@@ -184,11 +184,11 @@
 		13290B56A520C033253F3AA9 /* TestCase */ = {
 			isa = PBXGroup;
 			children = (
-				1329024350ADA44111971C04 /* DecimalOperationsSpec.m */,
 				13290B0DE6895920C02F108A /* DecimalConverterSpec.m */,
-				1329042280F5581C262C9ED2 /* OperationValidatorSpec.m */,
-				13290E833DDFDEB6FA7C14CE /* OperationConverterSpec.m */,
+				1329024350ADA44111971C04 /* DecimalOperationsSpec.m */,
 				132907B4885074F0C749A3C3 /* OperationCalculatorSpec.m */,
+				13290E833DDFDEB6FA7C14CE /* OperationConverterSpec.m */,
+				1329042280F5581C262C9ED2 /* OperationValidatorSpec.m */,
 			);
 			path = TestCase;
 			sourceTree = "<group>";
@@ -196,10 +196,10 @@
 		13290CC6B12F82F455F5E69C /* Factory */ = {
 			isa = PBXGroup;
 			children = (
-				13290C43AF09CEB35E22E75E /* OperatorFactory.m */,
+				13290DBE98BD099230EF1997 /* ErrorFactory.h */,
 				13290C62C2826BF4FEED2CA2 /* ErrorFactory.m */,
 				1329077D49844603CFC46D4F /* OperatorFactory.h */,
-				13290DBE98BD099230EF1997 /* ErrorFactory.h */,
+				13290C43AF09CEB35E22E75E /* OperatorFactory.m */,
 			);
 			path = Factory;
 			sourceTree = "<group>";
@@ -207,18 +207,18 @@
 		13290E5933734EC0C96DDFC6 /* Operators */ = {
 			isa = PBXGroup;
 			children = (
-				13290446E9304FC5EC34105D /* AddOperator.m */,
 				13290FA580B93A699503B488 /* AddOperator.h */,
-				1329098C7DC364F26E3F9C42 /* MultiplyOperator.m */,
-				13290F30D7C180C41E82CE91 /* MultiplyOperator.h */,
-				13290F5EFE29032EDDC50EF4 /* DivideOperator.m */,
+				13290446E9304FC5EC34105D /* AddOperator.m */,
+				132907D9457EE7038686E950 /* CloseBracket.h */,
+				13290393DA121BFC2A27D6FD /* CloseBracket.m */,
 				132909EE13C6DFBDDB692C5B /* DivideOperator.h */,
-				132900FE5B95F69AFF414C48 /* SubtractOperator.m */,
-				132901AF2D1AD34B4094AB03 /* SubtractOperator.h */,
+				13290F5EFE29032EDDC50EF4 /* DivideOperator.m */,
+				13290F30D7C180C41E82CE91 /* MultiplyOperator.h */,
+				1329098C7DC364F26E3F9C42 /* MultiplyOperator.m */,
 				1329079CAE7813E9E9F2A8A1 /* OpenBracket.h */,
 				132904C281ADAC40BC7D7F69 /* OpenBracket.m */,
-				13290393DA121BFC2A27D6FD /* CloseBracket.m */,
-				132907D9457EE7038686E950 /* CloseBracket.h */,
+				132901AF2D1AD34B4094AB03 /* SubtractOperator.h */,
+				132900FE5B95F69AFF414C48 /* SubtractOperator.m */,
 			);
 			path = Operators;
 			sourceTree = "<group>";
@@ -244,11 +244,11 @@
 		AFFF3DE11D6D947500CCA836 = {
 			isa = PBXGroup;
 			children = (
+				F2ACAFECBD9C4C407D1819DA /* Frameworks */,
 				AFFF3DED1D6D947600CCA836 /* MGDecimalOperations */,
 				AFFF3DF91D6D947600CCA836 /* MGDecimalOperationsTests */,
-				AFFF3DEC1D6D947600CCA836 /* Products */,
 				E8117577D6B3C8F63EDE2DA7 /* Pods */,
-				F2ACAFECBD9C4C407D1819DA /* Frameworks */,
+				AFFF3DEC1D6D947600CCA836 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -264,13 +264,13 @@
 		AFFF3DED1D6D947600CCA836 /* MGDecimalOperations */ = {
 			isa = PBXGroup;
 			children = (
-				AFFF3DEE1D6D947600CCA836 /* MGDecimalOperations.h */,
-				132902176FD5ED5B3AA8B5A9 /* OperationObjects */,
-				13290CC6B12F82F455F5E69C /* Factory */,
-				132906FE1AE9B667BEFA812C /* DecimalOperations */,
 				132905C29904993700AD0991 /* Converters */,
-				13290F534612549C887935D3 /* Validators */,
+				132906FE1AE9B667BEFA812C /* DecimalOperations */,
+				13290CC6B12F82F455F5E69C /* Factory */,
+				132902176FD5ED5B3AA8B5A9 /* OperationObjects */,
 				13290A45C00BE578A217F0E4 /* SupportingFiles */,
+				13290F534612549C887935D3 /* Validators */,
+				AFFF3DEE1D6D947600CCA836 /* MGDecimalOperations.h */,
 			);
 			path = MGDecimalOperations;
 			sourceTree = "<group>";
@@ -278,9 +278,9 @@
 		AFFF3DF91D6D947600CCA836 /* MGDecimalOperationsTests */ = {
 			isa = PBXGroup;
 			children = (
-				AFFF3E051D6D9D6F00CCA836 /* SpecHelper.h */,
 				1329025A09051860B4872650 /* SupportingFiles */,
 				13290B56A520C033253F3AA9 /* TestCase */,
+				AFFF3E051D6D9D6F00CCA836 /* SpecHelper.h */,
 			);
 			path = MGDecimalOperationsTests;
 			sourceTree = "<group>";
