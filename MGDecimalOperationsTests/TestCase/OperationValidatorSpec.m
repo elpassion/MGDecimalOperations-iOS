@@ -133,6 +133,10 @@ SpecBegin(OperationValidator)
         describe(@"validateOperationWithString", ^{
             __block NSError *error;
 
+            afterEach(^{
+                error = nil;
+            });
+
             context(@"when perform with 'a + b -c'", ^{
                 beforeEach(^{
                     [sut validateOperationWithString:@"a + b -c" error:&error];
@@ -148,7 +152,7 @@ SpecBegin(OperationValidator)
                     [sut validateOperationWithString:@"a + b (c)" error:&error];
                 });
 
-                it(@"should error not to be nil", ^{
+                it(@"should error NOT to be nil", ^{
                     expect(error).notTo.beNil();
                 });
 
@@ -162,7 +166,7 @@ SpecBegin(OperationValidator)
                     [sut validateOperationWithString:@"(a + c * (g)))" error:&error];
                 });
 
-                it(@"should error not to be nil", ^{
+                it(@"should error NOT to be nil", ^{
                     expect(error).notTo.beNil();
                 });
 
