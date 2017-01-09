@@ -23,7 +23,7 @@ describe(@"OperationConverter", ^{
     describe(@"operationObjectWithString", ^{
         __block id <OperationObjectProtocol> result;
 
-        context(@"when perform with ' aa+b' at index 0", ^{
+        context(@"when perform with 'aa+b' at index 0", ^{
             beforeEach(^{
                 result = [sut operationObjectWithString:@"aa+b" currentPositionInString:0];
             });
@@ -81,7 +81,7 @@ describe(@"OperationConverter", ^{
     describe(@"separatedObjectsWithString", ^{
         __block NSArray *result;
 
-        context(@"when perform with 'a+b*c'", ^{
+        context(@"when perform with 'a + b * c'", ^{
             beforeEach(^{
                 result = [sut separatedObjectsWithString:@"a + b * c"];
             });
