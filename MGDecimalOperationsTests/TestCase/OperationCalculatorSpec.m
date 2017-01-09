@@ -1,11 +1,12 @@
 #import "SpecHelper.h"
 #import "OperationCalculator.h"
-#import "BracketOperator.h"
 #import "AddOperator.h"
 #import "Variable.h"
 #import "MultiplyOperator.h"
 #import "DivideOperator.h"
 #import "SubtractOperator.h"
+#import "OpenBracket.h"
+#import "CloseBracket.h"
 
 SpecBegin(OperationCalculator)
 
@@ -30,15 +31,15 @@ SpecBegin(OperationCalculator)
 
                 beforeEach(^{
                     inputObjects = @[
-                            [[BracketOperator alloc] initWithSymbol:@"("],
-                            [[BracketOperator alloc] initWithSymbol:@"("],
+                            [OpenBracket new],
+                            [OpenBracket new],
                             [[Variable alloc] initWithSymbol:@"3"],
                             [AddOperator new],
                             [[Variable alloc] initWithSymbol:@"5"],
-                            [[BracketOperator alloc] initWithSymbol:@")"],
+                            [CloseBracket new],
                             [MultiplyOperator new],
                             [[Variable alloc] initWithSymbol:@"7"],
-                            [[BracketOperator alloc] initWithSymbol:@")"]
+                            [CloseBracket new]
                     ];
 
                     result = [sut postfixExpressionWithSeparatedObjects:inputObjects];
@@ -92,17 +93,17 @@ SpecBegin(OperationCalculator)
 
                 beforeEach(^{
                     inputObjects = @[
-                            [[BracketOperator alloc] initWithSymbol:@"("],
-                            [[BracketOperator alloc] initWithSymbol:@"("],
+                            [OpenBracket new],
+                            [OpenBracket new],
                             [[Variable alloc] initWithSymbol:@"3"],
                             [DivideOperator new],
                             [[Variable alloc] initWithSymbol:@"2"],
                             [MultiplyOperator new],
                             [[Variable alloc] initWithSymbol:@"5"],
-                            [[BracketOperator alloc] initWithSymbol:@")"],
+                            [CloseBracket new],
                             [AddOperator new],
                             [[Variable alloc] initWithSymbol:@"6"],
-                            [[BracketOperator alloc] initWithSymbol:@")"]
+                            [CloseBracket new],
                     ];
 
                     result = [sut postfixExpressionWithSeparatedObjects:inputObjects];
@@ -137,11 +138,11 @@ SpecBegin(OperationCalculator)
                             [DivideOperator new],
                             [[Variable alloc] initWithSymbol:@"3"],
                             [DivideOperator new],
-                            [[BracketOperator alloc] initWithSymbol:@"("],
+                            [OpenBracket new],
                             [[Variable alloc] initWithSymbol:@"3"],
                             [SubtractOperator new],
                             [[Variable alloc] initWithSymbol:@"5"],
-                            [[BracketOperator alloc] initWithSymbol:@")"]
+                            [CloseBracket new]
                     ];
 
                     result = [sut postfixExpressionWithSeparatedObjects:inputObjects];

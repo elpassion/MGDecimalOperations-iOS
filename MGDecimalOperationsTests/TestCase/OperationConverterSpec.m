@@ -2,6 +2,10 @@
 #import "OperationConverter.h"
 #import "OperatorProtocol.h"
 #import "Variable.h"
+#import "AddOperator.h"
+#import "MultiplyOperator.h"
+#import "OpenBracket.h"
+#import "CloseBracket.h"
 
 SpecBegin(OperationConverter)
 
@@ -87,8 +91,8 @@ describe(@"OperationConverter", ^{
             });
 
             describe(@"1st element", ^{
-                it(@"should be kind of class Variable", ^{
-                    expect(result[0]).beAKindOf([Variable class]);
+                it(@"should be instance of 'Variable'", ^{
+                    expect(result[0]).beInstanceOf([Variable class]);
                 });
 
                 it(@"should have correct value", ^{
@@ -97,8 +101,8 @@ describe(@"OperationConverter", ^{
             });
 
             describe(@"2nd element", ^{
-                it(@"should implements 'OperatorProtocol'", ^{
-                    expect(result[1]).conformTo(@protocol(OperatorProtocol));
+                it(@"should be instance of 'AddOperator'", ^{
+                    expect(result[1]).beInstanceOf([AddOperator class]);
                 });
 
                 it(@"should have correct value", ^{
@@ -107,8 +111,8 @@ describe(@"OperationConverter", ^{
             });
 
             describe(@"3rd element", ^{
-                it(@"should be kind of class Variable", ^{
-                    expect(result[2]).beAKindOf([Variable class]);
+                it(@"should be instance of 'Variable'", ^{
+                    expect(result[2]).beInstanceOf([Variable class]);
                 });
 
                 it(@"should have correct value", ^{
@@ -117,8 +121,8 @@ describe(@"OperationConverter", ^{
             });
 
             describe(@"4th element", ^{
-                it(@"should implements 'OperatorProtocol'", ^{
-                    expect(result[3]).conformTo(@protocol(OperatorProtocol));
+                it(@"should be instance of 'MultiplyOperator'", ^{
+                    expect(result[3]).beInstanceOf([MultiplyOperator class]);
                 });
 
                 it(@"should have correct value", ^{
@@ -127,8 +131,8 @@ describe(@"OperationConverter", ^{
             });
 
             describe(@"5th element", ^{
-                it(@"should be kind of class Variable", ^{
-                    expect(result[4]).beAKindOf([Variable class]);
+                it(@"should be instance of 'Variable'", ^{
+                    expect(result[4]).beInstanceOf([Variable class]);
                 });
 
                 it(@"should have correct value", ^{
@@ -147,8 +151,8 @@ describe(@"OperationConverter", ^{
             });
 
             describe(@"1st element", ^{
-                it(@"should be kind of class Variable", ^{
-                    expect(result[0]).beAKindOf([Variable class]);
+                it(@"should be instance of 'Variable'", ^{
+                    expect(result[0]).beInstanceOf([Variable class]);
                 });
 
                 it(@"should have correct value", ^{
@@ -157,8 +161,8 @@ describe(@"OperationConverter", ^{
             });
 
             describe(@"2nd element", ^{
-                it(@"should implements 'OperatorProtocol'", ^{
-                    expect(result[1]).conformTo(@protocol(OperatorProtocol));
+                it(@"should be instance of 'MultiplyOperator'", ^{
+                    expect(result[1]).beInstanceOf([MultiplyOperator class]);
                 });
 
                 it(@"should have correct value", ^{
@@ -167,8 +171,8 @@ describe(@"OperationConverter", ^{
             });
 
             describe(@"3rd element", ^{
-                it(@"should implements 'OperatorProtocol'", ^{
-                    expect(result[2]).conformTo(@protocol(OperatorProtocol));
+                it(@"should be instance of 'OpenBracket'", ^{
+                    expect(result[2]).beInstanceOf([OpenBracket class]);
                 });
 
                 it(@"should have correct value", ^{
@@ -177,8 +181,8 @@ describe(@"OperationConverter", ^{
             });
 
             describe(@"4th element", ^{
-                it(@"should be kind of class Variable", ^{
-                    expect(result[3]).beAKindOf([Variable class]);
+                it(@"should be instance of 'Variable'", ^{
+                    expect(result[3]).beInstanceOf([Variable class]);
                 });
 
                 it(@"should have correct value", ^{
@@ -187,8 +191,8 @@ describe(@"OperationConverter", ^{
             });
 
             describe(@"5th element", ^{
-                it(@"should implements 'OperatorProtocol'", ^{
-                    expect(result[4]).conformTo(@protocol(OperatorProtocol));
+                it(@"should be instance of 'AddOperator'", ^{
+                    expect(result[4]).beInstanceOf([AddOperator class]);
                 });
 
                 it(@"should have correct value", ^{
@@ -197,8 +201,8 @@ describe(@"OperationConverter", ^{
             });
 
             describe(@"6th element", ^{
-                it(@"should be kind of class Variable", ^{
-                    expect(result[5]).beAKindOf([Variable class]);
+                it(@"should be instance of 'Variable'", ^{
+                    expect(result[5]).beInstanceOf([Variable class]);
                 });
 
                 it(@"should have correct value", ^{
@@ -207,8 +211,8 @@ describe(@"OperationConverter", ^{
             });
 
             describe(@"7th element", ^{
-                it(@"should implements 'OperatorProtocol'", ^{
-                    expect(result[6]).conformTo(@protocol(OperatorProtocol));
+                it(@"should be instance of 'CloseBracket'", ^{
+                    expect(result[6]).beInstanceOf([CloseBracket class]);
                 });
 
                 it(@"should have correct value", ^{
