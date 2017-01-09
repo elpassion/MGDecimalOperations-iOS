@@ -4,7 +4,6 @@
 SpecBegin(DecimalOperations)
 
     describe(@"DecimalOperations", ^{
-
         __block DecimalOperations *sut;
 
         beforeEach(^{
@@ -16,19 +15,15 @@ SpecBegin(DecimalOperations)
         });
 
         describe(@"mathWithOperation variablesDecimal", ^{
-
             __block NSDictionary *variables;
             __block NSDecimalNumber *result;
             __block NSError *error;
 
             afterEach(^{
-                variables = nil;
-                result = nil;
                 error = nil;
             });
 
             context(@"when perform with '2.321378923 + 3.210932892'", ^{
-
                 beforeEach(^{
                     variables = @{
                             @"a": [NSDecimalNumber decimalNumberWithString:@"2.321378923"],
@@ -43,7 +38,6 @@ SpecBegin(DecimalOperations)
             });
 
             context(@"when perform with '50 - 70'", ^{
-
                 beforeEach(^{
                     variables = @{
                             @"a": [NSDecimalNumber decimalNumberWithString:@"50"],
@@ -58,7 +52,6 @@ SpecBegin(DecimalOperations)
             });
 
             context(@"when perform with '3 * 5'", ^{
-
                 beforeEach(^{
                     variables = @{
                             @"a": [NSDecimalNumber decimalNumberWithString:@"3"],
@@ -73,7 +66,6 @@ SpecBegin(DecimalOperations)
             });
 
             context(@"when perform with '70 / 7'", ^{
-
                 beforeEach(^{
                     variables = @{
                             @"a": [NSDecimalNumber decimalNumberWithString:@"70"],
@@ -88,7 +80,6 @@ SpecBegin(DecimalOperations)
             });
 
             context(@"when perform with '5 + 5 + 5 - 5'", ^{
-
                 beforeEach(^{
                     variables = @{
                             @"a": [NSDecimalNumber decimalNumberWithString:@"5"],
@@ -96,7 +87,6 @@ SpecBegin(DecimalOperations)
                             @"c": [NSDecimalNumber decimalNumberWithString:@"5"],
                             @"d": [NSDecimalNumber decimalNumberWithString:@"5"]
                     };
-
                     result = [sut mathWithOperation:@"a + b + c - d" variablesDecimal:variables error:&error];
                 });
 
@@ -106,14 +96,12 @@ SpecBegin(DecimalOperations)
             });
 
             context(@"when perform with '4 * 5 / 2'", ^{
-
                 beforeEach(^{
                     variables = @{
                             @"a": [NSDecimalNumber decimalNumberWithString:@"4"],
                             @"b": [NSDecimalNumber decimalNumberWithString:@"5"],
                             @"c": [NSDecimalNumber decimalNumberWithString:@"2"]
                     };
-
                     result = [sut mathWithOperation:@"a * b / c" variablesDecimal:variables error:&error];
                 });
 
@@ -123,14 +111,12 @@ SpecBegin(DecimalOperations)
             });
 
             context(@"when perform with '2 + (2 * 2)'", ^{
-
                 beforeEach(^{
                     variables = @{
                             @"a": [NSDecimalNumber decimalNumberWithString:@"2"],
                             @"b": [NSDecimalNumber decimalNumberWithString:@"2"],
                             @"c": [NSDecimalNumber decimalNumberWithString:@"2"]
                     };
-
                     result = [sut mathWithOperation:@"a + (b * c)" variablesDecimal:variables error:&error];
                 });
 
@@ -140,7 +126,6 @@ SpecBegin(DecimalOperations)
             });
 
             context(@"when perform with '(14 / 7 * (3 + (3 * 5)))'", ^{
-
                 beforeEach(^{
                     variables = @{
                             @"a": [NSDecimalNumber decimalNumberWithString:@"14"],
@@ -149,7 +134,6 @@ SpecBegin(DecimalOperations)
                             @"d": [NSDecimalNumber decimalNumberWithString:@"3"],
                             @"e": [NSDecimalNumber decimalNumberWithString:@"5"]
                     };
-
                     result = [sut mathWithOperation:@"(a / b * (c + (d * e)))" variablesDecimal:variables error:&error];
                 });
 
@@ -159,7 +143,6 @@ SpecBegin(DecimalOperations)
             });
 
             context(@"when perform with '((((3 * 5 * 2) + 5) - 10) / 5)'", ^{
-
                 beforeEach(^{
                     variables = @{
                             @"a": [NSDecimalNumber decimalNumberWithString:@"3"],
@@ -169,7 +152,6 @@ SpecBegin(DecimalOperations)
                             @"e": [NSDecimalNumber decimalNumberWithString:@"10"],
                             @"f": [NSDecimalNumber decimalNumberWithString:@"5"]
                     };
-
                     result = [sut mathWithOperation:@"((((a * b * c) + d) - e) / f)" variablesDecimal:variables error:&error];
                 });
 
@@ -179,7 +161,6 @@ SpecBegin(DecimalOperations)
             });
 
             context(@"when perform with '1+((2/3)*4-(5+6)*7)'", ^{
-
                 beforeEach(^{
                     variables = @{
                             @"a": [NSDecimalNumber decimalNumberWithString:@"1"],
@@ -190,7 +171,6 @@ SpecBegin(DecimalOperations)
                             @"f": [NSDecimalNumber decimalNumberWithString:@"6"],
                             @"go": [NSDecimalNumber decimalNumberWithString:@"7"],
                     };
-
                     result = [sut mathWithOperation:@"a+((bb/c )*d-( e +f)*go )" variablesDecimal:variables error:&error];
                 });
 
@@ -200,17 +180,15 @@ SpecBegin(DecimalOperations)
             });
 
             context(@"when perform with '1++2'", ^{
-
                 beforeEach(^{
                     variables = @{
                             @"a": [NSDecimalNumber decimalNumberWithString:@"1"],
                             @"b": [NSDecimalNumber decimalNumberWithString:@"2"]
                     };
-
                     result = [sut mathWithOperation:@"a++b" variablesDecimal:variables error:&error];
                 });
 
-                it(@"should error be not nil", ^{
+                it(@"should error be NOT nil", ^{
                     expect(error).notTo.beNil();
                 });
 
@@ -220,17 +198,15 @@ SpecBegin(DecimalOperations)
             });
 
             context(@"when perform with '2-+8'", ^{
-
                 beforeEach(^{
                     variables = @{
                             @"a": [NSDecimalNumber decimalNumberWithString:@"2"],
                             @"b": [NSDecimalNumber decimalNumberWithString:@"8"]
                     };
-
                     result = [sut mathWithOperation:@"a-+b" variablesDecimal:variables error:&error];
                 });
 
-                it(@"should error not to be nil", ^{
+                it(@"should error NOT to be nil", ^{
                     expect(error).notTo.beNil();
                 });
 
@@ -240,17 +216,15 @@ SpecBegin(DecimalOperations)
             });
 
             context(@"when perform with '111  222'", ^{
-
                 beforeEach(^{
                     variables = @{
                             @"a": [NSDecimalNumber decimalNumberWithString:@"111"],
                             @"b": [NSDecimalNumber decimalNumberWithString:@"222"]
                     };
-
                     result = [sut mathWithOperation:@"a  b" variablesDecimal:variables error:&error];
                 });
 
-                it(@"should error not to be nil", ^{
+                it(@"should error NOT to be nil", ^{
                     expect(error).notTo.beNil();
                 });
 
@@ -261,19 +235,15 @@ SpecBegin(DecimalOperations)
         });
 
         describe(@"mathWithOperation variablesString", ^{
-
             __block NSDictionary *variables;
             __block NSDecimalNumber *result;
             __block NSError *error;
 
             afterEach(^{
-                variables = nil;
-                result = nil;
                 error = nil;
             });
 
             context(@"when perform with '1 + 4 + 5 - 5'", ^{
-
                 beforeEach(^{
                     variables= @{
                             @"$%^": @"1",
@@ -281,7 +251,6 @@ SpecBegin(DecimalOperations)
                             @"!@#": @"5",
                             @"<7.,": @"5"
                     };
-
                     result = [sut mathWithOperation:@"$%^ + ~AW + !@# - <7.," variablesString:variables error:&error];
                 });
 
@@ -291,7 +260,6 @@ SpecBegin(DecimalOperations)
             });
 
             context(@"when perform with '2.321378923 + 3.210932892'", ^{
-
                 beforeEach(^{
                     variables = @{
                             @"a": @"2.321378923",
@@ -306,14 +274,12 @@ SpecBegin(DecimalOperations)
             });
 
             context(@"when perform with '2 + 4*5'", ^{
-
                 beforeEach(^{
                     variables = @{
                             @"a4a": @"2",
                             @"44g": @"4",
                             @"g4g": @"5"
                     };
-
                     result = [sut mathWithOperation:@"a4a + 44g*g4g" variablesString:variables error:&error];
                 });
 
@@ -323,7 +289,6 @@ SpecBegin(DecimalOperations)
             });
 
             context(@"when perform with '50 - 70'", ^{
-
                 beforeEach(^{
                     variables = @{
                             @"a": @"50",
@@ -338,7 +303,6 @@ SpecBegin(DecimalOperations)
             });
 
             context(@"when perform with '3 * 5'", ^{
-
                 beforeEach(^{
                     variables = @{
                             @"a": @"3",
@@ -353,7 +317,6 @@ SpecBegin(DecimalOperations)
             });
 
             context(@"when perform with '70 / 7'", ^{
-
                 beforeEach(^{
                     variables = @{
                             @"a": @"70",
@@ -368,7 +331,6 @@ SpecBegin(DecimalOperations)
             });
 
             context(@"when perform with '5 + 5 + 5 - 5'", ^{
-
                 beforeEach(^{
                     variables = @{
                             @"a": @"5",
@@ -376,7 +338,6 @@ SpecBegin(DecimalOperations)
                             @"c": @"5",
                             @"d": @"5"
                     };
-
                     result = [sut mathWithOperation:@"a + b + c - d" variablesString:variables error:&error];
                 });
 
@@ -386,14 +347,12 @@ SpecBegin(DecimalOperations)
             });
 
             context(@"when perform with '4 * 5 / 2'", ^{
-
                 beforeEach(^{
                     variables = @{
                             @"a": @"4",
                             @"b": @"5",
                             @"c": @"2"
                     };
-
                     result = [sut mathWithOperation:@"a * b / c" variablesString:variables error:&error];
                 });
 
@@ -403,14 +362,12 @@ SpecBegin(DecimalOperations)
             });
 
             context(@"when perform with '2 + (2 * 2)'", ^{
-
                 beforeEach(^{
                     variables = @{
                             @"a": @"2",
                             @"b": @"2",
                             @"c": @"2"
                     };
-
                     result = [sut mathWithOperation:@"a + (b * c)" variablesString:variables error:&error];
                 });
 
@@ -420,7 +377,6 @@ SpecBegin(DecimalOperations)
             });
 
             context(@"when perform with '(14 / 7 * (3 + (3 * 5)))'", ^{
-
                 beforeEach(^{
                     variables = @{
                             @"a": @"14",
@@ -429,7 +385,6 @@ SpecBegin(DecimalOperations)
                             @"d": @"3",
                             @"e": @"5"
                     };
-
                     result = [sut mathWithOperation:@"(a / b * (c + (d * e)))" variablesString:variables error:&error];
                 });
 
@@ -439,7 +394,6 @@ SpecBegin(DecimalOperations)
             });
 
             context(@"when perform with '((((3 * 5 * 2) + 5) - 10) / 5)'", ^{
-
                 beforeEach(^{
                     variables = @{
                             @"a": @"3",
@@ -449,7 +403,6 @@ SpecBegin(DecimalOperations)
                             @"e": @"10",
                             @"f": @"5"
                     };
-
                     result = [sut mathWithOperation:@"((((a * b * c) + d) - e) / f)" variablesString:variables error:&error];
                 });
 
@@ -459,7 +412,6 @@ SpecBegin(DecimalOperations)
             });
 
             context(@"when perform 'a + b * (c /d - (e+f * g)) + h *(i + (j/ k))'", ^{
-
                 beforeEach(^{
                     variables = @{
                             @"a": @"1",
@@ -474,7 +426,6 @@ SpecBegin(DecimalOperations)
                             @"j": @"11",
                             @"k": @"11"
                     };
-
                     result = [sut mathWithOperation:@"a + b * (c /d - (e+f * g)) + h *(i + (j/ k))" variablesString:variables error:&error];
                 });
 
@@ -488,7 +439,6 @@ SpecBegin(DecimalOperations)
             });
 
             context(@"when perform with 'a + b*c dd'", ^{
-
                 beforeEach(^{
                     variables = @{
                             @"a": @"1",
@@ -496,17 +446,15 @@ SpecBegin(DecimalOperations)
                             @"c": @"3",
                             @"dd": @"4"
                     };
-
                     result = [sut mathWithOperation:@"a + b*c dd" variablesString:variables error:&error];
                 });
 
-                it(@"should error not to be nil", ^{
+                it(@"should error NOT to be nil", ^{
                     expect(error).notTo.beNil();
                 });
             });
 
             context(@"when perform with 'aa * abc/ccc+ fff'", ^{
-
                 beforeEach(^{
                     variables = @{
                             @"aa": @"2",
@@ -514,7 +462,6 @@ SpecBegin(DecimalOperations)
                             @"ccc": @"3",
                             @"fff": @"1"
                     };
-
                     result = [sut mathWithOperation:@"aa * abc/ccc+ fff" variablesString:variables error:&error];
                 });
 
@@ -524,14 +471,12 @@ SpecBegin(DecimalOperations)
             });
 
             context(@"when perform with 'a + b - c * d'", ^{
-
                 beforeEach(^{
                     variables = @{
                             @"a": @"1",
                             @"b": @"3",
                             @"c": @"4"
                     };
-                    
                     result = [sut mathWithOperation:@"a + b - c * d" variablesString:variables error:&error];
                 });
 
@@ -539,7 +484,7 @@ SpecBegin(DecimalOperations)
                     expect(result).to.beNil();
                 });
 
-                it(@"should ", ^{
+                it(@"should error NOT to be nil", ^{
                     expect(error).notTo.beNil();
                 });
 
