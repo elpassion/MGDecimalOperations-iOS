@@ -7,40 +7,42 @@
 #import "OperationObjectProtocol.h"
 #import "OperatorProtocol.h"
 #import "Variable.h"
+#import "OpenBracket.h"
+#import "CloseBracket.h"
 
 @implementation OperationCalculator
 
 - (NSArray *)postfixExpressionWithSeparatedObjects:(NSArray *)separatedObjects
 {
-    NSMutableArray *startArray = [[NSMutableArray alloc] initWithArray:separatedObjects];
+    NSMutableArray *operationObjects = [[NSMutableArray alloc] initWithArray:separatedObjects];
     NSMutableArray *stack = [NSMutableArray new];
     NSMutableArray *output = [NSMutableArray new];
-    NSUInteger startArrayLength = startArray.count;
+    NSUInteger operationObjectsCount = operationObjects.count;
 
-    for (int i = 0; i < startArrayLength; i++) {
-        id <OperationObjectProtocol> operationObject = [startArray firstObject];
-        [startArray removeObjectAtIndex:0];
+    for (int i = 0; i < operationObjectsCount; i++) {
+        id <OperationObjectProtocol> operationObject = operationObjects.firstObject;
+        [operationObjects removeObjectAtIndex:0];
         if ([operationObject isKindOfClass:[Variable class]]) {
             [output addObject:operationObject];
-            continue;
-        }
-        id <OperatorProtocol> operator = (id <OperatorProtocol>) operationObject;
-        if ([[operator symbol] isEqualToString:@"("]) {
-            [stack addObject:operator];
-        } else if ([[operator symbol] isEqualToString:@")"]) {
+        }else if ([operationObject isKindOfClass:[OpenBracket class]]) {
+            [stack addObject:operationObject];
+        } else if ([operationObject isKindOfClass:[CloseBracket class]]) {
             while (true) {
-                id <OperatorProtocol> fromStack = [stack lastObject];
+                id <NonValueObjectProtocol> fromStack = stack.lastObject;
                 [stack removeLastObject];
-                if ([[fromStack symbol] isEqualToString:@"("]) break;
+                if ([fromStack isKindOfClass:[OpenBracket class]]) break;
                 [output addObject:fromStack];
             }
-        } else {
-            id <OperatorProtocol> stackOperator = [stack lastObject];
-            if (stackOperator.priority >= operator.priority && ![[stackOperator symbol] isEqualToString:@"("] && stack.count > 0) {
+        } else if ([stack.lastObject conformsToProtocol:@protocol(OperatorProtocol)]) {
+            id <OperatorProtocol> stackOperator = stack.lastObject;
+            id <OperatorProtocol> currentOperator = (id <OperatorProtocol>) operationObject;
+            if (stackOperator.priority >= currentOperator.priority && stack.count > 0) {
                 [stack removeLastObject];
                 [output addObject:stackOperator];
             }
-            [stack addObject:operator];
+            [stack addObject:operationObject];
+        } else {
+            [stack addObject:operationObject];
         }
     }
 
