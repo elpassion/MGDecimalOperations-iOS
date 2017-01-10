@@ -470,7 +470,20 @@ SpecBegin(DecimalOperations)
                 });
             });
 
-            context(@"when perform with 'a + b - c * d'", ^{
+            context(@"when perform 'a+((a+a)/(a*a)*a)'", ^{
+                beforeEach(^{
+                    variables = @{
+                            @"a": @"2"
+                    };
+                    result = [sut mathWithOperation:@"a+((a+a)/(a*a)*a)" variablesString:variables error:&error];
+                });
+
+                it(@"should return 4", ^{
+                    expect(result).to.equal(4);
+                });
+            });
+
+            context(@"when perform 'a + b - c * d'", ^{
                 beforeEach(^{
                     variables = @{
                             @"a": @"1",
