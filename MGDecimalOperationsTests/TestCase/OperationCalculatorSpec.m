@@ -174,18 +174,40 @@ SpecBegin(OperationCalculator)
                             [[Variable alloc] initWithSymbol:@"c"],
                             [MultiplyOperator new]
                     ];
-
                     inputVariables = @{
-                            @"a" : [[NSDecimalNumber alloc] initWithString:@"3"],
-                            @"b" : [[NSDecimalNumber alloc] initWithString:@"5"],
-                            @"c" : [[NSDecimalNumber alloc] initWithString:@"7"],
+                            @"a": [[NSDecimalNumber alloc] initWithString:@"3"],
+                            @"b": [[NSDecimalNumber alloc] initWithString:@"5"],
+                            @"c": [[NSDecimalNumber alloc] initWithString:@"7"],
                     };
-
                     result = [sut evaluatedResultWithPostfixArray:postfixArray variablesDictionary:inputVariables];
                 });
 
                 it(@"should return 56", ^{
-                    expect(result.value).equal(56);
+                    expect(result.value).to.equal(56);
+                });
+            });
+
+            context(@"when perform with 'a  b  +  c  c  /  +'", ^{
+                beforeEach(^{
+                    postfixArray = @[
+                            [[Variable alloc] initWithSymbol:@"a"],
+                            [[Variable alloc] initWithSymbol:@"b"],
+                            [AddOperator new],
+                            [[Variable alloc] initWithSymbol:@"c"],
+                            [[Variable alloc] initWithSymbol:@"c"],
+                            [DivideOperator new],
+                            [AddOperator new]
+                    ];
+                    inputVariables = @{
+                            @"a": [[NSDecimalNumber alloc] initWithString:@"3"],
+                            @"b": [[NSDecimalNumber alloc] initWithString:@"5"],
+                            @"c": [[NSDecimalNumber alloc] initWithString:@"7"]
+                    };
+                    result = [sut evaluatedResultWithPostfixArray:postfixArray variablesDictionary:inputVariables];
+                });
+
+                it(@"should return 9", ^{
+                    expect(result.value).to.equal(9);
                 });
             });
         });
