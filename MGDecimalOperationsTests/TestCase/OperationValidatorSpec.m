@@ -174,6 +174,51 @@ SpecBegin(OperationValidator)
                     expect(error.userInfo[NSLocalizedDescriptionKey]).to.equal(@"Wrong operation. Different number of open and close brackets");
                 });
             });
+
+            context(@"when perform with 'a ++ a'", ^{
+                beforeEach(^{
+                    NSDictionary *variables = @{
+                            @"a": [[NSDecimalNumber alloc] initWithString:@"2"]
+                    };
+                    NSArray *separatedObjects = @[
+                            [[Variable alloc] initWithSymbol:@"a"],
+                            [AddOperator new],
+                            [AddOperator new],
+                            [[Variable alloc] initWithSymbol:@"a"]
+                    ];
+                    [sut validateOperationWithSeparatedObjects:separatedObjects variables:variables error:&error];
+                });
+
+                it(@"should error NOT to be nil", ^{
+                    expect(error).notTo.beNil();
+                });
+
+                it(@"should error have correct user info", ^{
+                    expect(error.userInfo[NSLocalizedDescriptionKey]).to.equal(@"Wrong operation. Operator next to operator");
+                });
+            });
+
+            context(@"when perform 'a + b'", ^{
+                beforeEach(^{
+                    NSDictionary *variables = @{
+                            @"a": [[NSDecimalNumber alloc] initWithString:@"a"]
+                    };
+                    NSArray *separatedObjects = @[
+                            [[Variable alloc] initWithSymbol:@"a"],
+                            [AddOperator new],
+                            [[Variable alloc] initWithSymbol:@"b"]
+                    ];
+                    [sut validateOperationWithSeparatedObjects:separatedObjects variables:variables error:&error];
+                });
+
+                it(@"should error NOT to be nil", ^{
+                    expect(error).notTo.beNil();
+                });
+
+                it(@"should error have correct user info", ^{
+                    expect(error.userInfo[NSLocalizedDescriptionKey]).to.equal(@"Dictionary doesn't contain all variables");
+                });
+            });
         });
     });
 
