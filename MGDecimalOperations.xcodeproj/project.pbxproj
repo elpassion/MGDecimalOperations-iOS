@@ -34,6 +34,7 @@
 		13290913BA6541FBFC9EC047 /* DecimalOperations.h in Headers */ = {isa = PBXBuildFile; fileRef = 132904269B5B4DFAE192B827 /* DecimalOperations.h */; };
 		132909417D8955EFACAB4218 /* AddOperator.m in Sources */ = {isa = PBXBuildFile; fileRef = 13290446E9304FC5EC34105D /* AddOperator.m */; };
 		13290994AC4A3F6F6FA8C5EB /* OperationCalculatorSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 132907B4885074F0C749A3C3 /* OperationCalculatorSpec.m */; };
+		13290A08B5348295891D9B8A /* OperatorFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 13290DEF479A63318C60C74C /* OperatorFactorySpec.m */; };
 		13290AAE7FA71FB9AAABB5AB /* OperationValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 132902089A57F9AB74084656 /* OperationValidator.m */; };
 		13290AF228DAD17B36548412 /* NonValueObjectProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 13290F69BB455931580A5AD5 /* NonValueObjectProtocol.h */; };
 		13290BF9EAB6654C3623B5AB /* OperationConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = 13290760C389599B76D34A92 /* OperationConverter.h */; };
@@ -93,6 +94,7 @@
 		13290C43AF09CEB35E22E75E /* OperatorFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OperatorFactory.m; sourceTree = "<group>"; };
 		13290C62C2826BF4FEED2CA2 /* ErrorFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ErrorFactory.m; sourceTree = "<group>"; };
 		13290DBE98BD099230EF1997 /* ErrorFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ErrorFactory.h; sourceTree = "<group>"; };
+		13290DEF479A63318C60C74C /* OperatorFactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OperatorFactorySpec.m; sourceTree = "<group>"; };
 		13290DF481910291C035F747 /* OperationConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OperationConverter.m; sourceTree = "<group>"; };
 		13290E833DDFDEB6FA7C14CE /* OperationConverterSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OperationConverterSpec.m; sourceTree = "<group>"; };
 		13290F30D7C180C41E82CE91 /* MultiplyOperator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiplyOperator.h; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 				132907B4885074F0C749A3C3 /* OperationCalculatorSpec.m */,
 				13290E833DDFDEB6FA7C14CE /* OperationConverterSpec.m */,
 				1329042280F5581C262C9ED2 /* OperationValidatorSpec.m */,
+				13290DEF479A63318C60C74C /* OperatorFactorySpec.m */,
 			);
 			path = TestCase;
 			sourceTree = "<group>";
@@ -539,6 +542,7 @@
 				132901008505EAE6BEC9EFEA /* OperationValidatorSpec.m in Sources */,
 				132903C3E436ED68DB8803B0 /* OperationConverterSpec.m in Sources */,
 				13290994AC4A3F6F6FA8C5EB /* OperationCalculatorSpec.m in Sources */,
+				13290A08B5348295891D9B8A /* OperatorFactorySpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
