@@ -41,18 +41,20 @@ SpecBegin(OperationCalculator)
                     result = [sut postfixExpressionWithSeparatedObjects:inputObjects];
                 });
 
-                it(@"should return 5 elements", ^{
-                    expect(result).to.haveCount(5);
-                });
+                describe(@"result", ^{
+                    it(@"should have 5 elements", ^{
+                        expect(result).to.haveCount(5);
+                    });
 
-                it(@"should return right value", ^{
-                    expect(result).to.equal(@[
-                            inputObjects[2],
-                            inputObjects[4],
-                            inputObjects[3],
-                            inputObjects[7],
-                            inputObjects[6]
-                    ]);
+                    it(@"should have right value", ^{
+                        expect(result).to.equal(@[
+                                inputObjects[2],
+                                inputObjects[4],
+                                inputObjects[3],
+                                inputObjects[7],
+                                inputObjects[6]
+                        ]);
+                    });
                 });
             });
 
@@ -68,18 +70,20 @@ SpecBegin(OperationCalculator)
                     result = [sut postfixExpressionWithSeparatedObjects:inputObjects];
                 });
 
-                it(@"should return 5 elements", ^{
-                    expect(result).to.haveCount(5);
-                });
+                describe(@"result", ^{
+                    it(@"should have 5 elements", ^{
+                        expect(result).to.haveCount(5);
+                    });
 
-                it(@"should return right value", ^{
-                    expect(result).to.equal(@[
-                            inputObjects[0],
-                            inputObjects[2],
-                            inputObjects[1],
-                            inputObjects[4],
-                            inputObjects[3]
-                    ]);
+                    it(@"should have right value", ^{
+                        expect(result).to.equal(@[
+                                inputObjects[0],
+                                inputObjects[2],
+                                inputObjects[1],
+                                inputObjects[4],
+                                inputObjects[3]
+                        ]);
+                    });
                 });
             });
 
@@ -101,20 +105,22 @@ SpecBegin(OperationCalculator)
                     result = [sut postfixExpressionWithSeparatedObjects:inputObjects];
                 });
 
-                it(@"should have 11 elements", ^{
-                    expect(result).haveCount(7);
-                });
+                describe(@"result", ^{
+                    it(@"should have 11 elements", ^{
+                        expect(result).to.haveCount(7);
+                    });
 
-                it(@"should return right value", ^{
-                    expect(result).to.equal(@[
-                            inputObjects[2],
-                            inputObjects[4],
-                            inputObjects[3],
-                            inputObjects[6],
-                            inputObjects[5],
-                            inputObjects[9],
-                            inputObjects[8]
-                    ]);
+                    it(@"should have right value", ^{
+                        expect(result).to.equal(@[
+                                inputObjects[2],
+                                inputObjects[4],
+                                inputObjects[3],
+                                inputObjects[6],
+                                inputObjects[5],
+                                inputObjects[9],
+                                inputObjects[8]
+                        ]);
+                    });
                 });
             });
 
@@ -138,24 +144,74 @@ SpecBegin(OperationCalculator)
                     result = [sut postfixExpressionWithSeparatedObjects:inputObjects];
                 });
 
-                it(@"should have 11 elements", ^{
-                    expect(result).haveCount(11);
+                describe(@"result", ^{
+                    it(@"should have 11 elements", ^{
+                        expect(result).to.haveCount(11);
+                    });
+
+                    it(@"should have right value", ^{
+                        expect(result).to.equal(@[
+                                inputObjects[0],
+                                inputObjects[2],
+                                inputObjects[4],
+                                inputObjects[3],
+                                inputObjects[6],
+                                inputObjects[5],
+                                inputObjects[9],
+                                inputObjects[11],
+                                inputObjects[10],
+                                inputObjects[7],
+                                inputObjects[1]
+                        ]);
+                    });
+                });
+            });
+
+            context(@"when perform with '2+((2+2)/(2*2)*2)'", ^{
+                beforeEach(^{
+                    inputObjects = @[
+                            [[Variable alloc] initWithSymbol:@"a"],
+                            [AddOperator new],
+                            [OpenBracket new],
+                            [OpenBracket new],
+                            [[Variable alloc] initWithSymbol:@"a"],
+                            [AddOperator new],
+                            [[Variable alloc] initWithSymbol:@"a"],
+                            [CloseBracket new],
+                            [DivideOperator new],
+                            [OpenBracket new],
+                            [[Variable alloc] initWithSymbol:@"a"],
+                            [MultiplyOperator new],
+                            [[Variable alloc] initWithSymbol:@"a"],
+                            [CloseBracket new],
+                            [MultiplyOperator new],
+                            [[Variable alloc] initWithSymbol:@"a"],
+                            [CloseBracket new]
+                    ];
+
+                    result = [sut postfixExpressionWithSeparatedObjects:inputObjects];
                 });
 
-                it(@"should return right value", ^{
-                    expect(result).to.equal(@[
-                            inputObjects[0],
-                            inputObjects[2],
-                            inputObjects[4],
-                            inputObjects[3],
-                            inputObjects[6],
-                            inputObjects[5],
-                            inputObjects[9],
-                            inputObjects[11],
-                            inputObjects[10],
-                            inputObjects[7],
-                            inputObjects[1]
-                    ]);
+                describe(@"result", ^{
+                    it(@"should have 11 elements", ^{
+                        expect(result).to.haveCount(11);
+                    });
+
+                    it(@"should have right value", ^{
+                        expect(result).to.equal(@[
+                                inputObjects[0],
+                                inputObjects[4],
+                                inputObjects[6],
+                                inputObjects[5],
+                                inputObjects[10],
+                                inputObjects[12],
+                                inputObjects[11],
+                                inputObjects[8],
+                                inputObjects[15],
+                                inputObjects[14],
+                                inputObjects[1]
+                        ]);
+                    });
                 });
             });
         });
