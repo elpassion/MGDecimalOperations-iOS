@@ -64,9 +64,7 @@
 
 - (BOOL)isCharacterOperator:(UniChar)character
 {
-    if ((character >= 40 && character <= 43) || character == 47 || character == 45)
-        return true;
-    return false;
+    return ((character >= 40 && character <= 43) || character == 47 || character == 45);
 }
 
 @end
