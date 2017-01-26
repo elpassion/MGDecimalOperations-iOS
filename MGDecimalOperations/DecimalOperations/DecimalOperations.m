@@ -36,10 +36,10 @@
 - (NSDecimalNumber *)mathWithOperation:(NSString *)operation variablesDecimal:(NSDictionary *)variables error:(NSError **)error
 {
     [self.operationValidator validateOperationWithString:operation error:error];
-    if (*error != nil) return nil;
+    if (*error) return nil;
     NSArray *separatedObjects = [self.operationConverter separatedObjectsWithString:operation];
     [self.operationValidator validateOperationWithSeparatedObjects:separatedObjects variables:variables error:error];
-    if (*error != nil) return nil;
+    if (*error) return nil;
     NSArray *postfix = [[self operationCalculator] postfixExpressionWithSeparatedObjects:separatedObjects];
     Variable *resultVariable = [[self operationCalculator] evaluatedResultWithPostfixArray:postfix variablesDictionary:variables];
     return [resultVariable value];
