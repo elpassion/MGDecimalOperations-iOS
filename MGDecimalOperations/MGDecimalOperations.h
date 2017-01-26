@@ -1,8 +1,3 @@
-//
-//  Created by Maciej Gomółka on 24.08.2016.
-//  Copyright © 2016 EL Passion. All rights reserved.
-//
-
 #import <UIKit/UIKit.h>
 
 //! Project version number for MGDecimalOperations.

@@ -1,8 +1,3 @@
-//
-// Created by Maciej Gomółka on 28.08.2016.
-// Copyright (c) 2016 EL Passion. All rights reserved.
-//
-
 #import "OperatorFactory.h"
 #import "SubtractOperator.h"
 #import "MultiplyOperator.h"
