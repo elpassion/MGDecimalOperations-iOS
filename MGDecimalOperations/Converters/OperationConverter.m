@@ -37,29 +37,27 @@
 - (id <OperationObjectProtocol>)operationObjectWithString:(NSString *)operation currentPositionInString:(NSUInteger)currentPosition
 {
     NSString *object = @"";
-    BOOL isNumberInObject = NO;
 
     while (currentPosition < operation.length) {
         UniChar character = [operation characterAtIndex:currentPosition];
-        if ([self isCharacterOperator:character]) {
-            if (!isNumberInObject) {
-                return [self.operatorFactory operatorWithCharacter:character];
-            } else {
-                return [[Variable alloc] initWithSymbol:object];
-            }
+        if ([self isOperator:character]) {
+            return object.length == 0 ? [self.operatorFactory operatorWithCharacter:character] : [[Variable alloc] initWithSymbol:object];
         } else {
-            isNumberInObject = YES;
             object = [object stringByAppendingFormat:@"%c", character];
             currentPosition++;
-            continue;
         }
     }
     return [[Variable alloc] initWithSymbol:object];
 }
 
-- (BOOL)isCharacterOperator:(UniChar)character
+- (BOOL)isOperator:(UniChar)character
 {
-    return ((character >= 40 && character <= 43) || character == 47 || character == 45);
+    return [self.availableOperatorsSet characterIsMember:character];
+}
+
+- (NSCharacterSet *)availableOperatorsSet
+{
+    return [NSCharacterSet characterSetWithCharactersInString:@"()*/+-"];
 }
 
 @end
