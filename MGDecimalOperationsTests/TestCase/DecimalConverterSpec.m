@@ -80,24 +80,6 @@ SpecBegin(DecimalsConverter)
             });
         });
 
-        describe(@"decimalNumberFromString", ^{
-            context(@"when check '222'", ^{
-                __block id decimalNumber;
-
-                beforeEach(^{
-                    decimalNumber = [sut decimalNumberFromString:@"222"];
-                });
-
-                it(@"should be instance of 'NSDecimalNumber'", ^{
-                    expect(decimalNumber).beInstanceOf([NSDecimalNumber class]);
-                });
-
-                it(@"should return 222", ^{
-                    expect(decimalNumber).to.equal(222);
-                });
-            });
-        });
-
         describe(@"decimalVariablesFromStringVariables", ^{
             __block NSDictionary *stringVariables;
             __block NSDictionary *decimalVariables;
