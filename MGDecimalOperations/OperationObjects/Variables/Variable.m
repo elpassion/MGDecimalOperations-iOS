@@ -24,9 +24,4 @@
     self.value = variables[self.symbol];
 }
 
-- (BOOL)isValueSet
-{
-    return self.value != nil;
-}
-
 @end

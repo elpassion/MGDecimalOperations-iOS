@@ -67,8 +67,8 @@
             [stack removeLastObject];
             Variable *firstVariable = [stack lastObject];
             [stack removeLastObject];
-            if ([firstVariable isValueSet] == false) [firstVariable setVariableValueWithVariables:variables];
-            if ([secondVariable isValueSet] == false) [secondVariable setVariableValueWithVariables:variables];
+            if (firstVariable.value == nil) [firstVariable setVariableValueWithVariables:variables];
+            if (secondVariable.value == nil) [secondVariable setVariableValueWithVariables:variables];
             Variable *result = [operator makeOperationWithFirstArgument:firstVariable secondArgument:secondVariable];
             [stack addObject:result];
         }

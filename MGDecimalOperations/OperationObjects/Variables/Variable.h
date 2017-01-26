@@ -9,8 +9,6 @@
 - (instancetype)initWithSymbol:(NSString *)symbol;
 - (instancetype)initWithSymbol:(NSString *)symbol value:(NSString *)value;
 
-- (BOOL)isValueSet;
-
 - (void)setVariableValueWithVariables:(NSDictionary *)variables;
 
 @end
