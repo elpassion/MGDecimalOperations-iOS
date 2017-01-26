@@ -17,7 +17,7 @@
     return self;
 }
 
-- (NSMutableDictionary *)decimalVariablesFromStringVariables:(NSDictionary *)variables error:(NSError **)error
+- (NSDictionary *)decimalVariablesFromStringVariables:(NSDictionary *)variables error:(NSError **)error
 {
     NSMutableDictionary *decimalVariables = [NSMutableDictionary new];
     NSArray *keys = variables.allKeys;
@@ -31,7 +31,7 @@
             return nil;
         }
     }
-    return decimalVariables;
+    return decimalVariables.copy;
 }
 
 - (BOOL)isCorrectNumber:(NSString *)variable

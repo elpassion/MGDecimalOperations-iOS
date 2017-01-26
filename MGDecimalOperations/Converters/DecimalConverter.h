@@ -6,7 +6,7 @@
 
 - (instancetype)initWithErrorFactory:(ErrorFactory *)errorFactory;
 
-- (NSMutableDictionary *)decimalVariablesFromStringVariables:(NSDictionary *)variables error:(NSError **)error;
+- (NSDictionary *)decimalVariablesFromStringVariables:(NSDictionary *)variables error:(NSError **)error;
 - (BOOL)isCorrectNumber:(NSString *)variable;
 
 @end
