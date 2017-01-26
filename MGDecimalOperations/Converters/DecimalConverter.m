@@ -50,7 +50,7 @@
 
 - (BOOL)isOutOfRange:(UniChar)character
 {
-    return character < '0' || character > '9';
+    return ![NSCharacterSet.decimalDigitCharacterSet characterIsMember:character];
 }
 
 @end
