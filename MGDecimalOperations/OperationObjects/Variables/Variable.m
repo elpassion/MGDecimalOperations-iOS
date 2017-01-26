@@ -19,9 +19,4 @@
     return self;
 }
 
-- (void)setVariableValueWithVariables:(NSDictionary *)variables
-{
-    self.value = variables[self.symbol];
-}
-
 @end
