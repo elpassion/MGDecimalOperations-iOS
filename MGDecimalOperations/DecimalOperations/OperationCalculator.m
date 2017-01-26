@@ -19,7 +19,7 @@
         [operationObjects removeObjectAtIndex:0];
         if ([operationObject isKindOfClass:[Variable class]]) {
             [output addObject:operationObject];
-        }else if ([operationObject isKindOfClass:[OpenBracket class]]) {
+        } else if ([operationObject isKindOfClass:[OpenBracket class]]) {
             [stack addObject:operationObject];
         } else if ([operationObject isKindOfClass:[CloseBracket class]]) {
             while (true) {
