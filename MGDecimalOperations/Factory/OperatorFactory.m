@@ -3,29 +3,28 @@
 #import "MultiplyOperator.h"
 #import "DivideOperator.h"
 #import "OpenBracket.h"
+#import "NonValueObjectProtocol.h"
 #import "AddOperator.h"
 #import "CloseBracket.h"
 
 @implementation OperatorFactory
 
-- (id <OperationObjectProtocol>)operatorWithCharacter:(UniChar)operatorSymbol
+- (id <NonValueObjectProtocol>)operatorWithCharacter:(UniChar)operatorSymbol
 {
-    switch (operatorSymbol) {
-        case '+':
-            return [[AddOperator alloc] init];
-        case '-':
-            return [[SubtractOperator alloc] init];
-        case '*':
-            return [[MultiplyOperator alloc] init];
-        case '/':
-            return [[DivideOperator alloc] init];
-        case '(':
-            return [OpenBracket new];
-        case ')':
-            return [CloseBracket new];
-        default:
-            return nil;
-    }
+    NSString *key = [NSString stringWithFormat:@"%c", operatorSymbol];
+    return self.operatorsDict[key] ?: nil;
+}
+
+- (NSDictionary *)operatorsDict
+{
+    return @{
+            @"+": [AddOperator new],
+            @"-": [SubtractOperator new],
+            @"*": [MultiplyOperator new],
+            @"/": [DivideOperator new],
+            @"(": [OpenBracket new],
+            @")": [CloseBracket new]
+    };
 }
 
 @end

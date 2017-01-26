@@ -1,9 +1,9 @@
 #import <Foundation/Foundation.h>
 
-@protocol OperationObjectProtocol;
+@protocol NonValueObjectProtocol;
 
 @interface OperatorFactory : NSObject
 
-- (id <OperationObjectProtocol>)operatorWithCharacter:(UniChar)operatorSymbol;
+- (id <NonValueObjectProtocol>)operatorWithCharacter:(UniChar)operatorSymbol;
 
 @end
