@@ -69,7 +69,7 @@
             [stack removeLastObject];
             if ([firstVariable isValueSet] == false) [firstVariable setVariableValueWithVariables:variables];
             if ([secondVariable isValueSet] == false) [secondVariable setVariableValueWithVariables:variables];
-            Variable *result = [operator makeOperationWithFirstArgument:firstVariable SecondArgument:secondVariable];
+            Variable *result = [operator makeOperationWithFirstArgument:firstVariable secondArgument:secondVariable];
             [stack addObject:result];
         }
     }

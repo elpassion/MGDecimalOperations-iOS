@@ -8,6 +8,6 @@
 
 @property (nonatomic) NSInteger priority;
 
-- (Variable *)makeOperationWithFirstArgument:(Variable *)firstArgument SecondArgument:(Variable *)secondArgument;
+- (Variable *)makeOperationWithFirstArgument:(Variable *)firstArgument secondArgument:(Variable *)secondArgument;
 
 @end

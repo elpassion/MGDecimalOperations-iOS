@@ -12,7 +12,7 @@
     return self;
 }
 
-- (Variable *)makeOperationWithFirstArgument:(Variable *)firstArgument SecondArgument:(Variable *)secondArgument
+- (Variable *)makeOperationWithFirstArgument:(Variable *)firstArgument secondArgument:(Variable *)secondArgument
 {
     Variable *result = [[Variable alloc] initWithSymbol:@"" value:@"0"];
     result.value = [firstArgument.value decimalNumberByMultiplyingBy:secondArgument.value];
