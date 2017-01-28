@@ -24,7 +24,9 @@
  *  @return NSDecimalNumber that is result of operation wrote in operation parameter
  */
 
-- (NSDecimalNumber *)mathWithOperation:(NSString *)operation variablesString:(NSDictionary *)variables error:(NSError **)error;
+- (nullable NSDecimalNumber *)mathWithOperation:(NSString * _Nonnull)operation
+                                variablesString:(NSDictionary * _Nonnull)variables
+                                          error:(NSError * _Nullable * _Nullable)error;
 
 /**
  *  This is method for calculation operations wrote in String.
@@ -40,6 +42,8 @@
  *  @return NSDecimalNumber that is result of operation wrote in operation parameter
  */
 
-- (NSDecimalNumber *)mathWithOperation:(NSString *)operation variablesDecimal:(NSDictionary *)variables error:(NSError **)error;
+- (nullable NSDecimalNumber *)mathWithOperation:(NSString * _Nonnull)operation
+                               variablesDecimal:(NSDictionary * _Nonnull)variables
+                                          error:(NSError * _Nullable * _Nullable)error;
 
 @end
