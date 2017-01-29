@@ -22,6 +22,16 @@
  *                   When error occurs this variable will describe problem.
  *
  *  @return NSDecimalNumber that is result of operation wrote in operation parameter
+ *  @code
+ *  NSDictionary *variables = @{
+ *    @"a": "1"],
+ *    @"b": "2"]
+ *  };
+ *  NSString *operation = @"a + b"
+ *
+ *  NSDecimalNumber *result = [deciamlOperations mathWithOperation:operation
+ *                                                 variablesString:variables
+ *                                                           error:&error];
  */
 
 - (nullable NSDecimalNumber *)mathWithOperation:(NSString * _Nonnull)operation
@@ -40,6 +50,16 @@
  *                   pointer that you pass. When error occurs this variable will describe problem.
  *
  *  @return NSDecimalNumber that is result of operation wrote in operation parameter
+ *  @code
+ *  NSDictionary *variables = @{
+ *    @"a": [NSDecimalNumber decimalNumberWithString:@"1"],
+ *    @"b": [NSDecimalNumber decimalNumberWithString:@"2"]
+ *  };
+ *  NSString *operation = @"a + b"
+ *
+ *  NSDecimalNumber *result = [deciamlOperations mathWithOperation:operation
+ *                                                variablesDecimal:variables
+ *                                                           error:&error];
  */
 
 - (nullable NSDecimalNumber *)mathWithOperation:(NSString * _Nonnull)operation
