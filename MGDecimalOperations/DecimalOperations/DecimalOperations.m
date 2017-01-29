@@ -27,21 +27,28 @@
     return self;
 }
 
-- (NSDecimalNumber *)mathWithOperation:(NSString *)operation variablesString:(NSDictionary *)variables error:(NSError **)error
+- (NSDecimalNumber *)mathWithOperation:(NSString *)operation
+                       variablesString:(NSDictionary *)variables
+                                 error:(NSError **)error
 {
     NSDictionary *convertedVariables = [self.decimalsConverter decimalVariablesFromStringVariables:variables error:error];
     return [self mathWithOperation:operation variablesDecimal:convertedVariables error:error];
 }
 
-- (NSDecimalNumber *)mathWithOperation:(NSString *)operation variablesDecimal:(NSDictionary *)variables error:(NSError **)error
+- (NSDecimalNumber *)mathWithOperation:(NSString *)operation
+                      variablesDecimal:(NSDictionary *)variables
+                                 error:(NSError **)error
 {
     [self.operationValidator validateOperationWithString:operation error:error];
     if (*error) return nil;
     NSArray *separatedObjects = [self.operationConverter separatedObjectsWithString:operation];
-    [self.operationValidator validateOperationWithSeparatedObjects:separatedObjects variables:variables error:error];
+    [self.operationValidator validateOperationWithSeparatedObjects:separatedObjects
+                                                         variables:variables
+                                                             error:error];
     if (*error) return nil;
     NSArray *postfix = [[self operationCalculator] postfixExpressionWithSeparatedObjects:separatedObjects];
-    Variable *resultVariable = [[self operationCalculator] evaluatedResultWithPostfixArray:postfix variablesDictionary:variables];
+    Variable *resultVariable = [[self operationCalculator] evaluatedResultWithPostfixArray:postfix
+                                                                       variablesDictionary:variables];
     return [resultVariable value];
 }
 

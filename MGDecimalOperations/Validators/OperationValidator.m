@@ -29,7 +29,9 @@
     }
 }
 
-- (void)validateOperationWithSeparatedObjects:(NSArray *)separatedObjects variables:(NSDictionary *)variables error:(NSError **)error
+- (void)validateOperationWithSeparatedObjects:(NSArray *)separatedObjects
+                                    variables:(NSDictionary *)variables
+                                        error:(NSError **)error
 {
     if ([self areCurrentAndPreviousObjectsCanBeNeighbours:separatedObjects] == false) {
         *error = [self.errorFactory errorWithMessage:@"Wrong operation. Operator next to operator"];
@@ -68,7 +70,9 @@
 
 - (BOOL)isCorrectNumberOfOperatorsAndVariables:(NSString *)operation
 {
-    NSString *operationWithoutBrackets = [[operation stringByReplacingOccurrencesOfString:@"(" withString:@""] stringByReplacingOccurrencesOfString:@")" withString:@""];
+    NSString *operationWithoutOpenBrackets = [operation stringByReplacingOccurrencesOfString:@"(" withString:@""];
+    NSString *operationWithoutBrackets = [operationWithoutOpenBrackets stringByReplacingOccurrencesOfString:@")"
+                                                                                                 withString:@""];
     NSCharacterSet *characterSet = [NSCharacterSet characterSetWithCharactersInString:@" -+*/"];
     NSArray *operationInParts = [operationWithoutBrackets componentsSeparatedByCharactersInSet:characterSet];
     NSPredicate *noEmptyString = [NSPredicate predicateWithFormat:@"SELF != ''"];
@@ -98,7 +102,10 @@
         id <OperationObjectProtocol> previous = separatedObjects[i - 1];
 
         if ([current class] == [OpenBracket class] || [previous class] == [OpenBracket class]) return YES;
-        if ([current conformsToProtocol:@protocol(OperatorProtocol)] && [previous conformsToProtocol:@protocol(OperatorProtocol)]) return NO;
+        if ([current conformsToProtocol:@protocol(OperatorProtocol)] &&
+            [previous conformsToProtocol:@protocol(OperatorProtocol)]) {
+            return NO;
+        }
     }
     return YES;
 }
