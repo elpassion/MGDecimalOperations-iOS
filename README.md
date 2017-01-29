@@ -21,6 +21,12 @@ and after that execute
 pod install
 ```
 
+### Dependencies
+```
+Expecta ~> 1.0
+Specta ~> 1.0
+```
+
 ## Description
 The framework allows to make operations on ```NSDeciamlNumbers```. To perform an  operation you need to pass the operation written in ```String```, dictionary with variables and reference to ```NSError```. Framework keeps order of operations. You can use round brackets to establish order of operations. The name of variable is unlimited (all ASCII signs except mathematical operations signs and open brackets).
 
@@ -32,16 +38,16 @@ Basic supported mathematical operations:
 
 ## Usage
 To start using framework, you have to initialize ```MGDecimalOperations``` object.
-```
+```objective-c
 DecimalOperations *decimalOperations = [DecimalOperations new];
 ```
 After that you will be able to use these two methods:
-```
+```objective-c
 (NSDecimalNumber *)mathWithOperation:(NSString *)operation
                    variablesDecimal:(NSDictionary *)variables
                    error:(NSError **)error
 ```
-```
+```objective-c
 (NSDecimalNumber *)mathWithOperation:(NSString *)operation
                    variablesString:(NSDictionary *)variables
                    error:(NSError **)error
@@ -50,7 +56,7 @@ After that you will be able to use these two methods:
 The difference between them is that the first method accepts ```NSDictionary``` with ```NSDecimalNumbers``` and second accepts ```NSDictionary``` containing variables written in ```String``` (which will be converted to ```NSDecimalNumbers```).
 
 To use these methods you also need to create a pointer to ```NSError``` and pass it to method.
-```
+```objective-c
 NSError *error;
 ```
 
@@ -59,7 +65,7 @@ NSError *error;
 
 * Perform mathWithOperation ```a + b``` where ```a = 2.321378923``` and ```b = 3.210932892```
 
-```
+```objective-c
 NSDictionary *variables = @{
         @"a": [NSDecimalNumber decimalNumberWithString:@"2.321378923"],
         @"b": [NSDecimalNumber decimalNumberWithString:@"3.210932892"]
@@ -73,7 +79,7 @@ NSDecimalNumber *result = [deciamlOperations mathWithOperation:operation
 
 * Perform mathWithOperation ```alfa +((beta/gamma)* delta-(epsilon+dzeta )*eta)``` where ```alfa = 1```, ```beta = 2```, ```gamma = 3```, ```delta = 4```, ```epsilon = 5```, ```dzeta = 6```, ```eta = 7```.
 
-```
+```objective-c
 NSDictionary *variables = @{
         @"alfa": [NSDecimalNumber decimalNumberWithString:@"1"],
         @"beta": [NSDecimalNumber decimalNumberWithString:@"2"],
@@ -94,7 +100,7 @@ NSDecimalNumber *result = [decimalOperations mathWithOperation:operation
 
 * Perform mathWithOperation ```a4a + 44g*g4g``` where ```a4a = 2```, ```44g = 4```, ```g4g = 5```.
 
-```
+```objective-c
 NSDictionary *variables = @{
         @"a4a": @"2",
         @"44g": @"4",
