@@ -27,7 +27,8 @@
     NSArray *separatedObjects = [NSArray new];
 
     while (currentPositionInString < operationLength) {
-        currentObject = [self operationObjectWithString:operationWithoutSpaces currentPositionInString:currentPositionInString];
+        currentObject = [self operationObjectWithString:operationWithoutSpaces
+                                currentPositionInString:currentPositionInString];
         separatedObjects = [separatedObjects arrayByAddingObject:currentObject];
         currentPositionInString += currentObject.symbol.length;
     }
@@ -41,7 +42,10 @@
     while (currentPosition < operation.length) {
         UniChar character = [operation characterAtIndex:currentPosition];
         if ([self isOperator:character]) {
-            return object.length == 0 ? [self.operatorFactory operatorWithCharacter:character] : [[Variable alloc] initWithSymbol:object];
+            if (object.length == 0) {
+                return (id<OperationObjectProtocol>) [self.operatorFactory operatorWithCharacter:character];
+            }
+            return [[Variable alloc] initWithSymbol:object];
         } else {
             object = [object stringByAppendingFormat:@"%c", character];
             currentPosition++;
