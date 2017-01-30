@@ -10,3 +10,5 @@ before_install:
   - bundle exec pod install --repo-update
 script:
   - bundle exec scan
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
