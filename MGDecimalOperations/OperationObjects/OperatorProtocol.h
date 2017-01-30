@@ -6,7 +6,7 @@
 
 @protocol OperatorProtocol <NSObject, OperationObjectProtocol, NonValueObjectProtocol>
 
-@property (nonatomic) NSInteger priority;
+@property (nonatomic) NSUInteger priority;
 
 - (Variable *)makeOperationWithFirstArgument:(Variable *)firstArgument secondArgument:(Variable *)secondArgument;
 

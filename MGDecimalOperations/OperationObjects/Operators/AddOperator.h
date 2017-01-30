@@ -4,6 +4,6 @@
 @interface AddOperator : NSObject <OperatorProtocol>
 
 @property (nonatomic, strong) NSString *symbol;
-@property (nonatomic) NSInteger priority;
+@property (nonatomic) NSUInteger priority;
 
 @end
