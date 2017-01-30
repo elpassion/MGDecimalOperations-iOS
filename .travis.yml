@@ -1,0 +1,12 @@
+language: objective-c
+osx_image: xcode8
+cache: false
+sudo: false
+rvm:
+  - 2.3.0
+before_install:
+  - gem install bundler
+  - bundle install --without=documentation
+  - bundle exec pod install --repo-update
+script:
+  - bundle exec scan
