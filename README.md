@@ -1,7 +1,7 @@
 ![platform](https://img.shields.io/badge/platform-iOS-brightgreen.svg)
-![coverage](https://img.shields.io/badge/coverage-100%25-brightgreen.svg)
+[![codecov](https://codecov.io/gh/elpassion/MGDecimalOperations-iOS/branch/master/graph/badge.svg)](https://codecov.io/gh/elpassion/MGDecimalOperations-iOS)
 ![language](https://img.shields.io/badge/language-Objective--C-brightgreen.svg)
-![Build Status](https://api.travis-ci.org/elpassion/MGDecimalOperations-iOS.svg?branch=master)
+[![Build Status](https://travis-ci.org/elpassion/MGDecimalOperations-iOS.svg?branch=master)](https://travis-ci.org/elpassion/MGDecimalOperations-iOS)
 ![license](https://img.shields.io/badge/license-MIT-brightgreen.svg)
 
 # MGDecimalOperations
