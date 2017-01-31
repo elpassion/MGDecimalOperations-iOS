@@ -9,6 +9,6 @@ before_install:
   - bundle install --without=documentation
   - bundle exec pod install --repo-update
 script:
-  - bundle exec scan
+  - xcodebuild -scheme MGDecimalOperationsTests -workspace MGDecimalOperations.xcworkspace -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 6S,OS=10.0' -enableCodeCoverage YES build test | xcpretty --color
 after_success:
   - bash <(curl -s https://codecov.io/bash)
