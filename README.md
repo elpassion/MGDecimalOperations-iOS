@@ -15,7 +15,7 @@ MGDecimalOperations is a framework that simplyfy and makes clear operations on `
 ### [CocoaPods](https://cocoapods.org/)
 To install you need to add this line in your ```Podfile```
 ```
-pod 'MGDecimalOperations'
+pod 'MGDecimalOperations-iOS', '~> 1.0.0'
 ```
 and after that execute
 ```
