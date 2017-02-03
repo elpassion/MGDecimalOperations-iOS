@@ -31,7 +31,7 @@
 		13290810C84A5D3DB2B8A058 /* SubtractOperator.h in Headers */ = {isa = PBXBuildFile; fileRef = 132901AF2D1AD34B4094AB03 /* SubtractOperator.h */; };
 		1329089C1E7F41CF88E37E2C /* ErrorFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 13290DBE98BD099230EF1997 /* ErrorFactory.h */; };
 		132908E5B48178BB768B27DF /* OperationCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 13290AE1A740E76B2B723A22 /* OperationCalculator.m */; };
-		13290913BA6541FBFC9EC047 /* DecimalOperations.h in Headers */ = {isa = PBXBuildFile; fileRef = 132904269B5B4DFAE192B827 /* DecimalOperations.h */; };
+		13290913BA6541FBFC9EC047 /* DecimalOperations.h in Headers */ = {isa = PBXBuildFile; fileRef = 132904269B5B4DFAE192B827 /* DecimalOperations.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		132909417D8955EFACAB4218 /* AddOperator.m in Sources */ = {isa = PBXBuildFile; fileRef = 13290446E9304FC5EC34105D /* AddOperator.m */; };
 		13290994AC4A3F6F6FA8C5EB /* OperationCalculatorSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 132907B4885074F0C749A3C3 /* OperationCalculatorSpec.m */; };
 		13290A08B5348295891D9B8A /* OperatorFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 13290DEF479A63318C60C74C /* OperatorFactorySpec.m */; };
@@ -316,6 +316,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFFF3DEF1D6D947600CCA836 /* MGDecimalOperations.h in Headers */,
+				13290913BA6541FBFC9EC047 /* DecimalOperations.h in Headers */,
 				132903CD494ABE4C20FFE2FD /* Variable.h in Headers */,
 				13290146457D875E29EA8B42 /* AddOperator.h in Headers */,
 				13290C16EC1C85AFC263961F /* MultiplyOperator.h in Headers */,
@@ -323,7 +324,6 @@
 				13290810C84A5D3DB2B8A058 /* SubtractOperator.h in Headers */,
 				132906E292E41A345EF33636 /* OperatorFactory.h in Headers */,
 				1329089C1E7F41CF88E37E2C /* ErrorFactory.h in Headers */,
-				13290913BA6541FBFC9EC047 /* DecimalOperations.h in Headers */,
 				1329078FBDBA0D7632E22B30 /* OpenBracket.h in Headers */,
 				132903D604E54E6D8FF4DB95 /* OperatorProtocol.h in Headers */,
 				13290728C272DB64FC10CFF5 /* OperationObjectProtocol.h in Headers */,
