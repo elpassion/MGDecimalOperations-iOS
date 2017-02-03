@@ -1,4 +1,4 @@
-#import <UIKit/UIKit.h>
+#import <MGDecimalOperations/DecimalOperations.h>
 
 //! Project version number for MGDecimalOperations.
 FOUNDATION_EXPORT double MGDecimalOperationsVersionNumber;
