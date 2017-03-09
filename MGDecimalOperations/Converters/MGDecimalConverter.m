@@ -1,15 +1,15 @@
-#import "DecimalConverter.h"
-#import "ErrorFactory.h"
+#import "MGDecimalConverter.h"
+#import "MGErrorFactory.h"
 
-@interface DecimalConverter ()
+@interface MGDecimalConverter ()
 
-@property (nonatomic, strong) ErrorFactory *errorFactory;
+@property (nonatomic, strong) MGErrorFactory *errorFactory;
 
 @end
 
-@implementation DecimalConverter
+@implementation MGDecimalConverter
 
-- (instancetype)initWithErrorFactory:(ErrorFactory *)errorFactory
+- (instancetype)initWithErrorFactory:(MGErrorFactory *)errorFactory
 {
     if (self = [super init]) {
         _errorFactory = errorFactory;

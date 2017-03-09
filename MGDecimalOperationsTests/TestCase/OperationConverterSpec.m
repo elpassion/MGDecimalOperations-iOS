@@ -1,19 +1,19 @@
 #import "SpecHelper.h"
-#import "OperationConverter.h"
-#import "OperatorProtocol.h"
-#import "Variable.h"
-#import "AddOperator.h"
-#import "MultiplyOperator.h"
-#import "OpenBracket.h"
-#import "CloseBracket.h"
+#import "MGOperationConverter.h"
+#import "MGOperatorProtocol.h"
+#import "MGVariable.h"
+#import "MGAddOperator.h"
+#import "MGMultiplyOperator.h"
+#import "MGOpenBracket.h"
+#import "MGCloseBracket.h"
 
-SpecBegin(OperationConverter)
+SpecBegin(MGOperationConverter)
 
-describe(@"OperationConverter", ^{
-    __block OperationConverter *sut;
+describe(@"MGOperationConverter", ^{
+    __block MGOperationConverter *sut;
 
     beforeEach(^{
-        sut = [OperationConverter new];
+        sut = [MGOperationConverter new];
     });
 
     afterEach(^{
@@ -21,7 +21,7 @@ describe(@"OperationConverter", ^{
     });
 
     describe(@"operationObjectWithString", ^{
-        __block id <OperationObjectProtocol> result;
+        __block id <MGOperationObjectProtocol> result;
 
         context(@"when perform with 'aa+b' at index 0", ^{
             beforeEach(^{
@@ -53,7 +53,7 @@ describe(@"OperationConverter", ^{
             });
 
             it(@"should be kind of class FailedObject", ^{
-                expect(result).beKindOf([Variable class]);
+                expect(result).beKindOf([MGVariable class]);
             });
         });
 
@@ -92,7 +92,7 @@ describe(@"OperationConverter", ^{
 
             describe(@"1st element", ^{
                 it(@"should be instance of 'Variable'", ^{
-                    expect(result[0]).beInstanceOf([Variable class]);
+                    expect(result[0]).beInstanceOf([MGVariable class]);
                 });
 
                 it(@"should have correct value", ^{
@@ -102,7 +102,7 @@ describe(@"OperationConverter", ^{
 
             describe(@"2nd element", ^{
                 it(@"should be instance of 'AddOperator'", ^{
-                    expect(result[1]).beInstanceOf([AddOperator class]);
+                    expect(result[1]).beInstanceOf([MGAddOperator class]);
                 });
 
                 it(@"should have correct value", ^{
@@ -112,7 +112,7 @@ describe(@"OperationConverter", ^{
 
             describe(@"3rd element", ^{
                 it(@"should be instance of 'Variable'", ^{
-                    expect(result[2]).beInstanceOf([Variable class]);
+                    expect(result[2]).beInstanceOf([MGVariable class]);
                 });
 
                 it(@"should have correct value", ^{
@@ -122,7 +122,7 @@ describe(@"OperationConverter", ^{
 
             describe(@"4th element", ^{
                 it(@"should be instance of 'MultiplyOperator'", ^{
-                    expect(result[3]).beInstanceOf([MultiplyOperator class]);
+                    expect(result[3]).beInstanceOf([MGMultiplyOperator class]);
                 });
 
                 it(@"should have correct value", ^{
@@ -132,7 +132,7 @@ describe(@"OperationConverter", ^{
 
             describe(@"5th element", ^{
                 it(@"should be instance of 'Variable'", ^{
-                    expect(result[4]).beInstanceOf([Variable class]);
+                    expect(result[4]).beInstanceOf([MGVariable class]);
                 });
 
                 it(@"should have correct value", ^{
@@ -152,7 +152,7 @@ describe(@"OperationConverter", ^{
 
             describe(@"1st element", ^{
                 it(@"should be instance of 'Variable'", ^{
-                    expect(result[0]).beInstanceOf([Variable class]);
+                    expect(result[0]).beInstanceOf([MGVariable class]);
                 });
 
                 it(@"should have correct value", ^{
@@ -162,7 +162,7 @@ describe(@"OperationConverter", ^{
 
             describe(@"2nd element", ^{
                 it(@"should be instance of 'MultiplyOperator'", ^{
-                    expect(result[1]).beInstanceOf([MultiplyOperator class]);
+                    expect(result[1]).beInstanceOf([MGMultiplyOperator class]);
                 });
 
                 it(@"should have correct value", ^{
@@ -172,7 +172,7 @@ describe(@"OperationConverter", ^{
 
             describe(@"3rd element", ^{
                 it(@"should be instance of 'OpenBracket'", ^{
-                    expect(result[2]).beInstanceOf([OpenBracket class]);
+                    expect(result[2]).beInstanceOf([MGOpenBracket class]);
                 });
 
                 it(@"should have correct value", ^{
@@ -182,7 +182,7 @@ describe(@"OperationConverter", ^{
 
             describe(@"4th element", ^{
                 it(@"should be instance of 'Variable'", ^{
-                    expect(result[3]).beInstanceOf([Variable class]);
+                    expect(result[3]).beInstanceOf([MGVariable class]);
                 });
 
                 it(@"should have correct value", ^{
@@ -192,7 +192,7 @@ describe(@"OperationConverter", ^{
 
             describe(@"5th element", ^{
                 it(@"should be instance of 'AddOperator'", ^{
-                    expect(result[4]).beInstanceOf([AddOperator class]);
+                    expect(result[4]).beInstanceOf([MGAddOperator class]);
                 });
 
                 it(@"should have correct value", ^{
@@ -202,7 +202,7 @@ describe(@"OperationConverter", ^{
 
             describe(@"6th element", ^{
                 it(@"should be instance of 'Variable'", ^{
-                    expect(result[5]).beInstanceOf([Variable class]);
+                    expect(result[5]).beInstanceOf([MGVariable class]);
                 });
 
                 it(@"should have correct value", ^{
@@ -212,7 +212,7 @@ describe(@"OperationConverter", ^{
 
             describe(@"7th element", ^{
                 it(@"should be instance of 'CloseBracket'", ^{
-                    expect(result[6]).beInstanceOf([CloseBracket class]);
+                    expect(result[6]).beInstanceOf([MGCloseBracket class]);
                 });
 
                 it(@"should have correct value", ^{

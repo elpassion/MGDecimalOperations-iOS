@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 
-@interface ErrorFactory : NSObject
+@interface MGErrorFactory : NSObject
 
 - (NSError *)errorWithMessage:(NSString *)errorMessage;
 

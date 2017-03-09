@@ -1,6 +1,6 @@
-#import "ErrorFactory.h"
+#import "MGErrorFactory.h"
 
-@implementation ErrorFactory
+@implementation MGErrorFactory
 
 - (NSError *)errorWithMessage:(NSString *)errorMessage
 {

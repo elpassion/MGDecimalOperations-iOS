@@ -1,15 +1,15 @@
 #import "SpecHelper.h"
-#import "OperationValidator.h"
-#import "Variable.h"
-#import "AddOperator.h"
+#import "MGOperationValidator.h"
+#import "MGVariable.h"
+#import "MGAddOperator.h"
 
-SpecBegin(OperationValidator)
+SpecBegin(MGOperationValidator)
 
-    describe(@"OperationValidator", ^{
-        __block OperationValidator *sut;
+    describe(@"MGOperationValidator", ^{
+        __block MGOperationValidator *sut;
 
         beforeEach(^{
-            sut = [OperationValidator new];
+            sut = [MGOperationValidator new];
         });
 
         afterEach(^{
@@ -101,9 +101,9 @@ SpecBegin(OperationValidator)
             context(@"when perform with '1 + 1'", ^{
                 beforeEach(^{
                     inputValues = @[
-                            [[Variable alloc] initWithSymbol:@"a" value:@"1"],
-                            [AddOperator new],
-                            [[Variable alloc] initWithSymbol:@"b" value:@"1"]
+                            [[MGVariable alloc] initWithSymbol:@"a" value:@"1"],
+                            [MGAddOperator new],
+                            [[MGVariable alloc] initWithSymbol:@"b" value:@"1"]
                     ];
                     result = [sut areCurrentAndPreviousObjectsCanBeNeighbours:inputValues];
                 });
@@ -116,10 +116,10 @@ SpecBegin(OperationValidator)
             context(@"when perform with '56 ++ 4'", ^{
                 beforeEach(^{
                     inputValues = @[
-                            [[Variable alloc] initWithSymbol:@"a" value:@"56"],
-                            [AddOperator new],
-                            [AddOperator new],
-                            [[Variable alloc] initWithSymbol:@"b" value:@"4"]
+                            [[MGVariable alloc] initWithSymbol:@"a" value:@"56"],
+                            [MGAddOperator new],
+                            [MGAddOperator new],
+                            [[MGVariable alloc] initWithSymbol:@"b" value:@"4"]
                     ];
                     result = [sut areCurrentAndPreviousObjectsCanBeNeighbours:inputValues];
                 });
@@ -181,10 +181,10 @@ SpecBegin(OperationValidator)
                             @"a": [[NSDecimalNumber alloc] initWithString:@"2"]
                     };
                     NSArray *separatedObjects = @[
-                            [[Variable alloc] initWithSymbol:@"a"],
-                            [AddOperator new],
-                            [AddOperator new],
-                            [[Variable alloc] initWithSymbol:@"a"]
+                            [[MGVariable alloc] initWithSymbol:@"a"],
+                            [MGAddOperator new],
+                            [MGAddOperator new],
+                            [[MGVariable alloc] initWithSymbol:@"a"]
                     ];
                     [sut validateOperationWithSeparatedObjects:separatedObjects variables:variables error:&error];
                 });
@@ -204,9 +204,9 @@ SpecBegin(OperationValidator)
                             @"a": [[NSDecimalNumber alloc] initWithString:@"a"]
                     };
                     NSArray *separatedObjects = @[
-                            [[Variable alloc] initWithSymbol:@"a"],
-                            [AddOperator new],
-                            [[Variable alloc] initWithSymbol:@"b"]
+                            [[MGVariable alloc] initWithSymbol:@"a"],
+                            [MGAddOperator new],
+                            [[MGVariable alloc] initWithSymbol:@"b"]
                     ];
                     [sut validateOperationWithSeparatedObjects:separatedObjects variables:variables error:&error];
                 });

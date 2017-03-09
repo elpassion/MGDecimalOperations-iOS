@@ -1,10 +1,10 @@
 #import <Foundation/Foundation.h>
 
-@class ErrorFactory;
+@class MGErrorFactory;
 
-@interface DecimalConverter : NSObject
+@interface MGDecimalConverter : NSObject
 
-- (instancetype)initWithErrorFactory:(ErrorFactory *)errorFactory;
+- (instancetype)initWithErrorFactory:(MGErrorFactory *)errorFactory;
 
 - (NSDictionary *)decimalVariablesFromStringVariables:(NSDictionary *)variables error:(NSError **)error;
 - (BOOL)isCorrectNumber:(NSString *)variable;

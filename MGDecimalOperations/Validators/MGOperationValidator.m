@@ -1,21 +1,21 @@
-#import "OperationValidator.h"
-#import "ErrorFactory.h"
-#import "OperatorProtocol.h"
-#import "OpenBracket.h"
-#import "Variable.h"
+#import "MGOperationValidator.h"
+#import "MGErrorFactory.h"
+#import "MGOperatorProtocol.h"
+#import "MGOpenBracket.h"
+#import "MGVariable.h"
 
-@interface OperationValidator ()
+@interface MGOperationValidator ()
 
-@property (nonatomic, strong) ErrorFactory *errorFactory;
+@property (nonatomic, strong) MGErrorFactory *errorFactory;
 
 @end
 
-@implementation OperationValidator
+@implementation MGOperationValidator
 
 - (instancetype)init
 {
     if (self = [super init]) {
-        _errorFactory = [ErrorFactory new];
+        _errorFactory = [MGErrorFactory new];
     }
     return self;
 }
@@ -43,9 +43,9 @@
 - (BOOL)isDictionaryContainSeparatedObjects:(NSArray *)separatedObjects variables:(NSDictionary *)variables
 {
     for(NSUInteger i = 0; i < separatedObjects.count; i++){
-        id <OperationObjectProtocol> object = separatedObjects[i];
-        if ([object isKindOfClass:[Variable class]]){
-            Variable *variable = (Variable *)object;
+        id <MGOperationObjectProtocol> object = separatedObjects[i];
+        if ([object isKindOfClass:[MGVariable class]]){
+            MGVariable *variable = (MGVariable *)object;
             NSDecimalNumber *value = variables[variable.symbol];
             if (value == nil){
                 return false;
@@ -98,12 +98,12 @@
 - (BOOL)areCurrentAndPreviousObjectsCanBeNeighbours:(NSArray *)separatedObjects
 {
     for (NSUInteger i = 1; i < separatedObjects.count; i++) {
-        id <OperationObjectProtocol> current = separatedObjects[i];
-        id <OperationObjectProtocol> previous = separatedObjects[i - 1];
+        id <MGOperationObjectProtocol> current = separatedObjects[i];
+        id <MGOperationObjectProtocol> previous = separatedObjects[i - 1];
 
-        if ([current class] == [OpenBracket class] || [previous class] == [OpenBracket class]) return YES;
-        if ([current conformsToProtocol:@protocol(OperatorProtocol)] &&
-            [previous conformsToProtocol:@protocol(OperatorProtocol)]) {
+        if ([current class] == [MGOpenBracket class] || [previous class] == [MGOpenBracket class]) return YES;
+        if ([current conformsToProtocol:@protocol(MGOperatorProtocol)] &&
+            [previous conformsToProtocol:@protocol(MGOperatorProtocol)]) {
             return NO;
         }
     }

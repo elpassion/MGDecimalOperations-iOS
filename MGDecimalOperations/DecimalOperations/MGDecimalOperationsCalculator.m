@@ -1,28 +1,28 @@
-#import "DecimalOperations.h"
-#import "DecimalConverter.h"
-#import "Variable.h"
-#import "OperationValidator.h"
-#import "OperationCalculator.h"
-#import "OperationConverter.h"
+#import "MGDecimalOperations.h"
+#import "MGDecimalConverter.h"
+#import "MGVariable.h"
+#import "MGOperationValidator.h"
+#import "MGOperationCalculator.h"
+#import "MGOperationConverter.h"
 
-@interface DecimalOperations ()
+@interface MGDecimalOperationsCalculator ()
 
-@property (nonatomic, strong) DecimalConverter *decimalsConverter;
-@property (nonatomic, strong) OperationValidator *operationValidator;
-@property (nonatomic, strong) OperationCalculator *operationCalculator;
-@property (nonatomic, strong) OperationConverter *operationConverter;
+@property (nonatomic, strong) MGDecimalConverter *decimalsConverter;
+@property (nonatomic, strong) MGOperationValidator *operationValidator;
+@property (nonatomic, strong) MGOperationCalculator *operationCalculator;
+@property (nonatomic, strong) MGOperationConverter *operationConverter;
 
 @end
 
-@implementation DecimalOperations
+@implementation MGDecimalOperationsCalculator
 
 - (instancetype)init
 {
     if (self = [super init]) {
-        _decimalsConverter = [DecimalConverter new];
-        _operationValidator = [OperationValidator new];
-        _operationCalculator = [OperationCalculator new];
-        _operationConverter = [OperationConverter new];
+        _decimalsConverter = [MGDecimalConverter new];
+        _operationValidator = [MGOperationValidator new];
+        _operationCalculator = [MGOperationCalculator new];
+        _operationConverter = [MGOperationConverter new];
     }
     return self;
 }
@@ -47,7 +47,7 @@
                                                              error:error];
     if (*error) return nil;
     NSArray *postfix = [[self operationCalculator] postfixExpressionWithSeparatedObjects:separatedObjects];
-    Variable *resultVariable = [[self operationCalculator] evaluatedResultWithPostfixArray:postfix
+    MGVariable *resultVariable = [[self operationCalculator] evaluatedResultWithPostfixArray:postfix
                                                                        variablesDictionary:variables];
     return [resultVariable value];
 }

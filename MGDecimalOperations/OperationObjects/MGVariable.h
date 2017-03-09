@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
-#import "OperationObjectProtocol.h"
+#import "MGOperationObjectProtocol.h"
 
-@interface Variable : NSObject <OperationObjectProtocol>
+@interface MGVariable : NSObject <MGOperationObjectProtocol>
 
 @property (nonatomic, strong) NSString *symbol;
 @property (nonatomic, strong) NSDecimalNumber *value;

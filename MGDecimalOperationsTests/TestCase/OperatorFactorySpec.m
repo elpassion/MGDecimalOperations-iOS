@@ -1,19 +1,19 @@
 #import "SpecHelper.h"
-#import "OperatorFactory.h"
-#import "AddOperator.h"
-#import "SubtractOperator.h"
-#import "MultiplyOperator.h"
-#import "DivideOperator.h"
-#import "OpenBracket.h"
-#import "CloseBracket.h"
+#import "MGOperatorFactory.h"
+#import "MGAddOperator.h"
+#import "MGSubtractOperator.h"
+#import "MGMultiplyOperator.h"
+#import "MGDivideOperator.h"
+#import "MGOpenBracket.h"
+#import "MGCloseBracket.h"
 
-SpecBegin(OperatorFactory)
+SpecBegin(MGOperatorFactory)
 
-describe(@"OperatorFactory", ^{
-    __block OperatorFactory *sut;
+describe(@"MGOperatorFactory", ^{
+    __block MGOperatorFactory *sut;
 
     beforeEach(^{
-        sut = [OperatorFactory new];
+        sut = [MGOperatorFactory new];
     });
 
     afterEach(^{
@@ -22,73 +22,73 @@ describe(@"OperatorFactory", ^{
 
     describe(@"operatorWithCharacter", ^{
         context(@"when perform with '+'", ^{
-            __block id <OperationObjectProtocol> result;
+            __block id <MGOperationObjectProtocol> result;
             beforeEach(^{
                 result = [sut operatorWithCharacter:'+'];
             });
 
             it(@"should return correct object", ^{
-                expect(result).to.beInstanceOf([AddOperator class]);
+                expect(result).to.beInstanceOf([MGAddOperator class]);
             });
         });
 
         context(@"when perform with '-'", ^{
-            __block id <OperationObjectProtocol> result;
+            __block id <MGOperationObjectProtocol> result;
             beforeEach(^{
                 result = [sut operatorWithCharacter:'-'];
             });
 
             it(@"should return correct object", ^{
-                expect(result).to.beInstanceOf([SubtractOperator class]);
+                expect(result).to.beInstanceOf([MGSubtractOperator class]);
             });
         });
 
         context(@"when perform with '*'", ^{
-            __block id <OperationObjectProtocol> result;
+            __block id <MGOperationObjectProtocol> result;
             beforeEach(^{
                 result = [sut operatorWithCharacter:'*'];
             });
 
             it(@"should return correct object", ^{
-                expect(result).to.beInstanceOf([MultiplyOperator class]);
+                expect(result).to.beInstanceOf([MGMultiplyOperator class]);
             });
         });
 
         context(@"when perform with '/'", ^{
-            __block id <OperationObjectProtocol> result;
+            __block id <MGOperationObjectProtocol> result;
             beforeEach(^{
                 result = [sut operatorWithCharacter:'/'];
             });
 
             it(@"should return correct object", ^{
-                expect(result).to.beInstanceOf([DivideOperator class]);
+                expect(result).to.beInstanceOf([MGDivideOperator class]);
             });
         });
 
         context(@"when perform with '('", ^{
-            __block id <OperationObjectProtocol> result;
+            __block id <MGOperationObjectProtocol> result;
             beforeEach(^{
                 result = [sut operatorWithCharacter:'('];
             });
 
             it(@"should return correct object", ^{
-                expect(result).to.beInstanceOf([OpenBracket class]);
+                expect(result).to.beInstanceOf([MGOpenBracket class]);
             });
         });
 
         context(@"when perform with ')'", ^{
-            __block id <OperationObjectProtocol> result;
+            __block id <MGOperationObjectProtocol> result;
             beforeEach(^{
                 result = [sut operatorWithCharacter:')'];
             });
 
             it(@"should return correct object", ^{
-                expect(result).to.beInstanceOf([CloseBracket class]);
+                expect(result).to.beInstanceOf([MGCloseBracket class]);
             });
         });
 
         context(@"when perform with 'a'", ^{
-            __block id <OperationObjectProtocol> result;
+            __block id <MGOperationObjectProtocol> result;
             beforeEach(^{
                 result = [sut operatorWithCharacter:'a'];
             });

@@ -1,13 +1,13 @@
 #import "SpecHelper.h"
-#import "DecimalOperations.h"
+#import "MGDecimalOperationsCalculator.h"
 
-SpecBegin(DecimalOperations)
+SpecBegin(MGDecimalOperationsCalculator)
 
-    describe(@"DecimalOperations", ^{
-        __block DecimalOperations *sut;
+    describe(@"MGDecimalOperationsCalculator", ^{
+        __block MGDecimalOperationsCalculator *sut;
 
         beforeEach(^{
-            sut = [DecimalOperations new];
+            sut = [MGDecimalOperationsCalculator new];
         });
 
         afterEach(^{

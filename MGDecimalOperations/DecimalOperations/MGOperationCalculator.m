@@ -1,11 +1,11 @@
-#import "OperationCalculator.h"
-#import "OperationObjectProtocol.h"
-#import "OperatorProtocol.h"
-#import "Variable.h"
-#import "OpenBracket.h"
-#import "CloseBracket.h"
+#import "MGOperationCalculator.h"
+#import "MGOperationObjectProtocol.h"
+#import "MGOperatorProtocol.h"
+#import "MGVariable.h"
+#import "MGOpenBracket.h"
+#import "MGCloseBracket.h"
 
-@implementation OperationCalculator
+@implementation MGOperationCalculator
 
 - (NSArray *)postfixExpressionWithSeparatedObjects:(NSArray *)separatedObjects
 {
@@ -15,22 +15,22 @@
     NSUInteger operationObjectsCount = operationObjects.count;
 
     for (int i = 0; i < operationObjectsCount; i++) {
-        id <OperationObjectProtocol> operationObject = operationObjects.firstObject;
+        id <MGOperationObjectProtocol> operationObject = operationObjects.firstObject;
         [operationObjects removeObjectAtIndex:0];
-        if ([operationObject isKindOfClass:[Variable class]]) {
+        if ([operationObject isKindOfClass:[MGVariable class]]) {
             [output addObject:operationObject];
-        } else if ([operationObject isKindOfClass:[OpenBracket class]]) {
+        } else if ([operationObject isKindOfClass:[MGOpenBracket class]]) {
             [stack addObject:operationObject];
-        } else if ([operationObject isKindOfClass:[CloseBracket class]]) {
+        } else if ([operationObject isKindOfClass:[MGCloseBracket class]]) {
             while (true) {
-                id <NonValueObjectProtocol> fromStack = stack.lastObject;
+                id <MGNonValueObjectProtocol> fromStack = stack.lastObject;
                 [stack removeLastObject];
-                if ([fromStack isKindOfClass:[OpenBracket class]]) break;
+                if ([fromStack isKindOfClass:[MGOpenBracket class]]) break;
                 [output addObject:fromStack];
             }
-        } else if ([stack.lastObject conformsToProtocol:@protocol(OperatorProtocol)]) {
-            id <OperatorProtocol> stackOperator = stack.lastObject;
-            id <OperatorProtocol> currentOperator = (id <OperatorProtocol>) operationObject;
+        } else if ([stack.lastObject conformsToProtocol:@protocol(MGOperatorProtocol)]) {
+            id <MGOperatorProtocol> stackOperator = stack.lastObject;
+            id <MGOperatorProtocol> currentOperator = (id <MGOperatorProtocol>) operationObject;
             if (stackOperator.priority >= currentOperator.priority && stack.count > 0) {
                 [stack removeLastObject];
                 [output addObject:stackOperator];
@@ -43,33 +43,33 @@
 
     NSUInteger stackLength = stack.count;
     for (int i = 0; i < stackLength; i++) {
-        id <OperationObjectProtocol> operationObject = [stack lastObject];
+        id <MGOperationObjectProtocol> operationObject = [stack lastObject];
         [stack removeLastObject];
         [output addObject:operationObject];
     }
     return output.copy;
 }
 
-- (Variable *)evaluatedResultWithPostfixArray:(NSArray *)postfixArray variablesDictionary:(NSDictionary *)variables
+- (MGVariable *)evaluatedResultWithPostfixArray:(NSArray *)postfixArray variablesDictionary:(NSDictionary *)variables
 {
     NSMutableArray *startPostfixArray = [postfixArray mutableCopy];
     NSMutableArray *stack = [NSMutableArray new];
     NSUInteger postfixArrayLength = postfixArray.count;
 
     for (int i = 0; i < postfixArrayLength; i++) {
-        id <OperationObjectProtocol> operationObject = [startPostfixArray firstObject];
+        id <MGOperationObjectProtocol> operationObject = [startPostfixArray firstObject];
         [startPostfixArray removeObjectAtIndex:0];
-        if ([operationObject isKindOfClass:[Variable class]]) {
+        if ([operationObject isKindOfClass:[MGVariable class]]) {
             [stack addObject:operationObject];
         } else {
-            id <OperatorProtocol> operator = (id <OperatorProtocol>) operationObject;
-            Variable *secondVariable = [stack lastObject];
+            id <MGOperatorProtocol> operator = (id <MGOperatorProtocol>) operationObject;
+            MGVariable *secondVariable = [stack lastObject];
             [stack removeLastObject];
-            Variable *firstVariable = [stack lastObject];
+            MGVariable *firstVariable = [stack lastObject];
             [stack removeLastObject];
             if (firstVariable.value == nil) firstVariable.value = variables[firstVariable.symbol];
             if (secondVariable.value == nil) secondVariable.value = variables[secondVariable.symbol];
-            Variable *result = [operator makeOperationWithFirstArgument:firstVariable secondArgument:secondVariable];
+            MGVariable *result = [operator makeOperationWithFirstArgument:firstVariable secondArgument:secondVariable];
             [stack addObject:result];
         }
     }

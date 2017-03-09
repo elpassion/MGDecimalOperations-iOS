@@ -1,19 +1,19 @@
-#import "OperationConverter.h"
-#import "OperatorFactory.h"
-#import "Variable.h"
+#import "MGOperationConverter.h"
+#import "MGOperatorFactory.h"
+#import "MGVariable.h"
 
-@interface OperationConverter ()
+@interface MGOperationConverter ()
 
-@property (nonatomic, strong) OperatorFactory *operatorFactory;
+@property (nonatomic, strong) MGOperatorFactory *operatorFactory;
 
 @end
 
-@implementation OperationConverter
+@implementation MGOperationConverter
 
 - (instancetype)init
 {
     if (self = [super init]) {
-        _operatorFactory = [OperatorFactory new];
+        _operatorFactory = [MGOperatorFactory new];
     }
     return self;
 }
@@ -23,7 +23,7 @@
     NSString *operationWithoutSpaces = [operation stringByReplacingOccurrencesOfString:@" " withString:@""];
     NSUInteger currentPositionInString = 0;
     NSUInteger operationLength = operationWithoutSpaces.length;
-    id <OperationObjectProtocol> currentObject;
+    id <MGOperationObjectProtocol> currentObject;
     NSArray *separatedObjects = [NSArray new];
 
     while (currentPositionInString < operationLength) {
@@ -35,7 +35,7 @@
     return separatedObjects;
 }
 
-- (id <OperationObjectProtocol>)operationObjectWithString:(NSString *)operation currentPositionInString:(NSUInteger)currentPosition
+- (id <MGOperationObjectProtocol>)operationObjectWithString:(NSString *)operation currentPositionInString:(NSUInteger)currentPosition
 {
     NSString *object = @"";
 
@@ -43,15 +43,15 @@
         UniChar character = [operation characterAtIndex:currentPosition];
         if ([self isOperator:character]) {
             if (object.length == 0) {
-                return (id<OperationObjectProtocol>) [self.operatorFactory operatorWithCharacter:character];
+                return (id<MGOperationObjectProtocol>) [self.operatorFactory operatorWithCharacter:character];
             }
-            return [[Variable alloc] initWithSymbol:object];
+            return [[MGVariable alloc] initWithSymbol:object];
         } else {
             object = [object stringByAppendingFormat:@"%c", character];
             currentPosition++;
         }
     }
-    return [[Variable alloc] initWithSymbol:object];
+    return [[MGVariable alloc] initWithSymbol:object];
 }
 
 - (BOOL)isOperator:(UniChar)character

@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 
-@interface OperationValidator : NSObject
+@interface MGOperationValidator : NSObject
 
 - (void)validateOperationWithString:(NSString *)operation error:(NSError **)error;
 - (void)validateOperationWithSeparatedObjects:(NSArray *)separatedObjects variables:(NSDictionary *)variables error:(NSError **)error;

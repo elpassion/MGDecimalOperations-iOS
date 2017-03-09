@@ -1,15 +1,15 @@
 #import "SpecHelper.h"
-#import "DecimalConverter.h"
-#import "ErrorFactory.h"
+#import "MGDecimalConverter.h"
+#import "MGErrorFactory.h"
 
-SpecBegin(DecimalsConverter)
+SpecBegin(MGDecimalsConverter)
 
-    describe(@"DecimalConverter", ^{
-        __block DecimalConverter *sut;
+    describe(@"MGDecimalConverter", ^{
+        __block MGDecimalConverter *sut;
 
         beforeEach(^{
-            ErrorFactory *errorFactory = [ErrorFactory new];
-            sut = [[DecimalConverter alloc] initWithErrorFactory:errorFactory];
+            MGErrorFactory *errorFactory = [MGErrorFactory new];
+            sut = [[MGDecimalConverter alloc] initWithErrorFactory:errorFactory];
         });
 
         afterEach(^{

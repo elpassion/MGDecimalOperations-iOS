@@ -1,6 +1,6 @@
-#import "Variable.h"
+#import "MGVariable.h"
 
-@implementation Variable
+@implementation MGVariable
 
 - (instancetype)initWithSymbol:(NSString *)symbol
 {

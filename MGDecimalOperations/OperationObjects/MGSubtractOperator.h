@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
-#import "OperatorProtocol.h"
+#import "MGOperatorProtocol.h"
 
-@interface DivideOperator : NSObject <OperatorProtocol>
+@interface MGSubtractOperator : NSObject <MGOperatorProtocol>
 
 @property (nonatomic, strong) NSString *symbol;
 @property (nonatomic) NSUInteger priority;

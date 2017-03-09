@@ -1,20 +1,20 @@
 #import "SpecHelper.h"
-#import "OperationCalculator.h"
-#import "AddOperator.h"
-#import "Variable.h"
-#import "MultiplyOperator.h"
-#import "DivideOperator.h"
-#import "SubtractOperator.h"
-#import "OpenBracket.h"
-#import "CloseBracket.h"
+#import "MGOperationCalculator.h"
+#import "MGAddOperator.h"
+#import "MGVariable.h"
+#import "MGMultiplyOperator.h"
+#import "MGDivideOperator.h"
+#import "MGSubtractOperator.h"
+#import "MGOpenBracket.h"
+#import "MGCloseBracket.h"
 
-SpecBegin(OperationCalculator)
+SpecBegin(MGOperationCalculator)
 
-    describe(@"OperationCalculator", ^{
-        __block OperationCalculator *sut;
+    describe(@"MGOperationCalculator", ^{
+        __block MGOperationCalculator *sut;
 
         beforeEach(^{
-            sut = [OperationCalculator new];
+            sut = [MGOperationCalculator new];
         });
 
         afterEach(^{
@@ -28,15 +28,15 @@ SpecBegin(OperationCalculator)
             context(@"when perform with '((3+5)*7)'", ^{
                 beforeEach(^{
                     inputObjects = @[
-                            [OpenBracket new],
-                            [OpenBracket new],
-                            [[Variable alloc] initWithSymbol:@"3"],
-                            [AddOperator new],
-                            [[Variable alloc] initWithSymbol:@"5"],
-                            [CloseBracket new],
-                            [MultiplyOperator new],
-                            [[Variable alloc] initWithSymbol:@"7"],
-                            [CloseBracket new]
+                            [MGOpenBracket new],
+                            [MGOpenBracket new],
+                            [[MGVariable alloc] initWithSymbol:@"3"],
+                            [MGAddOperator new],
+                            [[MGVariable alloc] initWithSymbol:@"5"],
+                            [MGCloseBracket new],
+                            [MGMultiplyOperator new],
+                            [[MGVariable alloc] initWithSymbol:@"7"],
+                            [MGCloseBracket new]
                     ];
                     result = [sut postfixExpressionWithSeparatedObjects:inputObjects];
                 });
@@ -61,11 +61,11 @@ SpecBegin(OperationCalculator)
             context(@"when perform with '2*2+2'", ^{
                 beforeEach(^{
                     inputObjects = @[
-                            [[Variable alloc] initWithSymbol:@"2"],
-                            [MultiplyOperator new],
-                            [[Variable alloc] initWithSymbol:@"2"],
-                            [AddOperator new],
-                            [[Variable alloc] initWithSymbol:@"2"]
+                            [[MGVariable alloc] initWithSymbol:@"2"],
+                            [MGMultiplyOperator new],
+                            [[MGVariable alloc] initWithSymbol:@"2"],
+                            [MGAddOperator new],
+                            [[MGVariable alloc] initWithSymbol:@"2"]
                     ];
                     result = [sut postfixExpressionWithSeparatedObjects:inputObjects];
                 });
@@ -90,17 +90,17 @@ SpecBegin(OperationCalculator)
             context(@"when perform with '((3/2*5)+6)'", ^{
                 beforeEach(^{
                     inputObjects = @[
-                            [OpenBracket new],
-                            [OpenBracket new],
-                            [[Variable alloc] initWithSymbol:@"3"],
-                            [DivideOperator new],
-                            [[Variable alloc] initWithSymbol:@"2"],
-                            [MultiplyOperator new],
-                            [[Variable alloc] initWithSymbol:@"5"],
-                            [CloseBracket new],
-                            [AddOperator new],
-                            [[Variable alloc] initWithSymbol:@"6"],
-                            [CloseBracket new],
+                            [MGOpenBracket new],
+                            [MGOpenBracket new],
+                            [[MGVariable alloc] initWithSymbol:@"3"],
+                            [MGDivideOperator new],
+                            [[MGVariable alloc] initWithSymbol:@"2"],
+                            [MGMultiplyOperator new],
+                            [[MGVariable alloc] initWithSymbol:@"5"],
+                            [MGCloseBracket new],
+                            [MGAddOperator new],
+                            [[MGVariable alloc] initWithSymbol:@"6"],
+                            [MGCloseBracket new],
                     ];
                     result = [sut postfixExpressionWithSeparatedObjects:inputObjects];
                 });
@@ -127,19 +127,19 @@ SpecBegin(OperationCalculator)
             context(@"when perform with '3+5*7/3/(3-5)'", ^{
                 beforeEach(^{
                     inputObjects = @[
-                            [[Variable alloc] initWithSymbol:@"3"],
-                            [AddOperator new],
-                            [[Variable alloc] initWithSymbol:@"5"],
-                            [MultiplyOperator new],
-                            [[Variable alloc] initWithSymbol:@"7"],
-                            [DivideOperator new],
-                            [[Variable alloc] initWithSymbol:@"3"],
-                            [DivideOperator new],
-                            [OpenBracket new],
-                            [[Variable alloc] initWithSymbol:@"3"],
-                            [SubtractOperator new],
-                            [[Variable alloc] initWithSymbol:@"5"],
-                            [CloseBracket new]
+                            [[MGVariable alloc] initWithSymbol:@"3"],
+                            [MGAddOperator new],
+                            [[MGVariable alloc] initWithSymbol:@"5"],
+                            [MGMultiplyOperator new],
+                            [[MGVariable alloc] initWithSymbol:@"7"],
+                            [MGDivideOperator new],
+                            [[MGVariable alloc] initWithSymbol:@"3"],
+                            [MGDivideOperator new],
+                            [MGOpenBracket new],
+                            [[MGVariable alloc] initWithSymbol:@"3"],
+                            [MGSubtractOperator new],
+                            [[MGVariable alloc] initWithSymbol:@"5"],
+                            [MGCloseBracket new]
                     ];
                     result = [sut postfixExpressionWithSeparatedObjects:inputObjects];
                 });
@@ -170,23 +170,23 @@ SpecBegin(OperationCalculator)
             context(@"when perform with '2+((2+2)/(2*2)*2)'", ^{
                 beforeEach(^{
                     inputObjects = @[
-                            [[Variable alloc] initWithSymbol:@"a"],
-                            [AddOperator new],
-                            [OpenBracket new],
-                            [OpenBracket new],
-                            [[Variable alloc] initWithSymbol:@"a"],
-                            [AddOperator new],
-                            [[Variable alloc] initWithSymbol:@"a"],
-                            [CloseBracket new],
-                            [DivideOperator new],
-                            [OpenBracket new],
-                            [[Variable alloc] initWithSymbol:@"a"],
-                            [MultiplyOperator new],
-                            [[Variable alloc] initWithSymbol:@"a"],
-                            [CloseBracket new],
-                            [MultiplyOperator new],
-                            [[Variable alloc] initWithSymbol:@"a"],
-                            [CloseBracket new]
+                            [[MGVariable alloc] initWithSymbol:@"a"],
+                            [MGAddOperator new],
+                            [MGOpenBracket new],
+                            [MGOpenBracket new],
+                            [[MGVariable alloc] initWithSymbol:@"a"],
+                            [MGAddOperator new],
+                            [[MGVariable alloc] initWithSymbol:@"a"],
+                            [MGCloseBracket new],
+                            [MGDivideOperator new],
+                            [MGOpenBracket new],
+                            [[MGVariable alloc] initWithSymbol:@"a"],
+                            [MGMultiplyOperator new],
+                            [[MGVariable alloc] initWithSymbol:@"a"],
+                            [MGCloseBracket new],
+                            [MGMultiplyOperator new],
+                            [[MGVariable alloc] initWithSymbol:@"a"],
+                            [MGCloseBracket new]
                     ];
 
                     result = [sut postfixExpressionWithSeparatedObjects:inputObjects];
@@ -217,18 +217,18 @@ SpecBegin(OperationCalculator)
         });
 
         describe(@"evaluatedResultWithPostfixArray", ^{
-            __block Variable *result;
+            __block MGVariable *result;
             __block NSArray *postfixArray;
             __block NSDictionary *inputVariables;
 
             context(@"when perform with 'a b + c *'", ^{
                 beforeEach(^{
                     postfixArray = @[
-                            [[Variable alloc] initWithSymbol:@"a"],
-                            [[Variable alloc] initWithSymbol:@"b"],
-                            [AddOperator new],
-                            [[Variable alloc] initWithSymbol:@"c"],
-                            [MultiplyOperator new]
+                            [[MGVariable alloc] initWithSymbol:@"a"],
+                            [[MGVariable alloc] initWithSymbol:@"b"],
+                            [MGAddOperator new],
+                            [[MGVariable alloc] initWithSymbol:@"c"],
+                            [MGMultiplyOperator new]
                     ];
                     inputVariables = @{
                             @"a": [[NSDecimalNumber alloc] initWithString:@"3"],
@@ -246,13 +246,13 @@ SpecBegin(OperationCalculator)
             context(@"when perform with 'a  b  +  c  c  /  +'", ^{
                 beforeEach(^{
                     postfixArray = @[
-                            [[Variable alloc] initWithSymbol:@"a"],
-                            [[Variable alloc] initWithSymbol:@"b"],
-                            [AddOperator new],
-                            [[Variable alloc] initWithSymbol:@"c"],
-                            [[Variable alloc] initWithSymbol:@"c"],
-                            [DivideOperator new],
-                            [AddOperator new]
+                            [[MGVariable alloc] initWithSymbol:@"a"],
+                            [[MGVariable alloc] initWithSymbol:@"b"],
+                            [MGAddOperator new],
+                            [[MGVariable alloc] initWithSymbol:@"c"],
+                            [[MGVariable alloc] initWithSymbol:@"c"],
+                            [MGDivideOperator new],
+                            [MGAddOperator new]
                     ];
                     inputVariables = @{
                             @"a": [[NSDecimalNumber alloc] initWithString:@"3"],

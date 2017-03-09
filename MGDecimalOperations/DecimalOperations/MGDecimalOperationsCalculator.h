@@ -3,11 +3,11 @@
 @class Variable;
 
 /**
- *  The 'DecimalOperations' class is responsible for execution 
+ *  The 'MGDecimalOperationsCalculator' class is responsible for execution 
  *  operations on NSDecimalNumbers wrote in String.
  */
 
-@interface DecimalOperations : NSObject
+@interface MGDecimalOperationsCalculator : NSObject
 
 /**
  *  This is method for calculate operations wrote in String. 

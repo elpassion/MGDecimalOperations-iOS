@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 
-@protocol OperationObjectProtocol <NSObject>
+@protocol MGOperationObjectProtocol <NSObject>
 
 @property (nonatomic, strong) NSString *symbol;
 
