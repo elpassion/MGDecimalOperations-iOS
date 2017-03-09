@@ -65,7 +65,7 @@
 		1329010D9B24DD6762F01C7E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		132902089A57F9AB74084656 /* OperationValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OperationValidator.m; sourceTree = "<group>"; };
 		1329024350ADA44111971C04 /* DecimalOperationsSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DecimalOperationsSpec.m; sourceTree = "<group>"; };
-		132902FC893A282AD3BE8572 /* OperationCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperationCalculator.h; sourceTree = "<group>"; };
+		132902FC893A282AD3BE8572 /* OperationCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OperationCalculator.h; path = ../DecimalOperations/OperationCalculator.h; sourceTree = "<group>"; };
 		132903C40C708E69BFFA5E18 /* DecimalOperations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DecimalOperations.m; path = DecimalOperations/DecimalOperations.m; sourceTree = "<group>"; };
 		1329042280F5581C262C9ED2 /* OperationValidatorSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OperationValidatorSpec.m; sourceTree = "<group>"; };
 		132904269B5B4DFAE192B827 /* DecimalOperations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DecimalOperations.h; path = DecimalOperations/DecimalOperations.h; sourceTree = "<group>"; };
@@ -77,7 +77,7 @@
 		132909AB71B05A7B6E2F5D59 /* OperationValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperationValidator.h; sourceTree = "<group>"; };
 		132909DB9DB71F036BB04005 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		13290AC490BF9CA19067CE1C /* OperatorProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperatorProtocol.h; sourceTree = "<group>"; };
-		13290AE1A740E76B2B723A22 /* OperationCalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OperationCalculator.m; sourceTree = "<group>"; };
+		13290AE1A740E76B2B723A22 /* OperationCalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OperationCalculator.m; path = ../DecimalOperations/OperationCalculator.m; sourceTree = "<group>"; };
 		13290B0DE6895920C02F108A /* DecimalConverterSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DecimalConverterSpec.m; sourceTree = "<group>"; };
 		13290C051DD460F71EAB2A8D /* DecimalConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DecimalConverter.m; sourceTree = "<group>"; };
 		13290C43AF09CEB35E22E75E /* OperatorFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OperatorFactory.m; sourceTree = "<group>"; };
@@ -172,17 +172,10 @@
 				13290C051DD460F71EAB2A8D /* DecimalConverter.m */,
 				13290760C389599B76D34A92 /* OperationConverter.h */,
 				13290DF481910291C035F747 /* OperationConverter.m */,
+				13290AE1A740E76B2B723A22 /* OperationCalculator.m */,
+				132902FC893A282AD3BE8572 /* OperationCalculator.h */,
 			);
 			path = Converters;
-			sourceTree = "<group>";
-		};
-		132906FE1AE9B667BEFA812C /* DecimalOperations */ = {
-			isa = PBXGroup;
-			children = (
-				132902FC893A282AD3BE8572 /* OperationCalculator.h */,
-				13290AE1A740E76B2B723A22 /* OperationCalculator.m */,
-			);
-			path = DecimalOperations;
 			sourceTree = "<group>";
 		};
 		13290A45C00BE578A217F0E4 /* SupportingFiles */ = {
@@ -252,7 +245,6 @@
 				132904269B5B4DFAE192B827 /* DecimalOperations.h */,
 				132903C40C708E69BFFA5E18 /* DecimalOperations.m */,
 				132905C29904993700AD0991 /* Converters */,
-				132906FE1AE9B667BEFA812C /* DecimalOperations */,
 				13290CC6B12F82F455F5E69C /* Factory */,
 				132902176FD5ED5B3AA8B5A9 /* OperationObjects */,
 				13290A45C00BE578A217F0E4 /* SupportingFiles */,

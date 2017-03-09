@@ -9,6 +9,6 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '8.0'
   s.source                = { :git => 'https://github.com/elpassion/MGDecimalOperations-iOS.git', :tag => s.version }
   s.source_files          = 'MGDecimalOperations/**/*{h,m}'
-  s.private_header_files  = ['MGDecimalOperations/Converters/*.h', 'MGDecimalOperations/DecimalOperations/OperationCalculator.h', 'MGDecimalOperations/Factory/*.h', 'MGDecimalOperations/OperationObjects/*.h', 'MGDecimalOperations/Validators/*.h']
+  s.private_header_files  = ['MGDecimalOperations/Converters/*.h', 'MGDecimalOperations/Factory/*.h', 'MGDecimalOperations/OperationObjects/*.h', 'MGDecimalOperations/Validators/*.h']
   s.requires_arc          = true
 end
