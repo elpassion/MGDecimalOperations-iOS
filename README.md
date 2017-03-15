@@ -15,7 +15,7 @@ MGDecimalOperations is a framework that simplyfy and makes clear operations on `
 ### [CocoaPods](https://cocoapods.org/)
 To install you need to add this line in your ```Podfile```
 ```
-pod 'MGDecimalOperations-iOS', '~> 1.0.0'
+pod 'MGDecimalOperations', '~> 1.0.0'
 ```
 and after that execute
 ```
@@ -38,9 +38,9 @@ Basic supported mathematical operations:
 * ```/```
 
 ## Usage
-To start using framework, you have to initialize ```MGDecimalOperations``` object.
+To start using framework, you have to initialize ```MGDecimalOperationsCalculator ``` object.
 ```objective-c
-DecimalOperations *decimalOperations = [DecimalOperations new];
+MGDecimalOperationsCalculator *decimalOperations = [MGDecimalOperationsCalculator new];
 ```
 After that you will be able to use these two methods:
 ```objective-c
