@@ -1,4 +1,4 @@
-#import <MGDecimalOperations/MGDecimalOperationsCalculator.h>
+#import "MGDecimalOperationsCalculator.h"
 
 //! Project version number for MGDecimalOperations.
 FOUNDATION_EXPORT double MGDecimalOperationsVersionNumber;
