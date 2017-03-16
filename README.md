@@ -22,12 +22,6 @@ and after that execute
 pod install
 ```
 
-### Dependencies
-```
-Expecta ~> 1.0
-Specta ~> 1.0
-```
-
 ## Description
 The framework allows to make operations on ```NSDeciamlNumbers```. To perform an  operation you need to pass the operation written in ```String```, dictionary with variables and reference to ```NSError```. Framework keeps order of operations. You can use round brackets to establish order of operations. The name of variable is unlimited (all ASCII signs except mathematical operations signs and open brackets).
 
