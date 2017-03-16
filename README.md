@@ -3,6 +3,7 @@
 ![language](https://img.shields.io/badge/language-Objective--C-brightgreen.svg)
 [![Build Status](https://travis-ci.org/elpassion/MGDecimalOperations-iOS.svg?branch=master)](https://travis-ci.org/elpassion/MGDecimalOperations-iOS)
 ![license](https://img.shields.io/badge/license-MIT-brightgreen.svg)
+[![CocoaPods](https://img.shields.io/cocoapods/v/MGDecimalOperations.svg)](https://cocoapods.org/pods/MGDecimalOperations)
 
 # MGDecimalOperations
 MGDecimalOperations is a framework that simplyfy and makes clear operations on ```NSDecimalNumbers```
